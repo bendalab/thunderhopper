@@ -1,0 +1,14 @@
+site_name: thunderhopper
+
+repo_url: https://github.com/bendalab/thunderhopper/
+
+edit_uri: ""
+
+site_author: Benda-Lab
+
+theme: readthedocs
+    
+nav:
+    - Home: 'index.md'
+    - 'Code':
+        - API reference: 'api/index.html'
