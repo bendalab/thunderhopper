@@ -8,6 +8,10 @@
 
 Model of the auditory pathway of grasshoppers.
 
+[Documentation](https://bendalab.github.io/thunderhopper/) |
+[API Reference](https://bendalab.github.io/thunderhopper/api/)
+
+
 ## Auditory pathway
 
 Acoustic signals are sequentially processed along the auditory pathway:
