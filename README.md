@@ -13,13 +13,13 @@ Model of the auditory pathway of grasshoppers.
 Acoustic signals are sequentially processed along the auditory pathway:
 
 1. Raw auditory signal (`raw`).
-2. Bandpass filterd by tympanum ('filt').
-3. Computation of envelope by rectification and low-pass filtering ('env').
-4. Logarithmic transform into decibel ('log').
-5. High-pass filtering to generate intensity invariant envelope ('inv').
-6. Convolution of the envelope with a set of Gabor kerneles ('conv').
-7. Thresholding the convolved traces ('bi').
-8. Low-pass filtering the binary trace to generate slowly varying features ('feat').
+2. Bandpass filterd by tympanum (`filt`).
+3. Computation of envelope by rectification and low-pass filtering (`env`).
+4. Logarithmic transform into decibel (`log`).
+5. High-pass filtering to generate intensity invariant envelope (`inv`).
+6. Convolution of the envelope with a set of Gabor kerneles (`conv`).
+7. Thresholding the convolved traces (`bi`).
+8. Low-pass filtering the binary trace to generate slowly varying features (`feat`).
 
 In brackets the acronyms are given that are used by output
 dictionaries and for signal selection as described below.
