@@ -8,18 +8,33 @@
 
 Model of the auditory pathway of grasshoppers.
 
+## Auditory pathway
+
+Acoustic signals are sequentially processed along the auditory pathway:
+
+1. Raw auditory signal (`raw`).
+2. Bandpass filterd by tympanum ('filt').
+3. Computation of envelope by rectification and low-pass filtering ('env').
+4. Logarithmic transform into decibel ('log').
+5. High-pass filtering to generate intensity invariant envelope ('inv').
+6. Convolution of the envelope with a set of Gabor kerneles ('conv').
+7. Thresholding the convolved traces ('bi').
+8. Low-pass filtering the binary trace to generate slowly varying features ('feat').
+
+In brackets the acronyms are given that are used by output
+dictionaries and for signal selection as described below.
+
 ## Usage
 
 First, import what we need:
 ```py
 import numpy as np
 import matplotlib.pyplot as plt
-from thunderhopper.model import configuration, process_signal
-from thunderhopper.modeltools import load_data
+from thunderhopper import configuration, process_signal, load_data
 ```
 
 Second, prepare a configuration dictionary. You simply need to provide
-the standarad deviations of the Garbor kernels and their types. The
+the standard deviations of the Garbor kernels and their types. The
 latter is the number of lobes you want, a negative number flips the
 kernel on the x-axis:
 
@@ -106,7 +121,7 @@ config.update({
     })
 ```
 
-## Select what to store
+### Select what to store
 
 If you do not need the traces from every step of the auditory pathway,
 you may select what to store via the `returns` argument. For example,
