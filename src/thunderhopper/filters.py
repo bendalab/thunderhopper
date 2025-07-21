@@ -1,9 +1,9 @@
 import numpy as np
 from scipy.interpolate import interpn
 from scipy.signal import butter, sosfiltfilt, sosfilt, sosfilt_zi
-from misctools import check_list, ensure_array, mirror_linspace
-from arraytools import broadcastable, array_slice, remap_array, align_arrays
-from filtertools import gauss_width, gabor_phase, gabor_freqs, encode_kernels
+from .misctools import check_list, ensure_array, mirror_linspace
+from .arraytools import broadcastable, array_slice, remap_array, align_arrays
+from .filtertools import gauss_width, gabor_phase, gabor_freqs, encode_kernels
 
 
 # DATA TRANSFORMATION:

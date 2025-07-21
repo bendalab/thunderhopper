@@ -1,5 +1,5 @@
 import numpy as np
-from misctools import combination_array
+from .misctools import combination_array
 
 
 def gauss_width(sigma, rel_height=0.01):

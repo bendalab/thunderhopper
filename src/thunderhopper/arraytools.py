@@ -1,5 +1,5 @@
 import numpy as np
-from misctools import string_series, equal_sequences
+from .misctools import string_series, equal_sequences
 
 
 ## CHECKS & VALIDATION ##

@@ -4,11 +4,11 @@ import numpy as np
 from sklearn.linear_model import Perceptron
 from sklearn.svm import SVC
 from scipy.sparse import csr_matrix
-from filters import gabor_set
-from stats import batch_correlation
-from misctools import string_series, merge_dicts, unmerge_dicts
-from filetools import check_extension, write_json, load_json, load_npz,\
-                      to_archive, from_archive, update_npz
+from .filters import gabor_set
+from .stats import batch_correlation
+from .misctools import string_series, merge_dicts, unmerge_dicts
+from .filetools import check_extension, write_json, load_json, load_npz,\
+                       to_archive, from_archive, update_npz
 
 
 # PIPELINE I/O FUNCTIONS:

@@ -5,7 +5,7 @@ import json
 import numpy as np
 from audioio import load_audio, write_audio
 from datetime import datetime, timedelta
-from misctools import check_list, unmerge_dicts
+from .misctools import check_list, unmerge_dicts
 
 
 # GENERAL PATH & FILE MANAGEMENT:
@@ -253,14 +253,19 @@ def from_archive(data):
             data[key] = None
         # Restore singular entries from 0D arrays:
         elif value.ndim == 0 and value.size == 1:
-            if np.isdtype(value.dtype, 'signed integer'):
-                data[key] = int(value)
-            elif np.isdtype(value.dtype, 'real floating'):
-                data[key] = float(value)
-            elif np.isdtype(value.dtype, 'bool'):
-                data[key] = bool(value)
-            elif np.isdtype(value.dtype, np.str_):
-                data[key] = str(value)
+            try:
+                if np.isdtype(value.dtype, 'signed integer'):
+                    data[key] = int(value)
+                elif np.isdtype(value.dtype, 'real floating'):
+                    data[key] = float(value)
+                elif np.isdtype(value.dtype, 'bool'):
+                    data[key] = bool(value)
+                elif np.isdtype(value.dtype, np.str_):
+                    data[key] = str(value)
+            except AttributeError:
+                # np.isdtype() was added in numpy version 2.0!
+                # This might also work:
+                data[key] = value.item()
     return data
 
 

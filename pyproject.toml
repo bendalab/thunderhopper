@@ -9,8 +9,9 @@ dependencies = [
   "scikit-learn",
   "scipy",
   "numpy",
-  "numba",
   "matplotlib",
+  "distinctipy",
+  "bottleneck",
   "audioio>=2.5"
 ]
 requires-python = ">=3.6"

@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.ndimage import label
-from misctools import ensure_array
-from plottools import plot_spectrogram
+from .misctools import ensure_array
+from .plottools import plot_spectrogram
 
 
 # GENERAL & APPLIED SEGMENT IDENTIFICATION:

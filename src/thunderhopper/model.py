@@ -1,12 +1,13 @@
+import sys
 import numpy as np
 import audioio as aio
-from filters import gabor_set, decibel, sosfilter, envelope, downsampling
-from filtertools import link_kernels
-from misctools import ensure_iterable, merge_dicts
-from arraytools import array_slice, remap_array, align_arrays
-from labeltools import label_songs, label_gui
-from modeltools import save_data, event_lags
-from stats import batch_convolution, nonlinearity
+from .filters import gabor_set, decibel, sosfilter, envelope, downsampling
+from .filtertools import link_kernels
+from .misctools import ensure_iterable, merge_dicts
+from .arraytools import array_slice, remap_array, align_arrays
+from .labeltools import label_songs, label_gui
+from .modeltools import save_data, event_lags
+from .stats import batch_convolution, nonlinearity
 
 
 def configuration(env_rate=2000, feat_rate=1000, kernel_dict=None, specs=None,
@@ -738,3 +739,40 @@ def process_signal(config, returns=None, path=None, signal=None, rate=None,
         save_data(save, merge_dicts(data, rates, suffix='_rate'),
                   config, overwrite=overwrite)
     return data, rates
+
+
+def demo(path):
+    """ Simple demo demonstrating basic usage of process_signal().
+    """
+    
+    # Configure processing parameters:
+    sigmas = [0.001, 0.002, 0.004, 0.008, 0.016, 0.032]
+    types = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5,
+             6, -6, 7, -7, 8, -8, 9, -9, 10, -10]
+    config = configuration(types=types, sigmas=sigmas)
+
+    # Compute model traces:
+    data, rates = process_signal(config, path=path)
+
+    # Retrive traces:
+    filt = data['filt'][:, 0]
+    filt_rate = rates['filt']
+    tfilt = np.arange(len(filt))/filt_rate
+    env = data['env'][:, 0]
+    env_rate = rates['env']
+    tenv = np.arange(len(env))/env_rate
+
+    # plot:
+    import matplotlib.pyplot as plt
+    plt.plot(tfilt, filt)
+    plt.plot(tenv, env)
+    plt.show()
+
+
+if __name__ == '__main__':
+    if len(sys.argv) <= 1:
+        print('Usage:')
+        print('  model recording.wav:')
+    else:
+        demo(sys.argv[1])
+    

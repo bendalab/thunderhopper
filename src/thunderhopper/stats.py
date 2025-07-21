@@ -5,12 +5,16 @@ import bottleneck as bn
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import roc_auc_score
 from scipy.integrate import trapezoid, cumulative_trapezoid
-from scipy.signal import correlate, correlation_lags, convolve,\
-                         get_window, ShortTimeFFT
+from scipy.signal import correlate, correlation_lags, convolve, get_window
+try:
+    from scipy.signal import ShortTimeFFT
+    has_shorttimefft = True
+except ImportError:
+    has_shorttimefft = False
 from scipy.signal.windows import hamming
 from scipy.cluster.hierarchy import linkage, dendrogram, set_link_color_palette
-from misctools import ensure_array, unsort_unique, safe_zip
-from arraytools import array_slice, remap_array, edge_along_axis
+from .misctools import ensure_array, unsort_unique, safe_zip
+from .arraytools import array_slice, remap_array, edge_along_axis
 
 
 def linear_regression(x, y, ax=None, **kwargs):
@@ -881,6 +885,8 @@ def spectrogram(signal, rate, win=None, hop=None, mfft=None, log_power=False,
         Breaks for invalid formats of win. Further breaks if nperseg is None
         while win is not an array, or if neither hop nor noverlap are provided.
     """
+    if not has_shorttimefft:
+        raise ImportError('Failed to import scipy.signal.ShortTimeFFT')
     # Manage time window:
     n_samples = signal.shape[0]
     if not isinstance(win, np.ndarray):

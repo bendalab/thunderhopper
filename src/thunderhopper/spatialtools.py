@@ -1,10 +1,9 @@
 import numpy as np
 from itertools import combinations
-from misctools import string_series, make_circle
-from arraytools import is_valid_numpy_index, broadcastable, safe_fraction
-from stats import moving_center
-from plottools import setup_fig, color_range
-from IPython import embed
+from .misctools import string_series, make_circle
+from .arraytools import is_valid_numpy_index, broadcastable, safe_fraction
+from .stats import moving_center
+from .plottools import setup_fig, color_range
 
 
 def speed_of_sound(temperature=20., c=None):

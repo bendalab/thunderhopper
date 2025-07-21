@@ -8,10 +8,10 @@ from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 from scipy.spatial.distance import pdist, squareform
-from misctools import check_list, equal_sequences, flat_list, spread_shuffle, \
+from .misctools import check_list, equal_sequences, flat_list, spread_shuffle, \
                        round_power
-from filters import downsampling
-from stats import spectrogram
+from .filters import downsampling
+from .stats import spectrogram
 
 
 # FIGURES & AXES:
