@@ -725,7 +725,7 @@ def process_signal(config, returns=None, path=None, signal=None, rate=None,
             if 'filt' in returns and config['distance'] is not None:
                 delays = event_lags(data['filt'], rate, edges, config=config)
                 # Link to reference channel and underlying labels:
-                data[f'lag_{config['lag_ref']}_songs_{ind}'] = delays
+                data[f"lag_{config['lag_ref']}_songs_{ind}"] = delays
 
     # Sampling rate for each representation in storage:
     rates = {'raw': rate, 'filt': rate, 'env': config['env_rate'],

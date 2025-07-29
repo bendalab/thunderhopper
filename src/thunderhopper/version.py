@@ -1,4 +1,4 @@
-__version__='1.0.0'
+__version__='1.0.1'
 """Current version of the thunderhopper package."""
 
 __year__ = '2025'
