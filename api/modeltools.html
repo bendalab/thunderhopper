@@ -1,0 +1,1243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>thunderhopper.modeltools API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>thunderhopper.modeltools</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="thunderhopper.modeltools.config_to_archive"><code class="name flex">
+<span>def <span class="ident">config_to_archive</span></span>(<span>config)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def config_to_archive(config):
+    &#34;&#34;&#34; Converts the song detector parameter configuration to storable format.
+        Removes entries that are inhomogeneous lists (kernels, k_times) or very
+        large dictionaries (k_props) and can hence not be converted to arrays.
+        Re-codes Nones as empty 1D arrays to avoid arrays of data type object.
+        Flattens small dictionaries (spec_kwargs) and stores pre-fixed entries.
+        Ensures compatibility with npy/npz file format, and prevents pickling.
+        Use config_from_storage() to recover configuration in working format.
+
+    Parameters
+    ----------
+    config : dict
+        Top-level parameter configuration in the format of configuration().
+
+    Returns
+    -------
+    config : dict
+        Top-level parameter configuration in a format accepted by np.savez().
+    &#34;&#34;&#34;
+    # Exclude non-storable:
+    config = config.copy()
+    [config.pop(key, None) for key in (&#39;kernels&#39;, &#39;k_times&#39;, &#39;k_props&#39;)]
+    # Merge sub-dictionaries into configuration:
+    spec_kwargs = config.pop(&#39;spec_kwargs&#39;)
+    config = merge_dicts(config, spec_kwargs, prefix=&#39;label_gui_&#39;)
+    return to_archive(config)</code></pre>
+</details>
+<div class="desc"><p>Converts the song detector parameter configuration to storable format.
+Removes entries that are inhomogeneous lists (kernels, k_times) or very
+large dictionaries (k_props) and can hence not be converted to arrays.
+Re-codes Nones as empty 1D arrays to avoid arrays of data type object.
+Flattens small dictionaries (spec_kwargs) and stores pre-fixed entries.
+Ensures compatibility with npy/npz file format, and prevents pickling.
+Use config_from_storage() to recover configuration in working format.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>config</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Top-level parameter configuration in the format of configuration().</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>config</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Top-level parameter configuration in a format accepted by np.savez().</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.modeltools.config_from_archive"><code class="name flex">
+<span>def <span class="ident">config_from_archive</span></span>(<span>config, full_recovery=True)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def config_from_archive(config, full_recovery=True):
+    &#34;&#34;&#34; Reverts loaded song detector parameter configuration to working format.
+        Expects storage format returned by config_to_storage(). Unpacks ints,
+        floats, bools, and strings from their 0D array containers. Restores
+        empty 1D arrays to Nones. Bundles pre-fixed entries into the original
+        dictionaries (spec_kwargs). Can run kernel_set() with initial settings
+        to recover all kernel-related variables (kernels, k_times, k_props).
+
+    Parameters
+    ----------
+    config : dict
+        Top-level parameter configuration in storage format.
+    full_recovery : bool, optional
+        If True, scans configuration for auxiliary settings used to generate
+        the kernel set and re-runs kernel_set() with the k_specs entry to
+        recover the non-storable kernels, k_times, and k_props entries. Needed
+        to fully restore the original configuration. The default is True. 
+
+    Returns
+    -------
+    config : dict
+        Top-level parameter configuration in working format.
+    &#34;&#34;&#34;
+    # Convert arrays where needed:
+    config = from_archive(config)
+
+    # Re-bundle sub-dictionaries:
+    spec_kwargs, config = unmerge_dicts(config, prefix=&#39;label_gui_&#39;)
+    config[&#39;spec_kwargs&#39;] = spec_kwargs
+
+    if full_recovery:
+        # Scan for auxiliary settings:
+        keys = set(config.keys())
+        optional_keys = set([&#39;normalize&#39;, &#39;share_axis&#39;, &#39;time&#39;, &#39;flat_flanks&#39;])
+        auxiliaries = {k: config[k] for k in optional_keys &amp; keys}
+
+        # Scan for frequency estimation settings:
+        freq_keys = set([&#39;peak_thresh&#39;, &#39;offset&#39;, &#39;gauss_width&#39;, &#39;rel_height&#39;])
+        freq_kwargs = {k: config[k] for k in freq_keys &amp; keys}
+        if freq_kwargs:
+            # Add bundled frequency settings:
+            auxiliaries[&#39;freq_kwargs&#39;] = freq_kwargs
+
+        # Regenerate unstored kernel-associated variables:
+        packed = gabor_set(config[&#39;env_rate&#39;], specs=config[&#39;k_specs&#39;],
+                           **auxiliaries)
+        config[&#39;kernels&#39;], _, config[&#39;k_times&#39;], config[&#39;k_props&#39;] = packed
+    return config</code></pre>
+</details>
+<div class="desc"><p>Reverts loaded song detector parameter configuration to working format.
+Expects storage format returned by config_to_storage(). Unpacks ints,
+floats, bools, and strings from their 0D array containers. Restores
+empty 1D arrays to Nones. Bundles pre-fixed entries into the original
+dictionaries (spec_kwargs). Can run kernel_set() with initial settings
+to recover all kernel-related variables (kernels, k_times, k_props).</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>config</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Top-level parameter configuration in storage format.</dd>
+<dt><strong><code>full_recovery</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, scans configuration for auxiliary settings used to generate
+the kernel set and re-runs kernel_set() with the k_specs entry to
+recover the non-storable kernels, k_times, and k_props entries. Needed
+to fully restore the original configuration. The default is True.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>config</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Top-level parameter configuration in working format.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.modeltools.save_data"><code class="name flex">
+<span>def <span class="ident">save_data</span></span>(<span>path, data, config, prefix='metadata__', overwrite=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_data(path, data, config, prefix=&#39;metadata__&#39;, overwrite=False):
+    &#34;&#34;&#34; Stores processing data and parameter configuration as npz archive.
+        Converts configuration to storable format and inserts each parameter
+        under its prefixed key into the data dictionary, which is then saved. 
+
+    Parameters
+    ----------
+    path : str or pathlib.Path
+        Absolute or relative path for writing the npz archive to file.
+    data : dict of arrays
+        Collection of signal representations to include in the archive in a
+        format accepted by np.savez(), as returned by process_signal().
+    config : dict
+        Top-level parameter configuration in the format of configuration().
+        Parameter entries have the prefix prepended to their key.
+    prefix : str, optional
+        Key tag to distinguish parameter entries from data in the archive.
+        Empty strings disable tagging, preventing correct separation later on.
+        The default is &#39;metadata__&#39;.
+    overwrite : bool, optional
+        If True, writes data to a new archive under the given path, overwriting
+        any existing file. If False, updates an existing archive with the new
+        data, preserving any other archive entries. The default is False.
+    &#34;&#34;&#34;    
+    data = merge_dicts(data, config_to_archive(config), prefix)
+    if overwrite or not pathlib.Path(path).exists():
+        np.savez(path, **data)
+    else:
+        update_npz(path, **data)
+    return None</code></pre>
+</details>
+<div class="desc"><p>Stores processing data and parameter configuration as npz archive.
+Converts configuration to storable format and inserts each parameter
+under its prefixed key into the data dictionary, which is then saved. </p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code> or <code>pathlib.Path</code></dt>
+<dd>Absolute or relative path for writing the npz archive to file.</dd>
+<dt><strong><code>data</code></strong> :&ensp;<code>dict</code> of <code>arrays</code></dt>
+<dd>Collection of signal representations to include in the archive in a
+format accepted by np.savez(), as returned by process_signal().</dd>
+<dt><strong><code>config</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Top-level parameter configuration in the format of configuration().
+Parameter entries have the prefix prepended to their key.</dd>
+<dt><strong><code>prefix</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Key tag to distinguish parameter entries from data in the archive.
+Empty strings disable tagging, preventing correct separation later on.
+The default is 'metadata__'.</dd>
+<dt><strong><code>overwrite</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, writes data to a new archive under the given path, overwriting
+any existing file. If False, updates an existing archive with the new
+data, preserving any other archive entries. The default is False.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.modeltools.load_data"><code class="name flex">
+<span>def <span class="ident">load_data</span></span>(<span>path, files=None, keywords=None, prefix='metadata__', full_recovery=True)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_data(path, files=None, keywords=None, prefix=&#39;metadata__&#39;,
+              full_recovery=True):
+    &#34;&#34;&#34; Retrieves processed data and parameter configuration from npz archive.
+        Output can be limited to files whose names are explicitly given or
+        contain any of the specified keywords. Separates prefixed parameter
+        entries from data entries and converts the configuration to working
+        format. Can regenerate missing kernel-related parameters.
+
+    Parameters
+    ----------
+    path : str or pathlib.Path
+        Absolute or relative path to the npz archive.
+    files : str or list or tuple of str (m,), optional
+        Selection of names of npy data files to load from the archive. Attempts
+        to also return the corresponding sampling rate for each representation
+        under the key &#34;{name}_rate&#34;, if present. Ignores file names that cannot
+        be found in archive.files. The default is None (all representations).
+    keywords : str or list or tuple of str (n,), optional
+        Keywords to match against npy file names. Pass [] to disable keyword
+        search. The default is None (all labels and corresponding lag files).
+    prefix : str, optional
+        Key tag to identify parameter entries in the archive. Must be the same
+        prefix originally passed to save_data(). Empty strings mean that all
+        entries are treated as parameter entries. The default is &#39;metadata__&#39;.
+    full_recovery : bool, optional
+        If True, scans configuration for auxiliary settings used to generate
+        the kernel set and re-runs kernel_set() with the k_specs entry to
+        recover the non-storable kernels, k_times, and k_props entries. Needed
+        to fully restore the original configuration. The default is True. 
+
+    Returns
+    -------
+    data : dict of arrays (m,)
+        Collection of signal representations loaded from the npz archive. Loads
+        all entries if no returns are given. Returns {} if prefix is empty.
+    config : dict
+        Top-level parameter configuration used in processing. Parameter entries
+        have the prefix removed. Holds all archive entries if prefix is empty.
+    &#34;&#34;&#34;
+    # Manage fixed returns:
+    if files is None:
+        # Default to all possible representations:
+        files = [&#39;raw&#39;, &#39;filt&#39;, &#39;env&#39;, &#39;log&#39;, &#39;inv&#39;,
+                 &#39;conv&#39;, &#39;bi&#39;, &#39;feat&#39;, &#39;norm&#39;]
+    elif isinstance(files, str):
+        files = [files]
+
+    # Manage free returns: 
+    if keywords is None:
+        # Default to any labels:
+        keywords = [&#39;songs&#39;, &#39;noise&#39;]
+    elif isinstance(keywords, str):
+        keywords = [keywords]
+
+    # Include sampling rates and parameter configuration:
+    files = [*files, *[f&#39;{key}_rate&#39; for key in files]]
+    keywords = [*keywords, prefix]
+
+    # Safely retrieve requested data from archive:
+    config, data = load_npz(path, files, keywords, prefix)
+    return from_archive(data), config_from_archive(config, full_recovery)</code></pre>
+</details>
+<div class="desc"><p>Retrieves processed data and parameter configuration from npz archive.
+Output can be limited to files whose names are explicitly given or
+contain any of the specified keywords. Separates prefixed parameter
+entries from data entries and converts the configuration to working
+format. Can regenerate missing kernel-related parameters.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code> or <code>pathlib.Path</code></dt>
+<dd>Absolute or relative path to the npz archive.</dd>
+<dt><strong><code>files</code></strong> :&ensp;<code>str</code> or <code>list</code> or <code>tuple</code> of <code>str (m,)</code>, optional</dt>
+<dd>Selection of names of npy data files to load from the archive. Attempts
+to also return the corresponding sampling rate for each representation
+under the key "{name}_rate", if present. Ignores file names that cannot
+be found in archive.files. The default is None (all representations).</dd>
+<dt><strong><code>keywords</code></strong> :&ensp;<code>str</code> or <code>list</code> or <code>tuple</code> of <code>str (n,)</code>, optional</dt>
+<dd>Keywords to match against npy file names. Pass [] to disable keyword
+search. The default is None (all labels and corresponding lag files).</dd>
+<dt><strong><code>prefix</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Key tag to identify parameter entries in the archive. Must be the same
+prefix originally passed to save_data(). Empty strings mean that all
+entries are treated as parameter entries. The default is 'metadata__'.</dd>
+<dt><strong><code>full_recovery</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, scans configuration for auxiliary settings used to generate
+the kernel set and re-runs kernel_set() with the k_specs entry to
+recover the non-storable kernels, k_times, and k_props entries. Needed
+to fully restore the original configuration. The default is True.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>data</code></strong> :&ensp;<code>dict</code> of <code>arrays (m,)</code></dt>
+<dd>Collection of signal representations loaded from the npz archive. Loads
+all entries if no returns are given. Returns {} if prefix is empty.</dd>
+<dt><strong><code>config</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Top-level parameter configuration used in processing. Parameter entries
+have the prefix removed. Holds all archive entries if prefix is empty.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.modeltools.channel_lags"><code class="name flex">
+<span>def <span class="ident">channel_lags</span></span>(<span>signal,<br>rate,<br>ref=0,<br>channels=None,<br>frame=None,<br>crop=True,<br>sequential=False,<br>expand=True,<br>full_return=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def channel_lags(signal, rate, ref=0, channels=None, frame=None, crop=True,
+                 sequential=False, expand=True, full_return=False):
+    &#34;&#34;&#34; Estimates channel-specific signal delay using cross-correlation.
+        Correlates each specified channel with the reference channel and
+        identifies the lag time that maximizes the correlation coefficient.
+        Can also return the underlying correlation coefficients and lag times.
+
+    Parameters
+    ----------
+    signal : 2D array of floats (m, n)
+        Multi-channel signal data. Axis 0 is time, axis 1 are channels.
+    rate : float or int
+        Sampling rate of the signal in Hz.
+    ref : int or 1D array of int (1,), optional
+        Index of the reference channel in signal. The default is 0.
+    channels : 1D array of ints (p), optional
+        Indices of channels to correlate with the reference. If not specified,
+        uses all channels except the reference. The default is None.
+    frame : list or tuple of floats or ints (2,) or float or int, optional
+        If specified, only considers lag times within the specified bounds in
+        seconds when identifying the maximum correlation. Single values are
+        taken as symmetric interval [-frame, frame]. The default is None.
+    crop : bool, optional
+        If True while full_return is True, when frame is given or sequential is
+        True, returns rhos and lags only within the considered range of lag
+        times from frame[0] to frame[1], or to the final upper bound if expand
+        is True. The default is True. 
+    sequential : bool, optional
+        If True, restricts correlation maximization to increasingly more
+        positive lag times for each channel in channels by updating the lower
+        frame bound with one channel&#39;s computed lag time before proceeding to
+        the next channel. If frame is not given, begins with the full range of
+        available lag times. The default is False.
+    expand : bool, optional
+        If True while sequential is True and frame is specified, maintains the
+        frame width when increasing the lower bound by updating the upper bound
+        accordingly. Else, frame width decreases with each channel. Not secure
+        against bounds exceeding each other! The default is True.
+    full_return : bool, optional
+        If True, returns correlation coefficients (Pearson&#39;s rho) and lag times
+        of each cross-correlation alongside the delays. The default is False.
+
+    Returns
+    -------
+    rhos : 2D array of floats (2 * m - 1, p)
+        If full_return is True, correlation coefficients for each specified
+        channel against the reference, normalized to Pearson&#39;s rho in [-1, 1].
+    lags : 1D array of floats (2 * m - 1,)
+        If full_return is True, lags in [(-m + 1) / rate, (m - 1) / rate] in s.
+    delays : 1D array of floats (p)
+        Estimated signal delay for each specified channel in seconds. Negative
+        lag time means that the signal on a channel leads the signal on the
+        reference. Vice versa, positive lag time means that the signal on a
+        channel is delayed relative to the reference signal.
+    &#34;&#34;&#34;    
+    # Input interpretation:
+    if channels is None:
+        channels = np.array([i for i in range(signal.shape[1]) if i != ref])
+    # Ensure array format to enable slicing:
+    elif not isinstance(channels, np.ndarray):
+        channels = np.atleast_1d(channels)
+    if not isinstance(ref, np.ndarray):
+        ref = np.atleast_1d(ref)
+
+    # Fall back to symmetry to ensure two bounds:
+    if frame is not None and not np.iterable(frame):
+        frame = [-frame, frame]
+
+    # Compute channel-wise cross-correlations and lag times in seconds:
+    rhos, lags = batch_correlation(signal[:, channels], signal[:, ref])
+    lags = lags / rate    
+
+    # Procedure options:
+    if not sequential:
+        if frame is None:
+            # Find lags that maximize correlation:
+            delays = lags[np.argmax(rhos, axis=0)]
+        else:
+            # Focus on a certain range of lag times:
+            inds = (lags &gt;= frame[0]) &amp; (lags &lt;= frame[1])
+            delays = lags[inds][np.argmax(rhos[inds, :], axis=0)]
+            if full_return and crop:
+                # Adjust other outputs to lag range:
+                rhos, lags = rhos[inds, :], lags[inds]
+
+    elif sequential:
+        if frame is None:
+            # Fallback to full range:
+            frame = [lags[0], lags[-1]]
+            expand = False
+        if full_return and crop:
+            # Remember initial bound:
+            lower_bound = frame[0]
+        width = frame[1] - frame[0]
+
+        # Focus on individual lag ranges:
+        delays = np.zeros(rhos.shape[1])
+        for i in np.arange(rhos.shape[1])[np.argsort(channels)]:
+            # Find lag that maximizes current correlation:
+            inds = (lags &gt;= frame[0]) &amp; (lags &lt;= frame[1])
+            delays[i] = lags[inds][np.argmax(rhos[inds, i])]
+            # Update range towards positive lag, optionally maintaining width:
+            frame = [delays[i], (delays[i] + width) if expand else frame[1]]
+        if full_return and crop:
+            # Adjust other outputs to expanded lag range:
+            inds = (lags &gt;= lower_bound) &amp; (lags &lt;= frame[1])
+            rhos, lags = rhos[inds, :], lags[inds]
+
+    # Return options:
+    if full_return:
+        return rhos, lags, delays
+    return delays</code></pre>
+</details>
+<div class="desc"><p>Estimates channel-specific signal delay using cross-correlation.
+Correlates each specified channel with the reference channel and
+identifies the lag time that maximizes the correlation coefficient.
+Can also return the underlying correlation coefficients and lag times.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>signal</code></strong> :&ensp;<code>2D array</code> of <code>floats (m, n)</code></dt>
+<dd>Multi-channel signal data. Axis 0 is time, axis 1 are channels.</dd>
+<dt><strong><code>rate</code></strong> :&ensp;<code>float</code> or <code>int</code></dt>
+<dd>Sampling rate of the signal in Hz.</dd>
+<dt><strong><code>ref</code></strong> :&ensp;<code>int</code> or <code>1D array</code> of <code>int (1,)</code>, optional</dt>
+<dd>Index of the reference channel in signal. The default is 0.</dd>
+<dt><strong><code>channels</code></strong> :&ensp;<code>1D array</code> of <code>ints (p)</code>, optional</dt>
+<dd>Indices of channels to correlate with the reference. If not specified,
+uses all channels except the reference. The default is None.</dd>
+<dt><strong><code>frame</code></strong> :&ensp;<code>list</code> or <code>tuple</code> of <code>floats</code> or <code>ints (2,)</code> or <code>float</code> or <code>int</code>, optional</dt>
+<dd>If specified, only considers lag times within the specified bounds in
+seconds when identifying the maximum correlation. Single values are
+taken as symmetric interval [-frame, frame]. The default is None.</dd>
+<dt><strong><code>crop</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True while full_return is True, when frame is given or sequential is
+True, returns rhos and lags only within the considered range of lag
+times from frame[0] to frame[1], or to the final upper bound if expand
+is True. The default is True.</dd>
+<dt><strong><code>sequential</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, restricts correlation maximization to increasingly more
+positive lag times for each channel in channels by updating the lower
+frame bound with one channel's computed lag time before proceeding to
+the next channel. If frame is not given, begins with the full range of
+available lag times. The default is False.</dd>
+<dt><strong><code>expand</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True while sequential is True and frame is specified, maintains the
+frame width when increasing the lower bound by updating the upper bound
+accordingly. Else, frame width decreases with each channel. Not secure
+against bounds exceeding each other! The default is True.</dd>
+<dt><strong><code>full_return</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, returns correlation coefficients (Pearson's rho) and lag times
+of each cross-correlation alongside the delays. The default is False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>rhos</code></strong> :&ensp;<code>2D array</code> of <code>floats (2 * m - 1, p)</code></dt>
+<dd>If full_return is True, correlation coefficients for each specified
+channel against the reference, normalized to Pearson's rho in [-1, 1].</dd>
+<dt><strong><code>lags</code></strong> :&ensp;<code>1D array</code> of <code>floats (2 * m - 1,)</code></dt>
+<dd>If full_return is True, lags in [(-m + 1) / rate, (m - 1) / rate] in s.</dd>
+<dt><strong><code>delays</code></strong> :&ensp;<code>1D array</code> of <code>floats (p)</code></dt>
+<dd>Estimated signal delay for each specified channel in seconds. Negative
+lag time means that the signal on a channel leads the signal on the
+reference. Vice versa, positive lag time means that the signal on a
+channel is delayed relative to the reference signal.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.modeltools.event_lags"><code class="name flex">
+<span>def <span class="ident">event_lags</span></span>(<span>signal,<br>rate,<br>edges,<br>ref=0,<br>channels=None,<br>frame=None,<br>crop=True,<br>sequential=False,<br>expand=True,<br>config=None,<br>full_return=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def event_lags(signal, rate, edges, ref=0, channels=None, frame=None, crop=True,
+               sequential=False, expand=True, config=None, full_return=False):
+    # TODO: Add documentation.
+    # Input interpretation:
+    if config is not None:
+        ref = config[&#39;lag_ref&#39;]
+        channels = config[&#39;lag_channels&#39;]
+        frame = config[&#39;lag_frame&#39;]
+        sequential = config[&#39;sequential_lag&#39;]
+        expand = config[&#39;expand_frame&#39;]
+    if channels is None:
+        channels = np.array([i for i in range(signal.shape[1]) if i != ref])
+    # Ensure array format to enable slicing:
+    elif not isinstance(channels, np.ndarray):
+        channels = np.atleast_1d(channels)
+    if not isinstance(ref, np.ndarray):
+        ref = np.atleast_1d(ref)
+
+    # Fall back to symmetry to ensure two bounds:
+    if frame is not None and not np.iterable(frame):
+        frame = [-frame, frame]
+    
+    # Prepare storage and underlying time axis:
+    delays, rhos, lags = np.zeros((edges.shape[0], channels.size)), [], []
+    time = np.arange(signal.shape[0]) / rate
+
+    # Compute event-specific lagg times:
+    for i, event in enumerate(edges):
+        inds = (time &gt;= event[0]) &amp; (time &lt;= event[1])
+        output = channel_lags(signal[inds, :], rate, ref, channels, frame,
+                              crop, sequential, expand, full_return)
+        if full_return:
+            rhos.append(output[0])
+            lags.append(output[1])
+            delays[i, :] = output[2]
+        else:
+            delays[i, :] = output
+
+    # Return options:
+    if full_return:
+        return rhos, lags, delays
+    return delays</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="thunderhopper.modeltools.save_perceptron"><code class="name flex">
+<span>def <span class="ident">save_perceptron</span></span>(<span>model, path)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_perceptron(model, path):
+    &#34;&#34;&#34; Writes parameter configuration of a perceptron to .json or .txt file.
+        Only supports trained classifiers from sklearn.linear_model.Perceptron.
+        Saved configuration can be used to re-assamble the given perceptron.
+        Function taken from sklearn-json package.
+
+    Parameters
+    ----------
+    model : sklearn Perceptron
+        Fitted perceptron classifier. The function will crash when trying to
+        access the attributes of an untrained model.
+    path : str
+        Path to text file where the parameter configuration is saved.
+    &#34;&#34;&#34;    
+    # JSON-serialize model configuration:
+    serialized = {
+        &#39;meta&#39;: &#39;perceptron&#39;,                                                  # Type meta information
+        &#39;coef_&#39;: model.coef_.tolist(),                                         # Weights assigned to the features
+        &#39;intercept_&#39;: model.intercept_.tolist(),                               # Constants in decision function
+        &#39;n_iter_&#39;: model.n_iter_,                                              # Number of iterations to reach stopping criterion           
+        &#39;classes_&#39;: model.classes_.tolist(),                                   # Unique class labels
+        &#39;params&#39;: model.get_params()                                           # Initialization parameters
+    }
+    # Write to text file:
+    with open(path, &#39;w&#39;) as file:
+        json.dump(serialized, file)
+    return None</code></pre>
+</details>
+<div class="desc"><p>Writes parameter configuration of a perceptron to .json or .txt file.
+Only supports trained classifiers from sklearn.linear_model.Perceptron.
+Saved configuration can be used to re-assamble the given perceptron.
+Function taken from sklearn-json package.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>sklearn Perceptron</code></dt>
+<dd>Fitted perceptron classifier. The function will crash when trying to
+access the attributes of an untrained model.</dd>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to text file where the parameter configuration is saved.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.modeltools.load_perceptron"><code class="name flex">
+<span>def <span class="ident">load_perceptron</span></span>(<span>path)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_perceptron(path):
+    &#34;&#34;&#34; Loads parameter configuration of a perceptron and rebuilds the model.
+        Accepts both .json and .txt files created by save_perceptron().
+        Returns assembled model as sklearn.linear_model.Perceptron class.
+        Function taken from sklearn-json package.
+
+    Parameters
+    ----------
+    path : str
+        Path to text file where the parameter configuration is stored.
+
+    Returns
+    -------
+    model : sklearn Perceptron
+        Newly created perceptron classifier with all relevant attributes
+        overwritten by the loaded parameter configuration. Equivalent to the
+        originally saved fitted model.
+
+    Raises
+    ------
+    ValueError
+        Breaks if the type meta information in the loaded parameter 
+        configuration does not match &#39;perceptron&#39;, indicating that is has not
+        been created by save_perceptron().
+    &#34;&#34;&#34;    
+    # Load model configuration:
+    with open(path, &#39;r&#39;) as file:
+        serialized = json.load(file)
+    # Assert correct classifier type:
+    if serialized[&#39;meta&#39;] != &#39;perceptron&#39;:
+        raise ValueError(&#39;Loaded classifier is not a perceptron.&#39;)
+    # Initialize new model:
+    model = Perceptron(**serialized[&#39;params&#39;])
+    # Restore model state by overwriting defaults:
+    model.coef_ = np.array(serialized[&#39;coef_&#39;]).astype(np.float64)             # Weights assigned to the features
+    model.intercept_ = np.array(serialized[&#39;intercept_&#39;]).astype(np.float64)   # Constants in decision function
+    model.n_iter_ = np.array(serialized[&#39;n_iter_&#39;]).astype(np.float64)         # Number of iterations to reach stopping criterion
+    model.classes_ = np.array(serialized[&#39;classes_&#39;]).astype(np.int64)         # Unique class labels 
+    return model</code></pre>
+</details>
+<div class="desc"><p>Loads parameter configuration of a perceptron and rebuilds the model.
+Accepts both .json and .txt files created by save_perceptron().
+Returns assembled model as sklearn.linear_model.Perceptron class.
+Function taken from sklearn-json package.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to text file where the parameter configuration is stored.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>sklearn Perceptron</code></dt>
+<dd>Newly created perceptron classifier with all relevant attributes
+overwritten by the loaded parameter configuration. Equivalent to the
+originally saved fitted model.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>Breaks if the type meta information in the loaded parameter
+configuration does not match 'perceptron', indicating that is has not
+been created by save_perceptron().</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.modeltools.serialize_csr"><code class="name flex">
+<span>def <span class="ident">serialize_csr</span></span>(<span>csr_matrix)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def serialize_csr(csr_matrix):
+    &#34;&#34;&#34; Serializes a CSR matrix to a dictionary of its attributes. CSR
+        (Compressed Sparse Row) format is a memory-efficient way to represent
+        sparse data. JSON-serialization is required for writing the matrix
+        to a text file to restore it later. Function taken from sklearn-json
+        package.
+
+    Parameters
+    ----------
+    csr_matrix : scipy sparse matrix
+        CSR matrix to be serialized.
+
+    Returns
+    -------
+    serialized : dict
+        Matrix configuration in JSON-serializable format.
+    &#34;&#34;&#34;    
+    # JSON-serialize matrix configuration:
+    serialized = {
+        &#39;meta&#39;: &#39;csr&#39;,                                                         # Type meta information
+        &#39;data&#39;: csr_matrix.data.tolist(),                                      # Data array of the matrix
+        &#39;indices&#39;: csr_matrix.indices.tolist(),                                # Index array of the matrix
+        &#39;indptr&#39;: csr_matrix.indptr.tolist(),                                  # Index pointer array of the matrix
+        &#39;_shape&#39;: csr_matrix._shape,                                           # Shape of the matrix
+    }
+    return serialized</code></pre>
+</details>
+<div class="desc"><p>Serializes a CSR matrix to a dictionary of its attributes. CSR
+(Compressed Sparse Row) format is a memory-efficient way to represent
+sparse data. JSON-serialization is required for writing the matrix
+to a text file to restore it later. Function taken from sklearn-json
+package.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>csr_matrix</code></strong> :&ensp;<code>scipy sparse matrix</code></dt>
+<dd>CSR matrix to be serialized.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>serialized</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Matrix configuration in JSON-serializable format.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.modeltools.deserialize_csr"><code class="name flex">
+<span>def <span class="ident">deserialize_csr</span></span>(<span>serialized,<br>data_type=numpy.float64,<br>indices_type=numpy.int32,<br>indptr_type=numpy.int32)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def deserialize_csr(serialized, data_type=np.float64, indices_type=np.int32,
+                    indptr_type=np.int32):
+    &#34;&#34;&#34; Rebuilds a CSR matrix from a serialized dictionary of its attributes.
+        CSR (Compressed Sparse Row) format is a memory-efficient way to
+        represent sparse data. JSON-deserialization is required for loading the
+        matrix from a text file. Function taken from sklearn-json package.
+
+    Parameters
+    ----------
+    serialized : dict
+        Matrix configuration in JSON-serializable format.
+    data_type : numpy dtype, optional
+        Datatype of the data array of the rebuilt CSR matrix. The default
+        is np.float64.
+    indices_type : numpy dtype, optional
+        Datatype of the index array of the rebuilt CSR matrix. The default
+        is np.int32.
+    indptr_type : numpy dtype, optional
+        Datatype of the index pointer array of the rebuilt CSR matrix. The
+        default is np.int32.
+
+    Returns
+    -------
+    csr_matrix : scipy sparse matrix
+        Deserialized CSR matrix.
+    &#34;&#34;&#34;    
+    # Initialize new CSR matrix:
+    csr_matrix = csr_matrix(tuple(serialized[&#39;_shape&#39;]))
+    # Restore matrix state by overwriting defaults:
+    csr_matrix.data = np.array(serialized[&#39;data&#39;]).astype(data_type)           # Data array of the matrix
+    csr_matrix.indices = np.array(serialized[&#39;indices&#39;]).astype(indices_type)  # Index array of the matrix
+    csr_matrix.indptr = np.array(serialized[&#39;indptr&#39;]).astype(indptr_type)     # Index pointer array of the matrix
+    return csr_matrix</code></pre>
+</details>
+<div class="desc"><p>Rebuilds a CSR matrix from a serialized dictionary of its attributes.
+CSR (Compressed Sparse Row) format is a memory-efficient way to
+represent sparse data. JSON-deserialization is required for loading the
+matrix from a text file. Function taken from sklearn-json package.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>serialized</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Matrix configuration in JSON-serializable format.</dd>
+<dt><strong><code>data_type</code></strong> :&ensp;<code>numpy dtype</code>, optional</dt>
+<dd>Datatype of the data array of the rebuilt CSR matrix. The default
+is np.float64.</dd>
+<dt><strong><code>indices_type</code></strong> :&ensp;<code>numpy dtype</code>, optional</dt>
+<dd>Datatype of the index array of the rebuilt CSR matrix. The default
+is np.int32.</dd>
+<dt><strong><code>indptr_type</code></strong> :&ensp;<code>numpy dtype</code>, optional</dt>
+<dd>Datatype of the index pointer array of the rebuilt CSR matrix. The
+default is np.int32.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>csr_matrix</code></strong> :&ensp;<code>scipy sparse matrix</code></dt>
+<dd>Deserialized CSR matrix.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.modeltools.save_svc"><code class="name flex">
+<span>def <span class="ident">save_svc</span></span>(<span>model, path)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_svc(model, path):
+    &#34;&#34;&#34; Writes parameter configuration of a SVC to .json or .txt file. SVC
+        refers to a support vector machine classifier (in contrast to SVR for
+        regression). Only supports trained models from sklearn.svm.SVC. Saved
+        configuration can be used to re-assamble the given SVC. Function taken
+        from sklearn-json package.
+
+    Parameters
+    ----------
+    model : sklearn SVC
+        Fitted support vector machine classifier. The function will crash when
+        trying to access the attributes of an untrained model.
+    path : str
+        Path to text file where the parameter configuration is saved.
+    &#34;&#34;&#34;   
+    # JSON-serialize model configuration:
+    serialized = {
+        &#39;meta&#39;: &#39;svc&#39;,                                                         # Type meta information
+        &#39;class_weight_&#39;: model.class_weight_.tolist(),                         # Multipliers of regularization parameter C for each class
+        &#39;classes_&#39;: model.classes_.tolist(),                                   # Class labels
+        &#39;support_&#39;: model.support_.tolist(),                                   # Indices of support vectors
+        &#39;_n_support&#39;: model.n_support_.tolist(),                               # Number of support vectors for each class
+        &#39;intercept_&#39;: model.intercept_.tolist(),                               # Constants in decision function
+        &#39;_probA&#39;: model.probA_.tolist(),                                       # Parameter learned in Platt scaling when probability=True
+        &#39;_probB&#39;: model.probB_.tolist(),                                       # Parameter learned in Platt scaling when probability=True 
+        &#39;_intercept_&#39;: model._intercept_.tolist(),                             # Somehow, there are two intercept arrays in the fitted model
+        &#39;shape_fit_&#39;: model.shape_fit_,                                        # Shape of training vector
+        &#39;_gamma&#39;: model._gamma,                                                # Kernel coefficient for kernel types &#39;rbf&#39;, &#39;poly&#39; and &#39;sigmoid&#39;
+        &#39;params&#39;: model.get_params()                                           # Initialization parameters
+    }
+    # Type-dependent serialization of support vectors (sparse or dense):
+    if isinstance(model.support_vectors_, csr_matrix):                         # Support vectors (empty array if kernel is precomputed)
+        serialized[&#39;support_vectors_&#39;] = serialize_csr(model.support_vectors_) 
+    elif isinstance(model.support_vectors_, np.ndarray):
+        serialized[&#39;support_vectors_&#39;] = model.support_vectors_.tolist()
+    # Type-dependent serialization of dual coefficients (sparse or dense):
+    if isinstance(model.dual_coef_, csr_matrix):                               # Dual coefficients of the support vector in the decision function
+        serialized[&#39;dual_coef_&#39;] = serialize_csr(model.dual_coef_)
+    elif isinstance(model.dual_coef_, np.ndarray):
+        serialized[&#39;dual_coef_&#39;] = model.dual_coef_.tolist()
+    # Somehow, there are two dual coefficient arrays in the fitted model:
+    if isinstance(model._dual_coef_, csr_matrix):
+        serialized[&#39;_dual_coef_&#39;] = serialize_csr(model._dual_coef_)
+    elif isinstance(model._dual_coef_, np.ndarray):
+        serialized[&#39;_dual_coef_&#39;] = model._dual_coef_.tolist()
+    # Write to text file:
+    with open(path, &#39;w&#39;) as file:
+        json.dump(serialized, file)
+    return None</code></pre>
+</details>
+<div class="desc"><p>Writes parameter configuration of a SVC to .json or .txt file. SVC
+refers to a support vector machine classifier (in contrast to SVR for
+regression). Only supports trained models from sklearn.svm.SVC. Saved
+configuration can be used to re-assamble the given SVC. Function taken
+from sklearn-json package.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>sklearn SVC</code></dt>
+<dd>Fitted support vector machine classifier. The function will crash when
+trying to access the attributes of an untrained model.</dd>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to text file where the parameter configuration is saved.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.modeltools.load_svc"><code class="name flex">
+<span>def <span class="ident">load_svc</span></span>(<span>path)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_svc(path):
+    &#34;&#34;&#34; Loads parameter configuration of an SVC and rebuilds the model. SVC
+        refers to a support vector machine classifier (in contrast to SVR for
+        regression). Accepts both .json and .txt files created by save_svc().
+        Returns assembled model as sklearn.svm.SVC class. Function taken from
+        sklearn-json package.
+
+    Parameters
+    ----------
+    path : str
+        Path to text file where the parameter configuration is stored.
+
+    Returns
+    -------
+    model : sklearn SVC
+        Newly created support vector machine classifier with all relevant
+        attributes overwritten by the loaded parameter configuration.
+        Equivalent to the originally saved fitted model.
+
+    Raises
+    ------
+    ValueError
+        Breaks if the type meta information in the loaded parameter
+        configuration does not match &#39;svc&#39;, indicating that is has not been
+        created by save_svc().
+    &#34;&#34;&#34;  
+    # Load model configuration:
+    with open(path, &#39;r&#39;) as file:
+        serial = json.load(file)
+    # Assert correct classifier type:
+    if serial[&#39;meta&#39;] != &#39;svc&#39;:
+        raise ValueError(&#39;Loaded classifier is not an SVM classifier.&#39;)
+    # Initialize new model:
+    model = SVC(**serial[&#39;params&#39;])
+    # Restore model state by overwriting defaults:
+    model.shape_fit_ = serial[&#39;shape_fit_&#39;]                                    # Shape of training vector
+    model._gamma = serial[&#39;_gamma&#39;]                                            # Kernel coefficient for kernel types &#39;rbf&#39;, &#39;poly&#39; and &#39;sigmoid&#39;
+    model.class_weight_ = np.array(serial[&#39;class_weight_&#39;]).astype(np.float64) # Multipliers of regularization parameter C for each class
+    model.classes_ = np.array(serial[&#39;classes_&#39;])                              # Class labels
+    model.support_ = np.array(serial[&#39;support_&#39;]).astype(np.int32)             # Indices of support vectors 
+    model._n_support = np.array(serial[&#39;_n_support&#39;]).astype(np.int32)         # Number of support vectors for each class  
+    model.intercept_ = np.array(serial[&#39;intercept_&#39;]).astype(np.float64)       # Constants in decision function
+    model._probA = np.array(serial[&#39;_probA&#39;]).astype(np.float64)               # Parameter learned in Platt scaling when probability=True
+    model._probB = np.array(serial[&#39;_probB&#39;]).astype(np.float64)               # Parameter learned in Platt scaling when probability=True
+    model._intercept_ = np.array(serial[&#39;_intercept_&#39;]).astype(np.float64)     # Somehow, there are two intercept arrays in the fitted model
+    # Type-dependent deserialization of support vectors (sparse or dense):
+    support_vectors = serial[&#39;support_vectors_&#39;]                               # Support vectors (empty array if kernel is precomputed)
+    if &#39;meta&#39; in support_vectors and support_vectors[&#39;meta&#39;] == &#39;csr&#39;:
+        model.support_vectors_ = deserialize_csr(support_vectors)
+        model._sparse = True
+    else:
+        model.support_vectors_ = np.array(support_vectors).astype(np.float64)
+        model._sparse = False
+    # Type-dependent deserialization of dual coefficients (sparse or dense):
+    dual_coef = serial[&#39;dual_coef_&#39;]                                           # Dual coefficients of the support vector in the decision function
+    if &#39;meta&#39; in dual_coef and dual_coef[&#39;meta&#39;] == &#39;csr&#39;:
+        model.dual_coef_ = deserialize_csr(dual_coef)
+    else:
+        model.dual_coef_ = np.array(dual_coef).astype(np.float64)
+    # Somehow, there are two dual coefficient arrays in the fitted model:
+    dual_coef = serial[&#39;_dual_coef_&#39;]
+    if &#39;meta&#39; in dual_coef and dual_coef[&#39;meta&#39;] == &#39;csr&#39;:
+        model._dual_coef_ = deserialize_csr(dual_coef)
+    else:
+        model._dual_coef_ = np.array(dual_coef).astype(np.float64)
+    return model</code></pre>
+</details>
+<div class="desc"><p>Loads parameter configuration of an SVC and rebuilds the model. SVC
+refers to a support vector machine classifier (in contrast to SVR for
+regression). Accepts both .json and .txt files created by save_svc().
+Returns assembled model as sklearn.svm.SVC class. Function taken from
+sklearn-json package.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path to text file where the parameter configuration is stored.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>model</code></strong> :&ensp;<code>sklearn SVC</code></dt>
+<dd>Newly created support vector machine classifier with all relevant
+attributes overwritten by the loaded parameter configuration.
+Equivalent to the originally saved fitted model.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>Breaks if the type meta information in the loaded parameter
+configuration does not match 'svc', indicating that is has not been
+created by save_svc().</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.modeltools.save_config"><code class="name flex">
+<span>def <span class="ident">save_config</span></span>(<span>config, path)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_config(config, path):
+    &#34;&#34;&#34; Writes parameter configuration of the songdetector model to file.
+        Supports saving in .json or .txt format. Removes parameters that are
+        not easily serializable (classifier) or can be retrieved with the help
+        of other parameters (kernels, k_times, k_props).
+
+    Parameters
+    ----------
+    config : dict
+        Top-level parameter configuration as returned by configuration().
+    path : str
+        Absolute or relative path to the file where the configuration is saved.
+        Missing or incorrect file extensions are automatically set to &#39;.txt&#39;.
+    &#34;&#34;&#34;
+    # Validate file format:
+    path = check_extension(path, (&#39;txt&#39;, &#39;json&#39;))
+    # Manage saved parameters:    
+    save_dict = config.copy()
+    excluded_keys = [&#39;kernels&#39;, &#39;k_times&#39;, &#39;k_props&#39;, &#39;classifier&#39;]
+    [save_dict.pop(key) for key in excluded_keys]
+    # Save configuration to file:
+    write_json(save_dict, path)
+    return None</code></pre>
+</details>
+<div class="desc"><p>Writes parameter configuration of the songdetector model to file.
+Supports saving in .json or .txt format. Removes parameters that are
+not easily serializable (classifier) or can be retrieved with the help
+of other parameters (kernels, k_times, k_props).</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>config</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Top-level parameter configuration as returned by configuration().</dd>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Absolute or relative path to the file where the configuration is saved.
+Missing or incorrect file extensions are automatically set to '.txt'.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.modeltools.load_config"><code class="name flex">
+<span>def <span class="ident">load_config</span></span>(<span>path)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_config(path):
+    &#34;&#34;&#34; Loads parameter configuration of the songdetector model from file.
+        Supports loading from .json or .txt format. Restores kernel-related
+        parameters (kernels, k_times, k_props) omitted by save_config() and
+        adds a placeholder for the classifier.
+
+    Parameters
+    ----------
+    path : str
+        Absolute or relative path to the file where the configuration is saved.
+
+    Returns
+    -------
+    config : dict
+        Top-level parameter configuration that matches one returned by
+        configuration(), including all original parameter keys.
+    &#34;&#34;&#34;    
+    config = load_json(path)
+    # Restore kernel-related parameters:
+    specs = np.array(config[&#39;k_specs&#39;])
+    config[&#39;k_specs&#39;] = specs
+    packed = gabor_set(config[&#39;env_rate&#39;], specs=specs)
+    config[&#39;kernels&#39;] = packed[0]
+    config[&#39;k_times&#39;] = packed[2]
+    config[&#39;k_props&#39;] = packed[3]
+    # Add classifier placeholder:
+    config[&#39;classifier&#39;] = None
+    return config</code></pre>
+</details>
+<div class="desc"><p>Loads parameter configuration of the songdetector model from file.
+Supports loading from .json or .txt format. Restores kernel-related
+parameters (kernels, k_times, k_props) omitted by save_config() and
+adds a placeholder for the classifier.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Absolute or relative path to the file where the configuration is saved.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>config</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Top-level parameter configuration that matches one returned by
+configuration(), including all original parameter keys.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.modeltools.same_config"><code class="name flex">
+<span>def <span class="ident">same_config</span></span>(<span>config1, config2, compare=None, check_kernels=True)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def same_config(config1, config2, compare=None, check_kernels=True):
+    &#34;&#34;&#34; Validates consistency of two parameter configurations.
+        Compares the dictionary entries under the specified keys and returns
+        a single Boolean indicating whether all comparisons evaluate to True.
+        Cannot compare nested variables (&#39;kernels&#39;, &#39;k_times&#39;, &#39;k_props&#39;,
+        &#39;classifier&#39;) and, by default, also excludes parameters with minor
+        relevance to pipeline functionality (&#39;seed&#39;, &#39;n_iter&#39;). To check the
+        consistency between the two kernel sets, set check_kernels=True to
+        enable array comparison of the &#39;k_specs&#39; parameter. 
+
+    Parameters
+    ----------
+    config1 : dict or str
+        Top-level parameter configuration in the format of configuration(), or
+        a path to a config file (txt or json) to recover with load_config().
+    config2 : dict or str
+        Top-level parameter configuration in the format of configuration(), or
+        a path to a config file (txt or json) to recover with load_config().
+    compare : list of str, optional
+        Valid parameters to compare between the two configurations. If None,
+        compares all except &#39;kernels&#39;, &#39;k_times&#39;, &#39;k_props&#39;, &#39;k_specs&#39;,
+        &#39;classifier&#39;, &#39;seed&#39;, and &#39;n_iter&#39;. Use check_kernels to enable a
+        dedicated comparison of &#39;k_specs&#39;. The default is None.
+    check_kernels : bool, optional
+        If True, also checks the consistency of the &#39;k_specs&#39; parameter to
+        assert that the same kernel set is used in both configurations. The
+        default is True.
+
+    Returns
+    -------
+    is_same : bool
+        Returns True if all performed comparisons between the two parameter
+        configurations evaluate to True. Else, returns False.
+    
+    Raises
+    ------
+    ValueError
+        Breaks if compare is specified and requests any of the nested variables
+        &#39;kernels&#39;, &#39;k_times&#39;, &#39;k_props&#39;, &#39;k_specs&#39;, and &#39;classifier&#39;.
+    KeyError
+        By default (if compare is unspecified), also breaks if one
+        configuration has any keys that are not present in the other.
+    &#34;&#34;&#34;    
+    # Input interpretation:
+    if isinstance(config1, str):
+        config1 = load_config(config1)
+    if isinstance(config2, str):
+        config2 = load_config(config2)
+
+    # Manage excluded entries:
+    skip = [&#39;kernels&#39;, &#39;k_times&#39;, &#39;k_props&#39;, &#39;k_specs&#39;, &#39;classifier&#39;]
+    if compare is None:
+        all_keys = set(config1.keys()).union(config2.keys())
+        skip += [&#39;seed&#39;, &#39;n_iter&#39;]
+        compare = [key for key in all_keys if key not in skip]
+    elif any(np.isin(compare, skip)):
+        sequence = string_series(skip, conj=&#39;and&#39;)
+        raise ValueError(f&#39;Cannot compare nested parameters ({sequence}). &#39;
+                          &#39;Use check_kernels to enable comparison of k_specs.&#39;)
+
+    # Compare element-wise:
+    is_same = [config1[key] == config2[key] for key in compare]
+    if check_kernels:
+        # Assert identical kernel sets (array comparison):
+        is_same.append(np.all(config1[&#39;k_specs&#39;] == config2[&#39;k_specs&#39;]))
+    return all(is_same)</code></pre>
+</details>
+<div class="desc"><p>Validates consistency of two parameter configurations.
+Compares the dictionary entries under the specified keys and returns
+a single Boolean indicating whether all comparisons evaluate to True.
+Cannot compare nested variables ('kernels', 'k_times', 'k_props',
+'classifier') and, by default, also excludes parameters with minor
+relevance to pipeline functionality ('seed', 'n_iter'). To check the
+consistency between the two kernel sets, set check_kernels=True to
+enable array comparison of the 'k_specs' parameter. </p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>config1</code></strong> :&ensp;<code>dict</code> or <code>str</code></dt>
+<dd>Top-level parameter configuration in the format of configuration(), or
+a path to a config file (txt or json) to recover with load_config().</dd>
+<dt><strong><code>config2</code></strong> :&ensp;<code>dict</code> or <code>str</code></dt>
+<dd>Top-level parameter configuration in the format of configuration(), or
+a path to a config file (txt or json) to recover with load_config().</dd>
+<dt><strong><code>compare</code></strong> :&ensp;<code>list</code> of <code>str</code>, optional</dt>
+<dd>Valid parameters to compare between the two configurations. If None,
+compares all except 'kernels', 'k_times', 'k_props', 'k_specs',
+'classifier', 'seed', and 'n_iter'. Use check_kernels to enable a
+dedicated comparison of 'k_specs'. The default is None.</dd>
+<dt><strong><code>check_kernels</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, also checks the consistency of the 'k_specs' parameter to
+assert that the same kernel set is used in both configurations. The
+default is True.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>is_same</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Returns True if all performed comparisons between the two parameter
+configurations evaluate to True. Else, returns False.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>Breaks if compare is specified and requests any of the nested variables
+'kernels', 'k_times', 'k_props', 'k_specs', and 'classifier'.</dd>
+<dt><code>KeyError</code></dt>
+<dd>By default (if compare is unspecified), also breaks if one
+configuration has any keys that are not present in the other.</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="thunderhopper" href="index.html">thunderhopper</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="thunderhopper.modeltools.config_to_archive" href="#thunderhopper.modeltools.config_to_archive">config_to_archive</a></code></li>
+<li><code><a title="thunderhopper.modeltools.config_from_archive" href="#thunderhopper.modeltools.config_from_archive">config_from_archive</a></code></li>
+<li><code><a title="thunderhopper.modeltools.save_data" href="#thunderhopper.modeltools.save_data">save_data</a></code></li>
+<li><code><a title="thunderhopper.modeltools.load_data" href="#thunderhopper.modeltools.load_data">load_data</a></code></li>
+<li><code><a title="thunderhopper.modeltools.channel_lags" href="#thunderhopper.modeltools.channel_lags">channel_lags</a></code></li>
+<li><code><a title="thunderhopper.modeltools.event_lags" href="#thunderhopper.modeltools.event_lags">event_lags</a></code></li>
+<li><code><a title="thunderhopper.modeltools.save_perceptron" href="#thunderhopper.modeltools.save_perceptron">save_perceptron</a></code></li>
+<li><code><a title="thunderhopper.modeltools.load_perceptron" href="#thunderhopper.modeltools.load_perceptron">load_perceptron</a></code></li>
+<li><code><a title="thunderhopper.modeltools.serialize_csr" href="#thunderhopper.modeltools.serialize_csr">serialize_csr</a></code></li>
+<li><code><a title="thunderhopper.modeltools.deserialize_csr" href="#thunderhopper.modeltools.deserialize_csr">deserialize_csr</a></code></li>
+<li><code><a title="thunderhopper.modeltools.save_svc" href="#thunderhopper.modeltools.save_svc">save_svc</a></code></li>
+<li><code><a title="thunderhopper.modeltools.load_svc" href="#thunderhopper.modeltools.load_svc">load_svc</a></code></li>
+<li><code><a title="thunderhopper.modeltools.save_config" href="#thunderhopper.modeltools.save_config">save_config</a></code></li>
+<li><code><a title="thunderhopper.modeltools.load_config" href="#thunderhopper.modeltools.load_config">load_config</a></code></li>
+<li><code><a title="thunderhopper.modeltools.same_config" href="#thunderhopper.modeltools.same_config">same_config</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

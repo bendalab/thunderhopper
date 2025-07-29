@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" /><meta name="author" content="Benda-Lab" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>thunderhopper</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Home";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> thunderhopper
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#auditory-pathway">Auditory pathway</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#save-model-traces-in-file">Save model traces in file</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuration-parameters">Configuration parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#select-what-to-store">Select what to store</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Code</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="api/index.html">API reference</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">thunderhopper</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Home</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p><a href="https://github.com/bendalab/thunderhopper/blob/master/LICENSE"><img alt="license" src="https://img.shields.io/pypi/l/thunderhopper.svg" /></a>
+<a href="https://pypi.python.org/pypi/thunderhopper/"><img alt="PyPI version" src="https://img.shields.io/pypi/v/thunderhopper.svg" /></a>
+<img alt="downloads" src="https://img.shields.io/pypi/dm/thunderhopper.svg" />
+<a href="https://github.com/bendalab/thunderhopper/graphs/contributors"><img alt="contributors" src="https://img.shields.io/github/contributors/bendalab/thunderhopper" /></a>
+<a href="https://github.com/bendalab/thunderhopper/pulse"><img alt="commits" src="https://img.shields.io/github/commit-activity/m/bendalab/thunderhopper" /></a></p>
+<h1 id="thunderhopper">ThunderHopper</h1>
+<p>Model of the auditory pathway of grasshoppers.</p>
+<h2 id="auditory-pathway">Auditory pathway</h2>
+<p>Acoustic signals are sequentially processed along the auditory pathway:</p>
+<ol>
+<li>Raw auditory signal (<code>raw</code>).</li>
+<li>Bandpass filterd by tympanum (<code>filt</code>).</li>
+<li>Computation of envelope by rectification and low-pass filtering (<code>env</code>).</li>
+<li>Logarithmic transform into decibel (<code>log</code>).</li>
+<li>High-pass filtering to generate intensity invariant envelope (<code>inv</code>).</li>
+<li>Convolution of the envelope with a set of Gabor kerneles (<code>conv</code>).</li>
+<li>Thresholding the convolved traces (<code>bi</code>).</li>
+<li>Low-pass filtering the binary trace to generate slowly varying features (<code>feat</code>).</li>
+</ol>
+<p>In brackets the acronyms are given that are used by output
+dictionaries and for signal selection as described below.</p>
+<h2 id="usage">Usage</h2>
+<p>First, import what we need:</p>
+<pre><code class="language-py">import numpy as np
+import matplotlib.pyplot as plt
+from thunderhopper import configuration, process_signal, load_data
+</code></pre>
+<p>Second, prepare a configuration dictionary. You simply need to provide
+the standard deviations of the Garbor kernels and their types. The
+latter is the number of lobes you want, a negative number flips the
+kernel on the x-axis:</p>
+<pre><code class="language-py">sigmas = [0.001, 0.002, 0.004, 0.008, 0.016, 0.032]
+types = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5,
+         6, -6, 7, -7, 8, -8, 9, -9, 10, -10]
+config = configuration(types=types, sigmas=sigmas)
+</code></pre>
+<p>Then just run the model on an audio recording:</p>
+<pre><code class="language-py">data, rates = process_signal(config, path='recording.wav')
+</code></pre>
+<p>That's it!</p>
+<p>Both, <code>data</code> and <code>rates</code> are dictionaries with the same keys. <code>data</code>
+contains the time series and <code>rates</code> the corresponding sampling
+rates. To plot the filtered signal and the envelope of the first channel
+just run</p>
+<pre><code class="language-py">filt = data['filt'][:, 0]
+filt_rate = rates['filt']
+tfilt = np.arange(len(filt))/filt_rate
+
+env = data['env'][:, 0]
+env_rate = rates['env']
+tenv = np.arange(len(env))/env_rate
+
+plt.plot(tfilt, filt)
+plt.plot(tenv, env)
+plt.show()
+</code></pre>
+<h3 id="save-model-traces-in-file">Save model traces in file</h3>
+<p>You can also save all computed traces in a numpy npz file.
+Just pass a file path to the <code>save</code> argument:</p>
+<pre><code class="language-py">process_signal(config, path=data_path, save='recording.npz')
+</code></pre>
+<p>Now, all the computed traces are saved in this file.</p>
+<p>Load this file like this:</p>
+<pre><code class="language-py">data, params = load_data('recording.npz', ['filt', 'env'])
+filt_rate = params['rate']
+env_rate = params['env_rate']
+</code></pre>
+<p>The second argument requests only the filtered signal and the envelope
+to be loaded from the file. When not specified, all traces are loaded.</p>
+<h3 id="configuration-parameters">Configuration parameters</h3>
+<p>After calling <code>configuration()</code>, you may change some of the parameters
+of the model.</p>
+<p>For example, you can set individual thresholds for each feature by
+loading them from a file and change the low-pass filter's cutoff
+frequency that generates the features:</p>
+<pre><code class="language-py">config.update({
+    'feat_thresh': np.load('acrididae.npy') * 0.1,
+    'feat_fcut': 0.75,
+    })
+</code></pre>
+<p>Or run the song detection on a specific input channel with a specific
+threshold:</p>
+<pre><code class="language-py">config.update({
+    'label_channels': 0,
+    'label_thresh': 0.5
+    })
+</code></pre>
+<h3 id="select-what-to-store">Select what to store</h3>
+<p>If you do not need the traces from every step of the auditory pathway,
+you may select what to store via the <code>returns</code> argument. For example,
+if you are only interested in the features, the norm of the features
+and the song labels, call <code>process_signal()</code> like this:</p>
+<pre><code class="language-py">returns = ['feat', 'norm', 'songs']
+data, rates = process_signal(config, path='recording.wav', returns=returns)
+</code></pre>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/bendalab/thunderhopper/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2025-07-29 14:45:41.962668+00:00
+-->

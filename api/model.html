@@ -1,0 +1,1257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>thunderhopper.model API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>thunderhopper.model</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="thunderhopper.model.configuration"><code class="name flex">
+<span>def <span class="ident">configuration</span></span>(<span>env_rate=2000,<br>feat_rate=1000,<br>kernel_dict=None,<br>specs=None,<br>types=[1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 9, -9, 10, -10],<br>sigmas=[0.001, 0.002, 0.004, 0.008, 0.016, 0.032],<br>**kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def configuration(env_rate=2000, feat_rate=1000, kernel_dict=None, specs=None,
+                  types=[1, -1, 2, -2, 3, -3, 4, -4, 5, -5,
+                         6, -6, 7, -7, 8, -8, 9, -9, 10, -10],
+                  sigmas=[0.001, 0.002, 0.004, 0.008, 0.016, 0.032], **kwargs):
+    &#34;&#34;&#34; Top-level parameter configuration of the songdetector model.
+        Can be used in many functions to overwrite separate keyword arguments.
+        Accepts sampling rates and Gabor kernel specifications (keywords, type
+        identifiers and sigmas) on call. Other parameters are set to default.
+        Valid type identifiers are integer numbers that encode the number of
+        lobes (absolute id value) and the vertical orientation (sign of id) of
+        a given type of Gabor kernel.
+
+    Parameters
+    ----------
+    env_rate : float or int, optional
+        Sampling rate of the signal envelope in Hz. Defines the first
+        downsampling step along the processing pipeline. Also determines the
+        sampling of the intensity-invariant envelope, the set of Gabor kernels,
+        as well as the raw kernel responses (from convolution of the invariant
+        envelope) and the thresholded kernel responses (before averaging into
+        features). The default is 2000. 
+    feat_rate : float or int, optional
+        Sampling rate of the features in Hz. Defines the second downsampling
+        step along the processing pipeline. Also determines the sampling of the
+        different song labels (general/species-specific, unbuffered/buffered),
+        the file encoding for appended data, as well as the classifier
+        predictions. The default is 1000.
+    kernel_dict : dict, optional
+        If specified, defines the included kernel types (keys) and individual
+        Gaussian standard deviations per type in s (values). Accepts scalar
+        values of sigma. Duplicate sigmas for the same type result in duplicate
+        kernels. Overrides types and sigmas. Ignored if specs is given.
+        The default is None.
+    types : int or float or list or 1D array of ints or floats (m,)
+        If specified, defines the included kernel types. Accepts scalar values.
+        Duplicate types result in duplicate kernels. Must be specified together
+        with sigmas. Ignored if either kernel_dict or specs is given.
+        The default is [1, -1, 2, -2, 3, -3, 4, -4].
+    sigmas : int or float or list or 1D array of ints or floats (n,)
+        If specified, defines fixed Gaussian standard deviations for all kernel
+        types in s. Accepts scalar values. Duplicate sigmas result in duplicate
+        kernels. Must be specified together with types. Ignored if either
+        kernel_dict or specs is specified. The default is [0.001, 0.01].
+    specs : 2D array of floats (p, 2)
+        If specified, defines each Gabor kernel in the set as a pair of type
+        identifier (left column) and sigma (right column). The order of rows
+        determines the order of kernels in the created set. Duplicate rows
+        result in duplicate kernels. Overrides kernel_dict, sigmas, and types.
+        The default is None.
+    **kwargs : dict, optional
+        Additional keyword arguments passed to gabor_set(). May contain any of
+        &#39;normalize&#39;, &#39;freq_kwargs&#39;, and &#39;flat_flanks&#39;, as well as one of &#39;time&#39;
+        and &#39;share_axis&#39;. The default is {}.
+
+    Returns
+    -------
+    config : dict
+        Top-level parameter configuration of the songdetector model. Can be
+        passed to many functions to overwrite separate keyword arguments.
+    &#34;&#34;&#34;    
+    # Generate set of Gabor kernels and associated variables:
+    kernels, specs, times, params = gabor_set(env_rate, kernel_dict, types,
+                                              sigmas, specs=specs, **kwargs)
+
+    # OBLIGATE (have default):
+    config = {
+        # GENERAL:
+        &#39;rate&#39;: None,                                                          # Sampling rate of the input signal in Hz (float or int)  
+        &#39;channel&#39;: None,                                                       # Channel subset to process in multi-channel recordings (int or 1D array of ints)
+        # SAMPLING RATES:
+        &#39;env_rate&#39;: env_rate,                                                  # Sampling rate of envelope-related variables in Hz (float or int)
+        &#39;feat_rate&#39;: feat_rate,                                                # Sampling rate of feature-related variables in Hz (float or int)
+        &#39;rate_ratio&#39;: int(np.round(env_rate / feat_rate)),                     # Clean downsampling ratio of second relative to first downstampling step (int)
+        # CUT-OFF FREQUENCIES:
+        &#39;bp_fcut&#39;: [5000., 30000.],                                            # Lower &amp; upper cut-off frequency of initial band-pass filter in Hz (tuple or list of 2 floats or ints)
+        &#39;env_fcut&#39; : 500.,                                                     # Cut-off frequency of low-pass filter for envelope extraction in Hz (float or int)
+        &#39;inv_fcut&#39; : 10.,                                                      # Cut-off frequency of high-pass filter to transform logarithmic to invariant envelope in Hz (float or int)                            
+        # GABOR KERNELS:
+        &#39;kernels&#39;: kernels,                                                    # Set of Gabor kernels (list of 1D arrays of floats)
+        &#39;k_specs&#39;: specs,                                                      # Type identifier and sigma in s for each kernel (2-column array of floats)
+        &#39;k_times&#39;: times,                                                      # Time axis of each kernel in s (list of 1D arrays of floats)
+        &#39;k_props&#39;: params,                                                     # Attributes of each kernel (list of dicts with &#39;sigma&#39; in s, &#39;freq&#39; in Hz, &#39;phase&#39; in multiples of pi, &#39;lobes&#39;, and &#39;vert&#39;)
+        # FEATURE EXPANSION:
+        &#39;padlen&#39;: int(env_rate),                                               # Length of padding added before different filter steps in points (int)
+        &#39;feat_fcut&#39; : 1.,                                                      # Cut-off frequency of low-pass filter(s) for averaging thresholded kernel responses into features in Hz (float or int or list of floats or ints)
+        &#39;feat_thresh&#39;: 0.1,                                                    # Absolute threshold applied to kernel responses between convolution and averaging (float or int)
+        &#39;ring_cap&#39;: False,                                                     # Cap feature values to range [0, 1] to remove ringing artifacts (bool)
+        # LABELS (GENERAL):
+        &#39;label_channels&#39;: None,                                                # Channel subset to label in multi-channel recordings (int or 1D array of ints or None)
+        &#39;label_ref&#39;: None,                                                     # Reference channel for global threshold labeling in multi-channel recordings (int)
+        &#39;global_ref&#39;: False,                                                   # Use maximum feature norm as reference for global threshold labeling if ref_channel is None (bool)
+        &#39;label_thresh&#39;: 0.25,                                                  # Relative threshold to maximum of target signal for automatic song labeling (float)
+        &#39;label_seg&#39;: None,                                                     # Minimum tolerated song segment length in points (int)
+        &#39;label_seg_rel&#39;: None,                                                 # Alternative minimum tolerated song segment length relative to largest segment (float)
+        &#39;label_gap&#39;: None,                                                     # Minimum tolerated gap length in points (int)
+        &#39;label_gap_rel&#39;: None,                                                 # Alternative minimum tolerated gap length relative to largest gap (float)
+        # LABELS (GUI):
+        &#39;quick_render&#39;: True,                                                  # Replace plt.pcolormesh() with plt.imshow() for spectrogram display (bool)
+        &#39;fullscreen&#39;: True,                                                    # Open label GUI in fullscreen mode (bool)
+        &#39;f_resample&#39;: None,                                                    # Factor to downsample spectrogram frequency axis (int)
+        &#39;t_resample&#39;: None,                                                    # Factor to downsample spectrogram time axis (int)
+        &#39;spec_kwargs&#39;: {                                                       # Expandable set of keyword arguments for stats.spectrogram() and plottools.plot_spectrogram() (misc)
+            &#39;nperseg&#39;: 2**8,                                                   # Window size for spectrogram computation (int)
+            &#39;hop&#39;: 2**7,                                                       # Window shift for spectrogram computation (int)
+            &#39;log_power&#39;: True,                                                 # Scale spectrogram powers to decibel (bool)
+            &#39;db_high&#39;: -40                                                     # Drop all upper frequency bands that never exceed this power (float or int)
+            },
+        # MULTI-CHANNEL LAG:
+        &#39;distance&#39;: None,                                                      # Multi-channel recording distances in m (1D array of floats)
+        &#39;lag_channels&#39;: None,                                                  # Channel subset for which to compute transmission delays in multi-channel recordings (int or 1D array of ints or None)
+        &#39;lag_ref&#39;: 0,                                                          # Reference channel against which to compute transmission delay in multi-channel recordings (int)
+        &#39;lag_frame&#39;: None,                                                     # Range of lag times to consider when computing transmission delays (float or list/tuple of 2 floats)
+        &#39;sequential_lag&#39;: True,                                                # Force subsequent channels to have a larger transmission delay than the last (bool) 
+        &#39;expand_frame&#39;: False,                                                 # Maintain frame width when computing transmission delays sequentially (bool)
+        # BUFFER ZONES:
+        &#39;add_buffer&#39;: True,                                                    # Call buffer() to add buffer zones at edges of labeled song segments (bool)
+        &#39;n_buff&#39;: [0., 0.1, 0.1, 0.],                                          # Absolute/relative extent of each of the four possible buffer zones per segment in order [start_out, start_in, end_in, end_out] (list of 4 ints or floats)
+        &#39;buff_value&#39;: 0.,                                                      # Value to encode buffer zones in buffered label array (float or int)
+        # CLASSIFIER TRAINING:
+        &#39;add_noise&#39;: True,                                                     # Append additional pure noise recordings to training data (bool)
+        &#39;debuff_nolearn&#39; : True,                                               # Omit buffers also in nolearn training data, not just learn data (bool)
+        &#39;seed&#39;: 42,                                                            # Random seed for classifier initialization (int)
+        &#39;n_iter&#39;: 5000,                                                        # Number of iterations of classifier training (int)
+        &#39;classifier&#39;: None,                                                    # Insert fitted model once training is completed (class object)
+        # CLASSIFIER PREDICTIONS:
+        &#39;predict_seg&#39;: None,                                                   # Minimum tolerated segment length in classifier predictions in points (int)
+        &#39;predict_seg_rel&#39;: None,                                               # Alternative minimum tolerated prediction segment length relative to largest segment (float)
+        &#39;predict_gap&#39;: None,                                                   # Minimum tolerated gap length in classifier predictions in points (int) 
+        &#39;predict_gap_rel&#39;: None,                                               # Alternative minimum tolerated prediction gap length relative to largest gap (float)
+    }
+    # AUXILIARY (if specified):
+    if kwargs:
+        for argument, setting in kwargs.items():
+            if argument == &#39;freq_kwargs&#39;:
+                # Add flattened dictionary:
+                config.update(setting)
+            else:
+                # Append single entry:
+                config[argument] = setting
+    return config</code></pre>
+</details>
+<div class="desc"><p>Top-level parameter configuration of the songdetector model.
+Can be used in many functions to overwrite separate keyword arguments.
+Accepts sampling rates and Gabor kernel specifications (keywords, type
+identifiers and sigmas) on call. Other parameters are set to default.
+Valid type identifiers are integer numbers that encode the number of
+lobes (absolute id value) and the vertical orientation (sign of id) of
+a given type of Gabor kernel.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>env_rate</code></strong> :&ensp;<code>float</code> or <code>int</code>, optional</dt>
+<dd>Sampling rate of the signal envelope in Hz. Defines the first
+downsampling step along the processing pipeline. Also determines the
+sampling of the intensity-invariant envelope, the set of Gabor kernels,
+as well as the raw kernel responses (from convolution of the invariant
+envelope) and the thresholded kernel responses (before averaging into
+features). The default is 2000.</dd>
+<dt><strong><code>feat_rate</code></strong> :&ensp;<code>float</code> or <code>int</code>, optional</dt>
+<dd>Sampling rate of the features in Hz. Defines the second downsampling
+step along the processing pipeline. Also determines the sampling of the
+different song labels (general/species-specific, unbuffered/buffered),
+the file encoding for appended data, as well as the classifier
+predictions. The default is 1000.</dd>
+<dt><strong><code>kernel_dict</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>If specified, defines the included kernel types (keys) and individual
+Gaussian standard deviations per type in s (values). Accepts scalar
+values of sigma. Duplicate sigmas for the same type result in duplicate
+kernels. Overrides types and sigmas. Ignored if specs is given.
+The default is None.</dd>
+<dt><strong><code>types</code></strong> :&ensp;<code>int</code> or <code>float</code> or <code>list</code> or <code>1D array</code> of <code>ints</code> or <code>floats (m,)</code></dt>
+<dd>If specified, defines the included kernel types. Accepts scalar values.
+Duplicate types result in duplicate kernels. Must be specified together
+with sigmas. Ignored if either kernel_dict or specs is given.
+The default is [1, -1, 2, -2, 3, -3, 4, -4].</dd>
+<dt><strong><code>sigmas</code></strong> :&ensp;<code>int</code> or <code>float</code> or <code>list</code> or <code>1D array</code> of <code>ints</code> or <code>floats (n,)</code></dt>
+<dd>If specified, defines fixed Gaussian standard deviations for all kernel
+types in s. Accepts scalar values. Duplicate sigmas result in duplicate
+kernels. Must be specified together with types. Ignored if either
+kernel_dict or specs is specified. The default is [0.001, 0.01].</dd>
+<dt><strong><code>specs</code></strong> :&ensp;<code>2D array</code> of <code>floats (p, 2)</code></dt>
+<dd>If specified, defines each Gabor kernel in the set as a pair of type
+identifier (left column) and sigma (right column). The order of rows
+determines the order of kernels in the created set. Duplicate rows
+result in duplicate kernels. Overrides kernel_dict, sigmas, and types.
+The default is None.</dd>
+<dt><strong><code>**kwargs</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>Additional keyword arguments passed to gabor_set(). May contain any of
+'normalize', 'freq_kwargs', and 'flat_flanks', as well as one of 'time'
+and 'share_axis'. The default is {}.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>config</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Top-level parameter configuration of the songdetector model. Can be
+passed to many functions to overwrite separate keyword arguments.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.model.extract_env"><code class="name flex">
+<span>def <span class="ident">extract_env</span></span>(<span>signal,<br>rate,<br>bp_fcut=(5000.0, 30000.0),<br>env_fcut=500.0,<br>env_rate=2000.0,<br>rate_ratio=None,<br>padlen=None,<br>config=None,<br>both=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def extract_env(signal, rate, bp_fcut=(5000., 30000.), env_fcut=500.,
+                env_rate=2000., rate_ratio=None, padlen=None, config=None,
+                both=False):
+    #TODO: Update docstring.
+    &#34;&#34;&#34; Signal pre-processing by band-pass filtering and envelope extraction.
+        The filtered signal is low-pass filtered to obtain the signal envelope,
+        which can be downsampled afterwards.
+
+        In the songdetector model, this step relates to the band-pass
+        properties of the tympanal membrane and the mechano-transduction of the
+        attached population of receptor neurons. 
+
+    Parameters
+    ----------
+    signal : 1D array of floats or ints (m,)
+        Recorded song data, or any other (acoustic) signal. Only accepts a
+        single recording channel.
+    rate : float or int
+        Sampling rate of the signal in Hz.
+    bp_fcut : list of floats or ints (2,) or None, optional
+        Lower and upper cut-off frequency of initial band-pass filter in Hz.
+        Falls back to a high-pass filter if bp_fcut[1] is larger than the
+        Nyquist frequency (rate / 2). If None, extracts the envelope of the 
+        unfiltered input signal. The default is [5000.0, 30000.0].
+    env_fcut : float or int, optional
+        Cut-off frequency of the low-pass filter for envelope extraction in Hz.
+        The default is 500.0.
+    env_rate : float or int, optional
+        Sampling rate of the returned signal envelope in Hz. Signal is down-
+        sampled accordingly from rate to env_rate after low-pass filtering.
+        Ignored if env_rate &gt;= rate. The default is 2000.0.
+    rate_ratio : int, optional
+        Ratio of second downsampling step (env_rate to feat_rate, during
+        feature expansion) relative to first downsampling step (rate to
+        env_rate). If specified, crops the signal envelope to integer multiple
+        of ratio to avoid interpolation during the second downsampling step.
+        The default is None.
+    padlen : int, optional
+        Keyword argument of sosfilter() to control the length of the padding
+        added to each side of the signal to mitigate edge artifacts of the low-
+        and band-pass filter. The default is None.
+    config : dict, optional
+        Top-level parameter configuration in the format of configuration() that
+        replaces all keyword arguments if specified. The default is None.
+
+    Returns
+    -------
+    env : 1D array of floats (n,)
+        Envelope over the band-pass filtered signal, optionally downsampled
+        and cropped to avoid interpolation during further downsampling steps.
+    &#34;&#34;&#34;    
+    # Input interpretation:
+    if config is not None:
+        bp_fcut = config[&#39;bp_fcut&#39;]
+        env_fcut = config[&#39;env_fcut&#39;]
+        env_rate = config[&#39;env_rate&#39;]
+        rate_ratio = config[&#39;rate_ratio&#39;]
+        padlen = config[&#39;padlen&#39;]
+
+    if bp_fcut is not None:
+        # Initital band-pass filter (mean-padded):
+        band_passed = sosfilter(signal, rate, bp_fcut, &#39;bp&#39;,
+                                padtype=&#39;fixed&#39;, padlen=padlen)
+    else:
+        # Continue unfiltered:
+        band_passed = signal
+
+    # Envelope extraction by low-pass filter:
+    env = envelope(band_passed, rate, env_fcut, env_rate,
+                   padtype=&#39;even&#39;, padlen=padlen)
+    if rate_ratio is not None:
+        # Optional envelope cropping:
+        env = env[:(len(env) // rate_ratio) * rate_ratio]
+    return (band_passed, env) if both else env</code></pre>
+</details>
+<div class="desc"><p>Signal pre-processing by band-pass filtering and envelope extraction.
+The filtered signal is low-pass filtered to obtain the signal envelope,
+which can be downsampled afterwards.</p>
+<pre><code>In the songdetector model, this step relates to the band-pass
+properties of the tympanal membrane and the mechano-transduction of the
+attached population of receptor neurons.
+</code></pre>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>signal</code></strong> :&ensp;<code>1D array</code> of <code>floats</code> or <code>ints (m,)</code></dt>
+<dd>Recorded song data, or any other (acoustic) signal. Only accepts a
+single recording channel.</dd>
+<dt><strong><code>rate</code></strong> :&ensp;<code>float</code> or <code>int</code></dt>
+<dd>Sampling rate of the signal in Hz.</dd>
+<dt><strong><code>bp_fcut</code></strong> :&ensp;<code>list</code> of <code>floats</code> or <code>ints (2,)</code> or <code>None</code>, optional</dt>
+<dd>Lower and upper cut-off frequency of initial band-pass filter in Hz.
+Falls back to a high-pass filter if bp_fcut[1] is larger than the
+Nyquist frequency (rate / 2). If None, extracts the envelope of the
+unfiltered input signal. The default is [5000.0, 30000.0].</dd>
+<dt><strong><code>env_fcut</code></strong> :&ensp;<code>float</code> or <code>int</code>, optional</dt>
+<dd>Cut-off frequency of the low-pass filter for envelope extraction in Hz.
+The default is 500.0.</dd>
+<dt><strong><code>env_rate</code></strong> :&ensp;<code>float</code> or <code>int</code>, optional</dt>
+<dd>Sampling rate of the returned signal envelope in Hz. Signal is down-
+sampled accordingly from rate to env_rate after low-pass filtering.
+Ignored if env_rate &gt;= rate. The default is 2000.0.</dd>
+<dt><strong><code>rate_ratio</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Ratio of second downsampling step (env_rate to feat_rate, during
+feature expansion) relative to first downsampling step (rate to
+env_rate). If specified, crops the signal envelope to integer multiple
+of ratio to avoid interpolation during the second downsampling step.
+The default is None.</dd>
+<dt><strong><code>padlen</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Keyword argument of sosfilter() to control the length of the padding
+added to each side of the signal to mitigate edge artifacts of the low-
+and band-pass filter. The default is None.</dd>
+<dt><strong><code>config</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>Top-level parameter configuration in the format of configuration() that
+replaces all keyword arguments if specified. The default is None.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>env</code></strong> :&ensp;<code>1D array</code> of <code>floats (n,)</code></dt>
+<dd>Envelope over the band-pass filtered signal, optionally downsampled
+and cropped to avoid interpolation during further downsampling steps.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.model.intensity_invariant"><code class="name flex">
+<span>def <span class="ident">intensity_invariant</span></span>(<span>signal, rate=2000.0, inv_fcut=10.0, padlen=None, config=None, both=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def intensity_invariant(signal, rate=2000., inv_fcut=10., padlen=None,
+                        config=None, both=False):
+    #TODO Update docstring.
+    &#34;&#34;&#34; Pre-processing to render signal (envelope) intensity-invariant.
+        The signal is transformed to a logarithmic scale in dB and then
+        high-pass filtered to remove the signal offset. On a log-scale,
+        different multiplicative intensity scalings are transformed into
+        additive offsets by log(a * x) = log(a) + log(x). Offset log(a) of
+        signal log(x) is contained as a constant at 0 Hz in the Fourier
+        spectrum (and very low frequencies for transient offsets), which can
+        be removed by a high-pass filter.
+
+        In the songdetector model, this step relates to logarithmic intensity-
+        tuning of the receptor neurons and spike-frequency adaptation of the
+        receptor population and the following local interneurons in the
+        metathoracic ganglion.
+
+    Parameters
+    ----------
+    signal : 1D array of floats (m,)
+        Signal envelope as returned by preprocessing(), or any other signal to
+        be made intensity-invariant. Only accepts a single recording channel.
+    rate : float or int, optional
+        Sampling rate of the signal in Hz. The default is 2000.0.
+    inv_fcut : float or int, optional
+        Cut-off frequency of the high-pass filter for offset removal in Hz.
+        The default is 10.0.
+    padlen : int, optional
+        Keyword argument of sosfilter() to control the length of the padding
+        added to each side of the signal to mitigate edge artifacts of the
+        high-pass filter. The default is None.
+    config : dict, optional
+        Top-level parameter configuration in the format of configuration() that
+        replaces all keyword arguments if specified. The default is None.
+
+    Returns
+    -------
+    invariant : 1D array of floats (m,)
+        Logarithmically re-scaled, intensity-invariant signal (envelope).
+        Equalizes different intensity levels across signal segments while
+        preserving more prominent patterns. The effectiveness of this mechanism
+        depends on the signal-to-noise ration. The invariant signal is not on a
+        proper decibel scale anymore because of the high-pass filtering.
+    &#34;&#34;&#34;    
+    # Input interpretation:
+    if config is not None:
+        rate = config[&#39;env_rate&#39;]
+        inv_fcut = config[&#39;inv_fcut&#39;]
+        padlen = config[&#39;padlen&#39;]
+    log_signal = decibel(signal)
+    # Logarithmic scaling and offset removal by high-pass filter:
+    invariant = sosfilter(log_signal, rate, inv_fcut, &#39;hp&#39;,
+                          padtype=&#39;constant&#39;, padlen=padlen)
+    return (log_signal, invariant) if both else invariant</code></pre>
+</details>
+<div class="desc"><p>Pre-processing to render signal (envelope) intensity-invariant.
+The signal is transformed to a logarithmic scale in dB and then
+high-pass filtered to remove the signal offset. On a log-scale,
+different multiplicative intensity scalings are transformed into
+additive offsets by log(a * x) = log(a) + log(x). Offset log(a) of
+signal log(x) is contained as a constant at 0 Hz in the Fourier
+spectrum (and very low frequencies for transient offsets), which can
+be removed by a high-pass filter.</p>
+<pre><code>In the songdetector model, this step relates to logarithmic intensity-
+tuning of the receptor neurons and spike-frequency adaptation of the
+receptor population and the following local interneurons in the
+metathoracic ganglion.
+</code></pre>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>signal</code></strong> :&ensp;<code>1D array</code> of <code>floats (m,)</code></dt>
+<dd>Signal envelope as returned by preprocessing(), or any other signal to
+be made intensity-invariant. Only accepts a single recording channel.</dd>
+<dt><strong><code>rate</code></strong> :&ensp;<code>float</code> or <code>int</code>, optional</dt>
+<dd>Sampling rate of the signal in Hz. The default is 2000.0.</dd>
+<dt><strong><code>inv_fcut</code></strong> :&ensp;<code>float</code> or <code>int</code>, optional</dt>
+<dd>Cut-off frequency of the high-pass filter for offset removal in Hz.
+The default is 10.0.</dd>
+<dt><strong><code>padlen</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Keyword argument of sosfilter() to control the length of the padding
+added to each side of the signal to mitigate edge artifacts of the
+high-pass filter. The default is None.</dd>
+<dt><strong><code>config</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>Top-level parameter configuration in the format of configuration() that
+replaces all keyword arguments if specified. The default is None.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>invariant</code></strong> :&ensp;<code>1D array</code> of <code>floats (m,)</code></dt>
+<dd>Logarithmically re-scaled, intensity-invariant signal (envelope).
+Equalizes different intensity levels across signal segments while
+preserving more prominent patterns. The effectiveness of this mechanism
+depends on the signal-to-noise ration. The invariant signal is not on a
+proper decibel scale anymore because of the high-pass filtering.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.model.convolve_kernels"><code class="name flex">
+<span>def <span class="ident">convolve_kernels</span></span>(<span>signal, kernels, specs=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def convolve_kernels(signal, kernels, specs=None):
+    &#34;&#34;&#34; Batch-convolves the input signal channel-wise with the kernel set.
+        Convolution is pairwise, i.e. each column in signal is convolved with
+        every column in kernels. Accepts any combination of 1D and 2D input
+        arrays and returns output in a fitting shape (1D, 2D, or 3D). Refer to
+        batch_convolution() for details on the convolution process. Allows for
+        reduction of the number of performed convolutions if provided with a
+        sufficient mapping to group identical/inverted kernels (specs).
+
+    Parameters
+    ----------
+    signal : 1D array (m,) or 2D array (m, n) of floats
+        Signal from one or multiple channels to convolve with the kernel set.
+        The first dimension must be time (axis 0 of the output). If 2D, the
+        second dimension (channels) is always the last (3rd) output axis.
+    kernels : 1D array (p,) or 2D array (p, q) of floats
+        Kernel set to convolve with the signal. Can also be a list of 1D arrays
+        of varying lengths. If already an array, the first dimension must be
+        time. If 2D, the second dimension (kernels) is axis 1 of the output.
+    specs : 2D array (2, q) of floats, optional
+        For a set of Gabor kernels, defines each kernel as a pair of type
+        identifier (left column) and sigma in s (right column). Contains as
+        many rows as kernels in the set, including duplicates. When provided,
+        enables grouping of all kernels with identical or inverted waveform, so
+        that convolution with a single base kernel per group is sufficient to
+        obtain the results for all group members. Accepts any other 2D column
+        array of defining kernel properties, as long as the first column
+        indicates identical/inverted kernels by the sign of its values. 
+
+    Returns
+    -------
+    convolved : 1D or 2D or 3D array of floats
+        Pairwise convolution output of each channel in signal with any of the
+        kernels, normalized by kernel length and cropped along the time axis to
+        match that of the signal, even if kernels are longer in time. Output
+        shape depends on the shape of the input arrays. If both input arrays
+        are 1D, returns a 1D array (time,). If one input array is 1D and the
+        other 2D, returns a 2D array (time, kernels) or (time, channels). If
+        both input arrays are 2D, returns a 3D array (time, kernels, channels).
+    &#34;&#34;&#34;
+    # Input interpretation:
+    if isinstance(kernels, (list, tuple)):
+        # Merge 1D arrays into single 2D array:
+        kernels = align_arrays(kernels, new_axis=1)
+
+    # Attempt to reduce number of convolutions:
+    if specs is not None and specs.shape[0] &gt; 1:
+        # Group identical with inverted kernels:
+        base_kernels = link_kernels(specs) 
+        base_inds = np.array(list(base_kernels.keys()), dtype=int)
+        # Reduce to base kernel subset:
+        kernels = kernels[:, base_inds]
+
+    # Batch-convolve signal with the kernel (sub)set:
+    signal_axes = {0:0, 1:2} if signal.ndim == 2 else {0:0}
+    kernel_axes = {0:0, 1:1} if kernels.ndim == 2 else {0:0} 
+    convolved = batch_convolution(signal, kernels, signal_axes, kernel_axes)
+
+    # No skipped convolutions early exit:
+    if specs is None or specs.shape[0] == 1:
+        return convolved
+
+    # Initial 2D output array (time x kernels):
+    shape = [signal.shape[0], specs.shape[0]]
+    if signal.ndim == 2:
+        # Add channels as 3rd axis:
+        shape.append(signal.shape[1])
+    # Create 2D or 3D array:
+    output = np.zeros(shape)
+
+    # Reassign base kernel convolutions:
+    for i, base_ind in enumerate(base_inds):
+        # Get group members and signs relative to base:
+        group_inds, signs = base_kernels[base_ind]
+        # Extract base convolution slice from 2nd axis:
+        out = array_slice(convolved, axis=1, start=i, stop=i, include=True)
+        # Append a slice per group member (2nd axis):
+        tiles = np.ones(convolved.ndim, dtype=int)
+        # Initialize 2D or 3D indices for insertion:
+        target_inds = [slice(None)] * convolved.ndim
+        tiles[1], target_inds[1] = len(group_inds), group_inds
+        # Repeatedly insert base convolution slice in output array:
+        signs = remap_array(signs, axes_map={0:1}, shape=tiles)
+        output[tuple(target_inds)] = np.tile(out, tiles) * signs
+    return output</code></pre>
+</details>
+<div class="desc"><p>Batch-convolves the input signal channel-wise with the kernel set.
+Convolution is pairwise, i.e. each column in signal is convolved with
+every column in kernels. Accepts any combination of 1D and 2D input
+arrays and returns output in a fitting shape (1D, 2D, or 3D). Refer to
+batch_convolution() for details on the convolution process. Allows for
+reduction of the number of performed convolutions if provided with a
+sufficient mapping to group identical/inverted kernels (specs).</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>signal</code></strong> :&ensp;<code>1D array (m,)</code> or <code>2D array (m, n)</code> of <code>floats</code></dt>
+<dd>Signal from one or multiple channels to convolve with the kernel set.
+The first dimension must be time (axis 0 of the output). If 2D, the
+second dimension (channels) is always the last (3rd) output axis.</dd>
+<dt><strong><code>kernels</code></strong> :&ensp;<code>1D array (p,)</code> or <code>2D array (p, q)</code> of <code>floats</code></dt>
+<dd>Kernel set to convolve with the signal. Can also be a list of 1D arrays
+of varying lengths. If already an array, the first dimension must be
+time. If 2D, the second dimension (kernels) is axis 1 of the output.</dd>
+<dt><strong><code>specs</code></strong> :&ensp;<code>2D array (2, q)</code> of <code>floats</code>, optional</dt>
+<dd>For a set of Gabor kernels, defines each kernel as a pair of type
+identifier (left column) and sigma in s (right column). Contains as
+many rows as kernels in the set, including duplicates. When provided,
+enables grouping of all kernels with identical or inverted waveform, so
+that convolution with a single base kernel per group is sufficient to
+obtain the results for all group members. Accepts any other 2D column
+array of defining kernel properties, as long as the first column
+indicates identical/inverted kernels by the sign of its values.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>convolved</code></strong> :&ensp;<code>1D</code> or <code>2D</code> or <code>3D array</code> of <code>floats</code></dt>
+<dd>Pairwise convolution output of each channel in signal with any of the
+kernels, normalized by kernel length and cropped along the time axis to
+match that of the signal, even if kernels are longer in time. Output
+shape depends on the shape of the input arrays. If both input arrays
+are 1D, returns a 1D array (time,). If one input array is 1D and the
+other 2D, returns a 2D array (time, kernels) or (time, channels). If
+both input arrays are 2D, returns a 3D array (time, kernels, channels).</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.model.finalize_features"><code class="name flex">
+<span>def <span class="ident">finalize_features</span></span>(<span>signal,<br>rate=2000,<br>feat_fcut=1.0,<br>order=1,<br>padlen=None,<br>feat_rate=None,<br>ring_cap=False,<br>config=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def finalize_features(signal, rate=2000, feat_fcut=1., order=1, padlen=None,
+                      feat_rate=None, ring_cap=False, config=None):
+    &#34;&#34;&#34; Temporally averages binary representations into a set of features. 
+        Takes the thresholded convolution outputs per kernel and channel and
+        averages each over time by one or several separate low-pass filters.
+        The resulting feature set can be resampled to a lower rate. Accepts 2D
+        or 3D inputs and returns an array of matching dimensionality. For each
+        low-pass filter, a block of features is added to the 2nd output axis.
+
+    Parameters
+    ----------
+    signal : 1D array (t,) or 2D array (t, k) or 3D array (t, k, c) of floats
+        Binary representations of the expanded signal. First axis must be time.
+        If 2D, expects a single channel (time, kernels). If 3D, expects several
+        channels (time, kernels, channels). Expands 1D to a 2D column vector.
+        Dimensions are maintained in the output but may have different size.
+    rate : int or float, optional
+        Sampling rate of the expanded signal in Hz. The default is 2000.
+    feat_fcut : float or int or iterable (m,) of floats or ints, optional
+        Cut-off frequency of one or several low-pass filters in Hz. Iterables
+        must be of len(order) or contain a single element. The default is 1.
+    order : int or iterable (m,) of ints, optional
+        Order of one or several low-pass filters. Iterables must be of
+        len(feat_fcut) or contain a single element. The default is 1.
+    feat_rate : int or float, optional
+        If specified, downsamples the feature array to this rate in Hz. Ignored
+        if not below the input rate. The default is None.
+    padlen : int, optional
+        Keyword argument of sosfilter() to control the length of the padding
+        added to each side of the signal to mitigate edge artifacts of the
+        low-pass filter. The default is None.
+    ring_cap : bool, optional
+        If True, clips the feature array to [0, 1]. The default is False.
+    config : dict, optional
+        Top-level parameter configuration in the format of configuration() that
+        replaces all keyword arguments if specified. The default is None.
+
+    Returns
+    -------
+    features : 2D array (t, k * m) or 3D array (t, k * m, c) of floats
+        Finalized feature set, optionally downsampled and clipped to [0, 1].
+        Dimensionality matches that of the input array (except for 1D inputs).
+        For each low-pass filter specified by feat_fcut and order, a block of
+        kernel-specific features is appended to axis 1 of the output array. The
+        in-block order of the features corresponds to the order of the kernels.
+        If feat_rate is specified, axis 0 is downsampled to match the new rate. 
+    &#34;&#34;&#34;    
+    # Input intepretation:
+    if config is not None:
+        rate = config[&#39;env_rate&#39;]
+        feat_fcut = config[&#39;feat_fcut&#39;]
+        feat_rate = config[&#39;feat_rate&#39;]
+        padlen = config[&#39;padlen&#39;]
+        ring_cap = config[&#39;ring_cap&#39;]
+    # Assert 1D arrays of equal length:
+    feat_fcut, order = ensure_iterable((feat_fcut, order), equalize=True)
+    # Assert at least 2D:
+    if signal.ndim == 1:
+        signal = signal[:, None]
+    # Manage downsampling:
+    if feat_rate is None:
+        feat_rate = rate
+
+    # Initialize (downsampled) array:
+    target_shape = list(signal.shape)
+    target_shape[0] = int(np.round(feat_rate / rate * target_shape[0]))
+    target_shape[1] *= feat_fcut.size
+    features = np.zeros(target_shape)
+    n_total = features.shape[1]
+
+    # Feature transformation:
+    for i, (fcut, ord) in enumerate(zip(feat_fcut, order)):
+        # Apply low-pass filter of given cut-off and order:
+        feats = sosfilter(signal, rate, fcut, &#39;lp&#39;, order=ord,
+                          padlen=padlen, padtype=&#39;fixed&#39;, padval=0)
+        # Indices of filter-specific feature block:
+        target_inds = [slice(None)] * features.ndim
+        target_inds[1] = np.arange(i * n_total, (i + 1) * n_total)
+        # Insert optionally downsampled block along 2nd axis of array:
+        features[tuple(target_inds)] = downsampling(feats, rate, feat_rate)
+    return np.clip(features, 0, 1) if ring_cap else features</code></pre>
+</details>
+<div class="desc"><p>Temporally averages binary representations into a set of features.
+Takes the thresholded convolution outputs per kernel and channel and
+averages each over time by one or several separate low-pass filters.
+The resulting feature set can be resampled to a lower rate. Accepts 2D
+or 3D inputs and returns an array of matching dimensionality. For each
+low-pass filter, a block of features is added to the 2nd output axis.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>signal</code></strong> :&ensp;<code>1D array (t,)</code> or <code>2D array (t, k)</code> or <code>3D array (t, k, c)</code> of <code>floats</code></dt>
+<dd>Binary representations of the expanded signal. First axis must be time.
+If 2D, expects a single channel (time, kernels). If 3D, expects several
+channels (time, kernels, channels). Expands 1D to a 2D column vector.
+Dimensions are maintained in the output but may have different size.</dd>
+<dt><strong><code>rate</code></strong> :&ensp;<code>int</code> or <code>float</code>, optional</dt>
+<dd>Sampling rate of the expanded signal in Hz. The default is 2000.</dd>
+<dt><strong><code>feat_fcut</code></strong> :&ensp;<code>float</code> or <code>int</code> or <code>iterable (m,)</code> of <code>floats</code> or <code>ints</code>, optional</dt>
+<dd>Cut-off frequency of one or several low-pass filters in Hz. Iterables
+must be of len(order) or contain a single element. The default is 1.</dd>
+<dt><strong><code>order</code></strong> :&ensp;<code>int</code> or <code>iterable (m,)</code> of <code>ints</code>, optional</dt>
+<dd>Order of one or several low-pass filters. Iterables must be of
+len(feat_fcut) or contain a single element. The default is 1.</dd>
+<dt><strong><code>feat_rate</code></strong> :&ensp;<code>int</code> or <code>float</code>, optional</dt>
+<dd>If specified, downsamples the feature array to this rate in Hz. Ignored
+if not below the input rate. The default is None.</dd>
+<dt><strong><code>padlen</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Keyword argument of sosfilter() to control the length of the padding
+added to each side of the signal to mitigate edge artifacts of the
+low-pass filter. The default is None.</dd>
+<dt><strong><code>ring_cap</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, clips the feature array to [0, 1]. The default is False.</dd>
+<dt><strong><code>config</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>Top-level parameter configuration in the format of configuration() that
+replaces all keyword arguments if specified. The default is None.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>features</code></strong> :&ensp;<code>2D array (t, k * m)</code> or <code>3D array (t, k * m, c)</code> of <code>floats</code></dt>
+<dd>Finalized feature set, optionally downsampled and clipped to [0, 1].
+Dimensionality matches that of the input array (except for 1D inputs).
+For each low-pass filter specified by feat_fcut and order, a block of
+kernel-specific features is appended to axis 1 of the output array. The
+in-block order of the features corresponds to the order of the kernels.
+If feat_rate is specified, axis 0 is downsampled to match the new rate.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.model.expand_signal"><code class="name flex">
+<span>def <span class="ident">expand_signal</span></span>(<span>signal,<br>kernels=None,<br>specs=None,<br>threshold=None,<br>rate=2000,<br>feat_fcut=None,<br>order=1,<br>padlen=None,<br>feat_rate=None,<br>ring_cap=False,<br>config=None,<br>both=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def expand_signal(signal, kernels=None, specs=None, threshold=None,
+                  rate=2000, feat_fcut=None, order=1, padlen=None,
+                  feat_rate=None, ring_cap=False, config=None, both=False):
+    #TODO: Update docstring.
+    &#34;&#34;&#34; Expands the signal into a high-dimensional time-series representation.
+        Convolves each channel of the input signal with the kernel set, applies
+        a threshold non-linearity, and temporally averages the resulting binary
+        representations into a set of features. Can return the feature array
+        together with the convolution outputs before thresholding.
+
+    Parameters
+    ----------
+    signal : _type_
+        _description_
+    kernels : _type_, optional
+        _description_, by default None
+    specs : _type_, optional
+        _description_, by default None
+    threshold : _type_, optional
+        _description_, by default None
+    rate : int or float, optional
+        Sampling rate of the signal in Hz. The default is 2000.
+    feat_fcut : float or int or iterable (m,) of floats or ints, optional
+        Cut-off frequency of one or several averaging low-pass filters in Hz.
+        Iterables must be of len(order) or contain a single element.
+        The default is 1.
+    order : int or iterable (m,) of ints, optional
+        Order of one or several averaging low-pass filters. Iterables must be
+        of len(feat_fcut) or contain a single element. The default is 1.
+    feat_rate : int or float, optional
+        If specified, downsamples the feature array to this rate in Hz. Ignored
+        if not below the input rate. The default is None.
+    padlen : int, optional
+        Keyword argument of sosfilter() to control the length of the padding
+        added to each side of the signal to mitigate edge artifacts of the
+        low-pass filter. The default is None.
+    ring_cap : bool, optional
+        If True, clips the feature array to [0, 1]. The default is False.
+    config : dict, optional
+        Top-level parameter configuration in the format of configuration() that
+        replaces all keyword arguments except dual_return if specified.
+        The default is None.
+    both : bool, optional
+        _description_, by default False
+
+    Returns
+    -------
+    _type_
+        _description_
+    &#34;&#34;&#34;    
+    # Input intepretation:
+    if config is not None:
+        kernels = config[&#39;kernels&#39;]
+        specs = config[&#39;k_specs&#39;]
+        threshold = config[&#39;feat_thresh&#39;]
+        rate = config[&#39;env_rate&#39;]
+        feat_fcut = config[&#39;feat_fcut&#39;]
+        padlen = config[&#39;padlen&#39;]
+        feat_rate = config[&#39;feat_rate&#39;]
+        ring_cap = config[&#39;ring_cap&#39;]
+
+    # Convolve channels of signal with the kernel set:
+    convolved = convolve_kernels(signal, kernels, specs)
+    if both:
+        # Retain unmodified version:
+        convolved_copy = convolved.copy()
+
+    # Post-expansion processing:
+    if threshold is not None:
+        # Apply multiple kernel-specific or one general threshold:
+        convolved = nonlinearity(convolved, threshold, axes_map={0:1})
+    if feat_fcut is not None:
+        # Temporal averaging by one or several low-pass filters:
+        features = finalize_features(convolved, rate, feat_fcut, order,
+                                     padlen, feat_rate, ring_cap)
+        return (convolved_copy, features) if both else features
+    return convolved</code></pre>
+</details>
+<div class="desc"><p>Expands the signal into a high-dimensional time-series representation.
+Convolves each channel of the input signal with the kernel set, applies
+a threshold non-linearity, and temporally averages the resulting binary
+representations into a set of features. Can return the feature array
+together with the convolution outputs before thresholding.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>signal</code></strong> :&ensp;<code>_type_</code></dt>
+<dd><em>description</em></dd>
+<dt><strong><code>kernels</code></strong> :&ensp;<code>_type_</code>, optional</dt>
+<dd><em>description</em>, by default None</dd>
+<dt><strong><code>specs</code></strong> :&ensp;<code>_type_</code>, optional</dt>
+<dd><em>description</em>, by default None</dd>
+<dt><strong><code>threshold</code></strong> :&ensp;<code>_type_</code>, optional</dt>
+<dd><em>description</em>, by default None</dd>
+<dt><strong><code>rate</code></strong> :&ensp;<code>int</code> or <code>float</code>, optional</dt>
+<dd>Sampling rate of the signal in Hz. The default is 2000.</dd>
+<dt><strong><code>feat_fcut</code></strong> :&ensp;<code>float</code> or <code>int</code> or <code>iterable (m,)</code> of <code>floats</code> or <code>ints</code>, optional</dt>
+<dd>Cut-off frequency of one or several averaging low-pass filters in Hz.
+Iterables must be of len(order) or contain a single element.
+The default is 1.</dd>
+<dt><strong><code>order</code></strong> :&ensp;<code>int</code> or <code>iterable (m,)</code> of <code>ints</code>, optional</dt>
+<dd>Order of one or several averaging low-pass filters. Iterables must be
+of len(feat_fcut) or contain a single element. The default is 1.</dd>
+<dt><strong><code>feat_rate</code></strong> :&ensp;<code>int</code> or <code>float</code>, optional</dt>
+<dd>If specified, downsamples the feature array to this rate in Hz. Ignored
+if not below the input rate. The default is None.</dd>
+<dt><strong><code>padlen</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Keyword argument of sosfilter() to control the length of the padding
+added to each side of the signal to mitigate edge artifacts of the
+low-pass filter. The default is None.</dd>
+<dt><strong><code>ring_cap</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, clips the feature array to [0, 1]. The default is False.</dd>
+<dt><strong><code>config</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>Top-level parameter configuration in the format of configuration() that
+replaces all keyword arguments except dual_return if specified.
+The default is None.</dd>
+<dt><strong><code>both</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd><em>description</em>, by default False</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>_type_</code></dt>
+<dd><em>description</em></dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.model.process_signal"><code class="name flex">
+<span>def <span class="ident">process_signal</span></span>(<span>config,<br>returns=None,<br>path=None,<br>signal=None,<br>rate=None,<br>save=None,<br>overwrite=False,<br>label_edit=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def process_signal(config, returns=None, path=None, signal=None, rate=None,
+                   save=None, overwrite=False, label_edit=False):
+    &#34;&#34;&#34; Full song detector processing pipeline from input audio to feature set.
+        Includes band-pass filtering, envelope extraction by rectification and
+        low-pass filtering, intensity-invariance by logarithmic compression and
+        high-pass filtering, convolutional expansion with the kernel set into a
+        high-dimensional representation, thresholding into binary signals, and
+        multi-scale temporal averaging by low-pass filtering to finalize the
+        feature set. Offers automatic threshold-based song labeling and posthoc
+        GUI editing. Supports partial processing to return only a selection of
+        requested representations, avoiding redundant computations. Can store
+        representation data and parameter configuration in a joint npz archive.
+        Can handle both single-channel and multi-channel recordings.
+
+    Parameters
+    ----------
+    config : dict
+        Top-level parameter configuration in the format of configuration() that
+        provides required arguments for extract_env(), intensity_invariant(),
+        expand_signal(), nonlinearity(), and label_songs(), and defines further
+        processing settings. Also includes the kernel set to be used.
+    returns : str or list or tuple of str (m,), optional
+        Selection of representations to include in the output. Can be any of
+        # &#39;raw&#39;:   Unmodified input audio signal.
+        # &#39;filt&#39;:  Band-pass filtered input signal.
+        # &#39;env&#39;:   Signal envelope over the filtered signal.
+        # &#39;log&#39;:   Logarithmically scaled (dB) signal envelope.
+        # &#39;inv&#39;:   Intensity-invariant signal envelope.
+        # &#39;conv&#39;:  Convolution outputs of invariant signal and kernel set.
+        # &#39;bi&#39;:    Binary signals (thresholded convolution outputs).
+        # &#39;feat&#39;:  Feature set (temporally averaged binary signals).
+        # &#39;norm&#39;:  Frobenius norm across feature vectors.
+        # &#39;songs&#39;: Segment edge times of threshold-labeled song events.
+        Other strings have either no or unintended effect. Some representations
+        are computed implicitly and without request as predecessor for others.
+        Returns all representations if none are requested. The default is None.
+    path : str, optional
+        Absolute or relative path to a wav file for loading the input signal.
+        Loaded signal underlies the same dimensionality constraints as signal.
+        Overrides signal and rate if specified. The default is None.
+    signal : 1D array (t,) or 2D array (t, c) of floats, optional
+        Input signal to process. First axis must be time. If 1D, expects a
+        single channel. If 2D, expects multiple channels. Requires rate to be
+        specified. Ignored if path is provided instead. The default is None.
+    rate : float or int, optional
+        Initial sampling rate of the input signal in Hz. Requires signal to be
+        specified. Ignored if path is provided instead. The default is None.
+    save : str, optional
+        Absolute or relative path to a npz archive for storing the requested
+        representations, corresponding sampling rates, and the used parameter
+        configuration. Disables saving if not specified. The default is None.
+    overwrite : bool, optional
+        If True, writes data to a new archive under the given path, overwriting
+        any existing file. If False, updates an existing archive with the new
+        data, preserving any other archive entries. Ignored if save is not
+        specified. The default is False.
+    label_edit : bool, optional
+        If True and &#39;songs&#39; is requested, enables manual GUI-based editing of
+        automatically labeled song events in each target channel. Allows to
+        delete or add labels and recalculate edge times. The default is False.
+
+    Returns
+    -------
+    data : dict of arrays
+        Collection of requested representations created from the input signal.
+        Keys are consistent with returns. Contains all representations if none
+        are requested specifically. The dimensionality of each output array
+        depends on the number of processed channels. 
+    rates : dict of floats or ints
+        Collection of sampling rates of the returned representations in Hz.
+        Same keys as data. Sampling rates are included in the npz archive.
+
+    Raises
+    ------
+    ValueError
+        Breaks if neither a single path nor signal and rate are specified.
+    &#34;&#34;&#34;
+    # Manage source:
+    if path is not None:
+        signal, rate = aio.load_audio(path)
+    elif signal is None or rate is None:
+        raise ValueError(&#39;Specify either path or both signal and rate.&#39;)
+    config[&#39;rate&#39;] = rate
+
+    # Manage outputs:
+    if returns is None:
+        returns = (&#39;raw&#39;, &#39;filt&#39;, &#39;env&#39;, &#39;log&#39;, &#39;inv&#39;,
+                   &#39;conv&#39;, &#39;bi&#39;, &#39;feat&#39;, &#39;norm&#39;, &#39;songs&#39;)
+
+    # Select channel subset:
+    if config[&#39;channel&#39;] is not None:
+        signal = signal[:, config[&#39;channel&#39;]]
+
+    # Initialize storage for output representations:
+    data = {&#39;raw&#39;: signal} if &#39;raw&#39; in returns else {}
+    
+    # Initialize assignment helpers:
+    check = lambda key: key in returns
+    var_assign = lambda k, v: data.update({k: v}) if check(k) else None
+    fun_assign = lambda k, f, a: data.update({k: f(**a)}) if check(k) else None
+
+    # Band-pass and envelope:
+    if &#39;filt&#39; in returns:
+        data[&#39;filt&#39;], env = extract_env(signal, rate, config=config, both=True)
+    else:
+        env = extract_env(signal, rate, config=config)
+    var_assign(&#39;env&#39;, env)
+
+    # Decibel and invariance:
+    if &#39;log&#39; in returns:
+        data[&#39;log&#39;], inv = intensity_invariant(env, config=config, both=True)
+    else:
+        inv = intensity_invariant(env, config=config)
+    var_assign(&#39;inv&#39;, inv)
+
+    # Expansion to high-dimensional representation:
+    if any(np.isin([&#39;conv&#39;, &#39;bi&#39;, &#39;feat&#39;, &#39;norm&#39;], returns)):
+        # Bundle threshold settings for call to nonlinearity():
+        nl_args = {&#39;thresh&#39;: config[&#39;feat_thresh&#39;], &#39;axes_map&#39;: {0:1}}
+        # Get writable parameters:
+        config = config.copy()
+        
+        # Combination-dependent efficient computation:
+        if &#39;feat&#39; in returns or &#39;norm&#39; in returns:
+            # Feature expansion (threshold and low-pass):
+            if &#39;conv&#39; in returns or &#39;bi&#39; in returns:
+                # Retain raw convolution outputs:
+                conv, feat = expand_signal(inv, config=config, both=True)
+                # Log pre-features:
+                var_assign(&#39;conv&#39;, conv)
+                fun_assign(&#39;bi&#39;, nonlinearity, nl_args | {&#39;data&#39;: conv})
+            else:
+                feat = expand_signal(inv, config=config)
+            # Log feature variables:
+            var_assign(&#39;feat&#39;, feat)
+            fun_assign(&#39;norm&#39;, np.linalg.norm, {&#39;x&#39;: feat, &#39;axis&#39;: 1})
+        elif &#39;conv&#39; in returns:
+            # Convolutional expansion (optional threshold, no low-pass):
+            config[&#39;feat_thresh&#39;], config[&#39;feat_fcut&#39;] = None, None
+            data[&#39;conv&#39;] = expand_signal(inv, config=config)
+            fun_assign(&#39;bi&#39;, nonlinearity, nl_args | {&#39;data&#39;: data[&#39;conv&#39;]})
+        else:
+            # Pure threshold, no low-pass:
+            config[&#39;feat_fcut&#39;] = None
+            data[&#39;bi&#39;] = expand_signal(inv, config=config)
+    
+    # Song event labeling:
+    if &#39;songs&#39; in returns:
+        if &#39;norm&#39; in returns:
+            # By channel-wise feature norm: 
+            args = {&#39;rate&#39;: config[&#39;feat_rate&#39;], &#39;norm&#39;: data[&#39;norm&#39;]}
+        elif &#39;feat&#39; in returns:
+            # By norm computed from raw feature set:
+            args = {&#39;rate&#39;: config[&#39;feat_rate&#39;], &#39;features&#39;: data[&#39;feat&#39;]}
+        else:
+            # Fallback to channel-wise signal envelope:
+            args = {&#39;rate&#39;: config[&#39;env_rate&#39;], &#39;norm&#39;: env}
+
+        # Get edge times of supra-threshold segments:
+        song_edges = label_songs(config=config, wrap=True, **args)
+
+        # Manage target channel references:
+        channel_inds = config[&#39;label_channels&#39;]
+        if channel_inds is None:
+            # Default to all available channels:
+            channel_inds = range(len(song_edges))
+        elif not np.iterable(channel_inds):
+            # Ensure iterable:
+            channel_inds = [channel_inds]
+
+        # Prepare GUI:
+        if label_edit:
+            gui_kwargs = {
+                &#39;quick_render&#39;: config[&#39;quick_render&#39;],
+                &#39;fullscreen&#39;: config[&#39;fullscreen&#39;],
+                &#39;f_resample&#39;: config[&#39;f_resample&#39;],
+                &#39;t_resample&#39;: config[&#39;t_resample&#39;],
+                &#39;spec_kwargs&#39;: config[&#39;spec_kwargs&#39;]
+            }
+
+        # Channel-wise posthocs and storage:
+        for ind, edges in zip(channel_inds, song_edges):
+            if label_edit:
+                # Optional GUI:
+                edges = label_gui(signal[:, ind], rate, edges, **gui_kwargs)
+            # Link to target channel:
+            data[f&#39;songs_{ind}&#39;] = edges
+
+            # Add transmission delay between multiple channels:
+            if &#39;filt&#39; in returns and config[&#39;distance&#39;] is not None:
+                delays = event_lags(data[&#39;filt&#39;], rate, edges, config=config)
+                # Link to reference channel and underlying labels:
+                data[f&#34;lag_{config[&#39;lag_ref&#39;]}_songs_{ind}&#34;] = delays
+
+    # Sampling rate for each representation in storage:
+    rates = {&#39;raw&#39;: rate, &#39;filt&#39;: rate, &#39;env&#39;: config[&#39;env_rate&#39;],
+             &#39;log&#39;: config[&#39;env_rate&#39;], &#39;inv&#39;: config[&#39;env_rate&#39;],
+             &#39;conv&#39;: config[&#39;env_rate&#39;], &#39;bi&#39;: config[&#39;env_rate&#39;],
+             &#39;feat&#39;: config[&#39;feat_rate&#39;], &#39;norm&#39;: config[&#39;feat_rate&#39;]}
+    [rates.pop(key) for key in list(rates.keys()) if key not in returns]
+
+    # Write to npz archive:
+    if save is not None:
+        save_data(save, merge_dicts(data, rates, suffix=&#39;_rate&#39;),
+                  config, overwrite=overwrite)
+    return data, rates</code></pre>
+</details>
+<div class="desc"><p>Full song detector processing pipeline from input audio to feature set.
+Includes band-pass filtering, envelope extraction by rectification and
+low-pass filtering, intensity-invariance by logarithmic compression and
+high-pass filtering, convolutional expansion with the kernel set into a
+high-dimensional representation, thresholding into binary signals, and
+multi-scale temporal averaging by low-pass filtering to finalize the
+feature set. Offers automatic threshold-based song labeling and posthoc
+GUI editing. Supports partial processing to return only a selection of
+requested representations, avoiding redundant computations. Can store
+representation data and parameter configuration in a joint npz archive.
+Can handle both single-channel and multi-channel recordings.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>config</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Top-level parameter configuration in the format of configuration() that
+provides required arguments for extract_env(), intensity_invariant(),
+expand_signal(), nonlinearity(), and label_songs(), and defines further
+processing settings. Also includes the kernel set to be used.</dd>
+<dt><strong><code>returns</code></strong> :&ensp;<code>str</code> or <code>list</code> or <code>tuple</code> of <code>str (m,)</code>, optional</dt>
+<dd>Selection of representations to include in the output. Can be any of<h1 id="raw-unmodified-input-audio-signal">'raw':
+Unmodified input audio signal.</h1>
+<h1 id="filt-band-pass-filtered-input-signal">'filt':
+Band-pass filtered input signal.</h1>
+<h1 id="env-signal-envelope-over-the-filtered-signal">'env':
+Signal envelope over the filtered signal.</h1>
+<h1 id="log-logarithmically-scaled-db-signal-envelope">'log':
+Logarithmically scaled (dB) signal envelope.</h1>
+<h1 id="inv-intensity-invariant-signal-envelope">'inv':
+Intensity-invariant signal envelope.</h1>
+<h1 id="conv-convolution-outputs-of-invariant-signal-and-kernel-set">'conv':
+Convolution outputs of invariant signal and kernel set.</h1>
+<h1 id="bi-binary-signals-thresholded-convolution-outputs">'bi':
+Binary signals (thresholded convolution outputs).</h1>
+<h1 id="feat-feature-set-temporally-averaged-binary-signals">'feat':
+Feature set (temporally averaged binary signals).</h1>
+<h1 id="norm-frobenius-norm-across-feature-vectors">'norm':
+Frobenius norm across feature vectors.</h1>
+<h1 id="songs-segment-edge-times-of-threshold-labeled-song-events">'songs': Segment edge times of threshold-labeled song events.</h1>
+Other strings have either no or unintended effect. Some representations
+are computed implicitly and without request as predecessor for others.
+Returns all representations if none are requested. The default is None.</dd>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Absolute or relative path to a wav file for loading the input signal.
+Loaded signal underlies the same dimensionality constraints as signal.
+Overrides signal and rate if specified. The default is None.</dd>
+<dt><strong><code>signal</code></strong> :&ensp;<code>1D array (t,)</code> or <code>2D array (t, c)</code> of <code>floats</code>, optional</dt>
+<dd>Input signal to process. First axis must be time. If 1D, expects a
+single channel. If 2D, expects multiple channels. Requires rate to be
+specified. Ignored if path is provided instead. The default is None.</dd>
+<dt><strong><code>rate</code></strong> :&ensp;<code>float</code> or <code>int</code>, optional</dt>
+<dd>Initial sampling rate of the input signal in Hz. Requires signal to be
+specified. Ignored if path is provided instead. The default is None.</dd>
+<dt><strong><code>save</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Absolute or relative path to a npz archive for storing the requested
+representations, corresponding sampling rates, and the used parameter
+configuration. Disables saving if not specified. The default is None.</dd>
+<dt><strong><code>overwrite</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, writes data to a new archive under the given path, overwriting
+any existing file. If False, updates an existing archive with the new
+data, preserving any other archive entries. Ignored if save is not
+specified. The default is False.</dd>
+<dt><strong><code>label_edit</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True and 'songs' is requested, enables manual GUI-based editing of
+automatically labeled song events in each target channel. Allows to
+delete or add labels and recalculate edge times. The default is False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>data</code></strong> :&ensp;<code>dict</code> of <code>arrays</code></dt>
+<dd>Collection of requested representations created from the input signal.
+Keys are consistent with returns. Contains all representations if none
+are requested specifically. The dimensionality of each output array
+depends on the number of processed channels.</dd>
+<dt><strong><code>rates</code></strong> :&ensp;<code>dict</code> of <code>floats</code> or <code>ints</code></dt>
+<dd>Collection of sampling rates of the returned representations in Hz.
+Same keys as data. Sampling rates are included in the npz archive.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>Breaks if neither a single path nor signal and rate are specified.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.model.demo"><code class="name flex">
+<span>def <span class="ident">demo</span></span>(<span>path)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def demo(path):
+    &#34;&#34;&#34; Simple demo demonstrating basic usage of process_signal().
+    &#34;&#34;&#34;
+    
+    # Configure processing parameters:
+    sigmas = [0.001, 0.002, 0.004, 0.008, 0.016, 0.032]
+    types = [1, -1, 2, -2, 3, -3, 4, -4, 5, -5,
+             6, -6, 7, -7, 8, -8, 9, -9, 10, -10]
+    config = configuration(types=types, sigmas=sigmas)
+
+    # Compute model traces:
+    data, rates = process_signal(config, path=path)
+
+    # Retrive traces:
+    filt = data[&#39;filt&#39;][:, 0]
+    filt_rate = rates[&#39;filt&#39;]
+    tfilt = np.arange(len(filt))/filt_rate
+    env = data[&#39;env&#39;][:, 0]
+    env_rate = rates[&#39;env&#39;]
+    tenv = np.arange(len(env))/env_rate
+
+    # plot:
+    import matplotlib.pyplot as plt
+    plt.plot(tfilt, filt)
+    plt.plot(tenv, env)
+    plt.show()</code></pre>
+</details>
+<div class="desc"><p>Simple demo demonstrating basic usage of process_signal().</p></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="thunderhopper" href="index.html">thunderhopper</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="thunderhopper.model.configuration" href="#thunderhopper.model.configuration">configuration</a></code></li>
+<li><code><a title="thunderhopper.model.extract_env" href="#thunderhopper.model.extract_env">extract_env</a></code></li>
+<li><code><a title="thunderhopper.model.intensity_invariant" href="#thunderhopper.model.intensity_invariant">intensity_invariant</a></code></li>
+<li><code><a title="thunderhopper.model.convolve_kernels" href="#thunderhopper.model.convolve_kernels">convolve_kernels</a></code></li>
+<li><code><a title="thunderhopper.model.finalize_features" href="#thunderhopper.model.finalize_features">finalize_features</a></code></li>
+<li><code><a title="thunderhopper.model.expand_signal" href="#thunderhopper.model.expand_signal">expand_signal</a></code></li>
+<li><code><a title="thunderhopper.model.process_signal" href="#thunderhopper.model.process_signal">process_signal</a></code></li>
+<li><code><a title="thunderhopper.model.demo" href="#thunderhopper.model.demo">demo</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>
