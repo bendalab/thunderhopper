@@ -332,10 +332,9 @@ def convolve_kernels(signal, kernels, specs=None):
     # Attempt to reduce number of convolutions:
     if specs is not None and specs.shape[0] > 1:
         # Group identical with inverted kernels:
-        base_kernels = link_kernels(specs) 
-        base_inds = np.array(list(base_kernels.keys()), dtype=int)
-        # Reduce to base kernel subset:
-        kernels = kernels[:, base_inds]
+        group_mapping = link_kernels(specs) 
+        # Reduce kernel set to base kernel subset:
+        kernels = kernels[:, np.array(list(group_mapping.keys()), dtype=int)]
 
     # Batch-convolve signal with the kernel (sub)set:
     signal_axes = {0:0, 1:2} if signal.ndim == 2 else {0:0}
@@ -354,10 +353,8 @@ def convolve_kernels(signal, kernels, specs=None):
     # Create 2D or 3D array:
     output = np.zeros(shape)
 
-    # Reassign base kernel convolutions:
-    for i, base_ind in enumerate(base_inds):
-        # Get group members and signs relative to base:
-        group_inds, signs = base_kernels[base_ind]
+    # Reassign base kernel output to all group members:
+    for i, (group_inds, signs) in enumerate(group_mapping.values()):
         # Extract base convolution slice from 2nd axis:
         out = array_slice(convolved, axis=1, start=i, stop=i, include=True)
         # Append a slice per group member (2nd axis):

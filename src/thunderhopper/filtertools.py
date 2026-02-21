@@ -333,14 +333,14 @@ def link_kernels(specs):
         to base) of all kernels that are identical (1) or inverted (-1) to it.
     """    
     # Assimilate inverted types:
-    specs = specs.copy()
-    specs[:, 0] = np.abs(specs[:, 0])
+    merge_specs = specs.copy()
+    merge_specs[:, 0] = np.abs(merge_specs[:, 0])
 
     linked_kernels = {}
-    for base in np.unique(specs, axis=0):
+    for base in np.unique(merge_specs, axis=0):
         # Get all identical or inverted to the base kernel:
-        group = np.nonzero(np.all(specs == base, axis=1))[0]
-        # Get sign (+-1) of each kernel relative to the base:
+        group = np.nonzero(np.all(merge_specs == base, axis=1))[0]
+        # Get sign (+-1) of each kernel relative to base:
         signs = specs[group, 0] / specs[group[0], 0]
         # Map base to all related kernels:
         linked_kernels[group[0]] = (group, signs)
