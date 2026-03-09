@@ -691,15 +691,6 @@ def process_signal(config, returns=None, path=None, signal=None, rate=None,
         # Get edge times of supra-threshold segments:
         song_edges = label_songs(config=config, wrap=True, **args)
 
-        # Manage target channel references:
-        channel_inds = config['label_channels']
-        if channel_inds is None:
-            # Default to all available channels:
-            channel_inds = range(len(song_edges))
-        elif not np.iterable(channel_inds):
-            # Ensure iterable:
-            channel_inds = [channel_inds]
-
         # Prepare GUI:
         if label_edit:
             gui_kwargs = {
@@ -711,10 +702,11 @@ def process_signal(config, returns=None, path=None, signal=None, rate=None,
             }
 
         # Channel-wise posthocs and storage:
-        for ind, edges in zip(channel_inds, song_edges):
+        for ind, edges in zip(config['label_channels'], song_edges):
             if label_edit:
                 # Optional GUI:
-                edges = label_gui(signal[:, ind], rate, edges, **gui_kwargs)
+                trace = signal if signal.ndim == 1 else signal[:, ind]
+                edges = label_gui(trace, rate, edges, **gui_kwargs)
             # Link to target channel:
             data[f'songs_{ind}'] = edges
 

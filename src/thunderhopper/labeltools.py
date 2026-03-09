@@ -611,7 +611,10 @@ def label_songs(rate, threshold=None, norm=None, features=None, channels=None,
     config : dict, optional
         Top-level parameter configuration in the format of configuration() that
         replaces all keyword arguments except 'rate', 'norm', 'features', and
-        'wrap' if specified. The default is None.
+        'wrap' if specified. Automatically updates the 'label_channels' entry
+        with a 1D index array of labeled target channels for consistency
+        between single-/multi-channel labeling with/without channel subset
+        selection. The default is None.
 
     Returns
     -------
@@ -637,10 +640,6 @@ def label_songs(rate, threshold=None, norm=None, features=None, channels=None,
         ref_channel = config['label_ref']
         global_ref = config['global_ref']
 
-    # Channel subset selection:
-    if channels is not None and norm.ndim == 2:
-        norm = norm[:, channels]
-
     # Single channel:
     if norm.ndim == 1:
         # Identify consecutive supra-threshold elements:
@@ -649,7 +648,20 @@ def label_songs(rate, threshold=None, norm=None, features=None, channels=None,
         edges = np.zeros((len(segments), 2))
         for i, segment in enumerate(segments):
             edges[i] = [segment[0], segment[-1]]
+        # Update for consistency:
+        if config is not None:
+            config.update({'label_channels': np.array([0])})
         return (edges / rate,) if wrap else edges / rate
+
+    # Channel subset selection:
+    if channels is not None:
+        norm = norm[:, channels]
+        # Update to iterable:
+        if config is not None:
+            config.update({'label_channels': np.atleast_1d(channels)})
+    elif config is not None:
+        # Update for consistency:
+        config.update({'label_channels': np.arange(norm.shape[1])})
 
     # Multi-channel labeling:
     reference = norm.max(axis=0)
