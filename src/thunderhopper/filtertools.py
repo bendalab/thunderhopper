@@ -309,6 +309,20 @@ def encode_kernels(kernel_dict=None, types=None, sigmas=None, channels=None,
     return specs
 
 
+def find_kern_specs(specs, kerns=None, types=None, sigmas=None):
+    if kerns is not None:
+        inds = []
+        for kernel in kerns:
+            inds.extend(np.nonzero((specs == kernel).all(1))[0])
+        return np.array(inds, dtype=int)
+    inds = np.array(specs.shape[0], dtype=bool)
+    if types is not None:
+        inds &= np.isin(specs[:, 0], types)
+    if sigmas is not None:
+        inds &= np.isin(specs[:, 1], sigmas)
+    return np.nonzero(inds)[0] 
+
+
 def link_kernels(specs):
     """ Groups Gabor kernels that are identical or inverted to each other.
         All kernels of a group have the same sigma and the same absolute type

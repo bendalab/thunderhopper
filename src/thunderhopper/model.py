@@ -620,7 +620,7 @@ def process_signal(config, returns=None, path=None, signal=None, rate=None,
                    'conv', 'bi', 'feat', 'norm', 'songs')
 
     # Select channel subset:
-    if config['channel'] is not None:
+    if config['channel'] is not None and signal.ndim == 2:
         signal = signal[:, config['channel']]
 
     # Initialize storage for output representations:
