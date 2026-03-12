@@ -30,6 +30,31 @@ def gauss_width(sigma, rel_height=0.01):
     return 2 * np.sqrt(2 * np.log(1 / rel_height)) * sigma
 
 
+def pdf_proportion(p, sd=1., mu=0., right=True):
+    """ Returns x for which P(X > x) = p (or P(X < x) = p if right is False).
+
+    Parameters
+    ----------
+    p : float
+        Cumulative probability in [0, 1] to be held in the respective tail.
+        Values of 0 or 1 will result in -inf or inf, respectively.
+    sd : float, optional
+        Standard deviation of the normal PDF. The default is 1.0.
+    mu : float, optional
+        Mean of the normal PDF. The default is 0.0.
+    right : bool, optional
+        Whether p is supposed to be in the right tail. The default is True.
+
+    Returns
+    -------
+    x : float
+        The x-value for which the specified tail probability holds.
+    """    
+    if right:
+        return norm.ppf(1 - p, loc=mu, scale=sd)
+    return norm.ppf(p, loc=mu, scale=sd)
+
+
 def gabor_phase(n_lobes, sign=1, radians=True):
     """ Returns the required phase shift for a specific type of Gabor kernel.
         Chooses one of four possible phase values (0, pi, pi/2, -pi/2) of the
