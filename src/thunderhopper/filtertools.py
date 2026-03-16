@@ -1,4 +1,5 @@
 import numpy as np
+from scipy.stats import norm
 from .misctools import combination_array
 
 
@@ -30,24 +31,24 @@ def gauss_width(sigma, rel_height=0.01):
     return 2 * np.sqrt(2 * np.log(1 / rel_height)) * sigma
 
 
-def pdf_proportion(p, sd=1., mu=0., right=True):
+def pdf_proportion(p, sd=1., mu=0., right=False):
     """ Returns x for which P(X > x) = p (or P(X < x) = p if right is False).
 
     Parameters
     ----------
-    p : float
+    p : float or array-like of floats
         Cumulative probability in [0, 1] to be held in the respective tail.
         Values of 0 or 1 will result in -inf or inf, respectively.
-    sd : float, optional
+    sd : float or array-like of floats, optional
         Standard deviation of the normal PDF. The default is 1.0.
-    mu : float, optional
+    mu : float or array-like of floats, optional
         Mean of the normal PDF. The default is 0.0.
     right : bool, optional
-        Whether p is supposed to be in the right tail. The default is True.
+        Whether p is supposed to be in the right tail. The default is False.
 
     Returns
     -------
-    x : float
+    x : float or array-like of floats
         The x-value for which the specified tail probability holds.
     """    
     if right:
@@ -340,7 +341,7 @@ def find_kern_specs(specs, kerns=None, types=None, sigmas=None):
         for kernel in kerns:
             inds.extend(np.nonzero((specs == kernel).all(1))[0])
         return np.array(inds, dtype=int)
-    inds = np.array(specs.shape[0], dtype=bool)
+    inds = np.ones(specs.shape[0], dtype=bool)
     if types is not None:
         inds &= np.isin(specs[:, 0], types)
     if sigmas is not None:
