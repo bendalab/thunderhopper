@@ -10,12 +10,12 @@ from .filtertools import gauss_width, gabor_phase, gabor_freqs, encode_kernels
 
 
 def decibel(data, ref=None, axis=None, lower_bound=1e-10):
-    """ Logarithmic transformation of data to decibel (10 * log10(data / ref)).
+    """ Logarithmic transformation of data to decibel (20 * log10(data / ref)).
 
     Parameters
     ----------
     data : ND-array of floats (arbitrary shape)
-        Data to transform to dB.
+        Data to transform to dB. Assumes amplitudes instead of powers.
     ref : float, optional
         Reference intensity for dB calculation that will correspond to 0 dB.
         If unspecified, uses the maximum over data. If axis is specified, uses
@@ -34,7 +34,7 @@ def decibel(data, ref=None, axis=None, lower_bound=1e-10):
         ref = np.where(maximum != 0, maximum, 1)
     data = np.array(data)
     data[data < lower_bound] = lower_bound
-    return 10 * np.log10(data / ref)
+    return 20 * np.log10(data / ref)
 
 
 def downsampling(data, rate, new_rate, axis=0):

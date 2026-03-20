@@ -87,6 +87,10 @@ def configuration(env_rate=2000, feat_rate=1000, kernel_dict=None, specs=None,
         'bp_fcut': [5000., 30000.],                                            # Lower & upper cut-off frequency of initial band-pass filter in Hz (tuple or list of 2 floats or ints)
         'env_fcut' : 500.,                                                     # Cut-off frequency of low-pass filter for envelope extraction in Hz (float or int)
         'inv_fcut' : 10.,                                                      # Cut-off frequency of high-pass filter to transform logarithmic to invariant envelope in Hz (float or int)                            
+        # DECIBEL SCALE:
+        'db_ref': None,                                                        # Reference value(s) for decibel conversion, else maximum along db_axis (None or float or int or 1D array of floats or ints)
+        'db_axis': None,                                                       # If db_ref is None, axis along which to take maximum for decibel reference, else global maximum (None or int)
+        'db_bound': 1e-10,                                                     # Minimum cap applied to envelope before decibel conversion to avoid log(0) (float or int)
         # GABOR KERNELS:
         'kernels': kernels,                                                    # Set of Gabor kernels (list of 1D arrays of floats)
         'k_specs': specs,                                                      # Type identifier and sigma in s for each kernel (2-column array of floats)
@@ -229,7 +233,8 @@ def extract_env(signal, rate, bp_fcut=(5000., 30000.), env_fcut=500.,
 
 
 def intensity_invariant(signal, rate=2000., inv_fcut=10., padlen=None,
-                        config=None, both=False):
+                        db_ref=None, db_axis=None, db_bound=1e-10, config=None,
+                        both=False):
     #TODO Update docstring.
     """ Pre-processing to render signal (envelope) intensity-invariant.
         The signal is transformed to a logarithmic scale in dB and then
@@ -277,8 +282,12 @@ def intensity_invariant(signal, rate=2000., inv_fcut=10., padlen=None,
         rate = config['env_rate']
         inv_fcut = config['inv_fcut']
         padlen = config['padlen']
-    log_signal = decibel(signal)
-    # Logarithmic scaling and offset removal by high-pass filter:
+        db_ref = config['db_ref']
+        db_axis = config['db_axis']
+        db_bound = config['db_bound']
+    # Logarithmic compression to dB scale:
+    log_signal = decibel(signal, db_ref, db_axis, db_bound)
+    # Offset removal by high-pass filter:
     invariant = sosfilter(log_signal, rate, inv_fcut, 'hp',
                           padtype='constant', padlen=padlen)
     return (log_signal, invariant) if both else invariant
