@@ -1,0 +1,1058 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>thunderhopper.arraytools API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>thunderhopper.arraytools</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="thunderhopper.arraytools.is_valid_numpy_index"><code class="name flex">
+<span>def <span class="ident">is_valid_numpy_index</span></span>(<span>ind)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_valid_numpy_index(ind):
+    &#34;&#34;&#34; Checks if the given variable is valid for indexing numpy arrays.
+        Valid array indices can be integers, bools, arrays of ints or bools,
+        slice objects, ellipsis, None, or tuples of a combination of those.
+
+    Parameters
+    ----------
+    ind : any type (any shape)
+        The variable to validate as numpy array index.
+
+    Returns
+    -------
+    valid : bool
+        Returns True if ind can be used to index numpy arrays, False otherwise.
+    &#34;&#34;&#34;
+    # Force dimension specificity:    
+    if not isinstance(ind, tuple):
+        ind = (ind,)
+
+    for dim in ind:
+        # Validate indices along each array dimension separately:
+        data_type = type(dim) if not isinstance(dim, np.ndarray) else dim.dtype
+        is_int = np.issubdtype(data_type, np.integer)
+        is_bool = np.issubdtype(data_type, np.bool_)
+        is_slice = isinstance(dim, slice)
+        # Type violation early exit:
+        if not any([is_int, is_bool, is_slice, dim is Ellipsis, dim is None]):
+            return False
+    return True</code></pre>
+</details>
+<div class="desc"><p>Checks if the given variable is valid for indexing numpy arrays.
+Valid array indices can be integers, bools, arrays of ints or bools,
+slice objects, ellipsis, None, or tuples of a combination of those.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>ind</code></strong> :&ensp;<code>any type (any shape)</code></dt>
+<dd>The variable to validate as numpy array index.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>valid</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Returns True if ind can be used to index numpy arrays, False otherwise.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.arraytools.broadcastable"><code class="name flex">
+<span>def <span class="ident">broadcastable</span></span>(<span>*shapes, vars=None, crash=False, output=True)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def broadcastable(*shapes, vars=None, crash=False, output=True):
+    &#34;&#34;&#34; Checks if the given array shapes are broadcastable to a common shape.
+        Upon failure, can either return normally or immediately raise an error. 
+        Can return the common shape expected from operations with these arrays.
+
+    Parameters
+    ----------
+    shapes : array-like (m,) of array-likes of ints, optional
+        Array shapes to be validated. The default is None.
+    vars : array-like (m,) of arrays, floats or ints, optional
+        Variables whose shapes are to be validated. Overrides shapes if given.
+        Only accepts ndarrays and scalars. The default is None.
+    crash : bool, optional
+        If True, failed broadcasting raises a ValueError, while successful
+        broadcasting returns shape without valid. If False, always returns
+        valid, together with shape if output is True. The default is False.
+    output : bool, optional
+        If True, returns the common shape of the arrays in addition to valid.
+        Ignored if crash is True. The default is True.
+
+    Returns
+    -------
+    valid : bool
+        Returns True if all array shapes are broadcastable to a common shape.
+        Only returned if crash is False.
+    shape : tuple of ints, optional
+        Array shape resulting from broadcasting. Bullshit if valid is False.
+        Only returned if output is True.
+    &#34;&#34;&#34;    
+    # Input interpretation:
+    if vars is not None:
+        shapes = [(1,) if np.isscalar(var) else var.shape for var in vars]
+
+    # Check array dimensionality:
+    dims = np.array([len(shape) for shape in shapes])
+    reference = np.array(shapes[np.argmax(dims)])
+
+    # Align shapes by trailing dimensions:
+    aligned = np.ones((dims.size, dims.max()), dtype=int)
+    for i, shape in enumerate(shapes):
+        aligned[i, -dims[i]:] = shape
+
+    # Check if sizes of each dimension are compatible:
+    valid = ((aligned == reference) | (aligned == 1) | (reference == 1)).all()
+    common_shape = tuple(aligned.max(axis=0))
+
+    # Return options:
+    if crash and not valid:
+        msg = f&#39;Array shapes {string_series(shapes, delimit=&#34; &#34;)} &#39;\
+               &#39;are not broadcastable to a common shape.&#39;
+        raise ValueError(msg)
+    elif crash:
+        return common_shape
+    return (valid, common_shape) if output else valid</code></pre>
+</details>
+<div class="desc"><p>Checks if the given array shapes are broadcastable to a common shape.
+Upon failure, can either return normally or immediately raise an error.
+Can return the common shape expected from operations with these arrays.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>shapes</code></strong> :&ensp;<code>array-like (m,)</code> of <code>array-likes</code> of <code>ints</code>, optional</dt>
+<dd>Array shapes to be validated. The default is None.</dd>
+<dt><strong><code>vars</code></strong> :&ensp;<code>array-like (m,)</code> of <code>arrays, floats</code> or <code>ints</code>, optional</dt>
+<dd>Variables whose shapes are to be validated. Overrides shapes if given.
+Only accepts ndarrays and scalars. The default is None.</dd>
+<dt><strong><code>crash</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, failed broadcasting raises a ValueError, while successful
+broadcasting returns shape without valid. If False, always returns
+valid, together with shape if output is True. The default is False.</dd>
+<dt><strong><code>output</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, returns the common shape of the arrays in addition to valid.
+Ignored if crash is True. The default is True.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>valid</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Returns True if all array shapes are broadcastable to a common shape.
+Only returned if crash is False.</dd>
+<dt><strong><code>shape</code></strong> :&ensp;<code>tuple</code> of <code>ints</code>, optional</dt>
+<dd>Array shape resulting from broadcasting. Bullshit if valid is False.
+Only returned if output is True.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.arraytools.reduce_array"><code class="name flex">
+<span>def <span class="ident">reduce_array</span></span>(<span>array, squeeze=False, unpack=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reduce_array(array, squeeze=False, unpack=False):
+    &#34;&#34;&#34; Wrapper to quickly squeeze and itemize numpy arrays, if possible.
+        Allows to remove singleton dimensions (squeeze, maintains at least 1D)
+        and to convert single-entry arrays into scalar output (unpack). 
+
+    Parameters
+    ----------
+    array : ND-array of arbitrary type and shape
+        Array to be shape-checked and reduced to simpler formats, if possible.
+        Must be at least 1D. Array is not copied or modified by this function.
+    squeeze : bool, optional
+        If True, calls np.squeeze() on array to remove dimensions of size 1. If 
+        array is size 1, retains a single dimension to prevent 0D output. The
+        default is False.
+    unpack : bool, optional
+        If True and output would be an array of size 1, converts the array into
+        a single scalar. Applied after squeezing. The default is False. 
+
+    Returns
+    -------
+    array : 1D...ND-array or scalar of array.dtype
+        View of input array after dimensional pruning and scalar conversion.
+        If squeeze is True, may have fewer dimensions (down to 1D). If unpack
+        is True, may be converted to a scalar. If input array has no singleton
+        dimensions and is not size 1, the output is the same as the input. If
+        squeeze and unpack are both False, immediately returns the input array.
+    &#34;&#34;&#34;
+    # Optional dimensional pruning:
+    if squeeze and array.ndim &gt; 1:
+        # Remove all singleton dimensions, retaining at least 1D:
+        axes = (ind for ind, size in enumerate(array.shape)[1:] if size == 1)
+        array = np.squeeze(array, axis=axes)
+    # Optional scalar conversion of single-entry 1D arrays:
+    return array.item() if (unpack and array.size == 1) else array</code></pre>
+</details>
+<div class="desc"><p>Wrapper to quickly squeeze and itemize numpy arrays, if possible.
+Allows to remove singleton dimensions (squeeze, maintains at least 1D)
+and to convert single-entry arrays into scalar output (unpack). </p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>array</code></strong> :&ensp;<code>ND-array</code> of <code>arbitrary type and shape</code></dt>
+<dd>Array to be shape-checked and reduced to simpler formats, if possible.
+Must be at least 1D. Array is not copied or modified by this function.</dd>
+<dt><strong><code>squeeze</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, calls np.squeeze() on array to remove dimensions of size 1. If
+array is size 1, retains a single dimension to prevent 0D output. The
+default is False.</dd>
+<dt><strong><code>unpack</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True and output would be an array of size 1, converts the array into
+a single scalar. Applied after squeezing. The default is False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>array</code></strong> :&ensp;<code>1D...ND-array</code> or <code>scalar</code> of <code>array.dtype</code></dt>
+<dd>View of input array after dimensional pruning and scalar conversion.
+If squeeze is True, may have fewer dimensions (down to 1D). If unpack
+is True, may be converted to a scalar. If input array has no singleton
+dimensions and is not size 1, the output is the same as the input. If
+squeeze and unpack are both False, immediately returns the input array.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.arraytools.slice_index"><code class="name flex">
+<span>def <span class="ident">slice_index</span></span>(<span>dims, axis=0, start=None, stop=None, step=1, include=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def slice_index(dims, axis=0, start=None, stop=None, step=1, include=False):
+    &#34;&#34;&#34; Indices to slice an N-dimensional array along one or multiple axes.
+        Shamelessly stolen and adapted from scipy.signal._arraytools.
+
+    Parameters
+    ----------
+    dims : int
+        Number of dimensions of the target array.
+    axis : int or tuple/list/1D array of ints (m,), optional
+        Target axis or axes along which to slice the array. If several, enables
+        multi-dimensional slicing, also accepting sequence-like inputs for each
+        of start, stop, and step. Single elements apply to all target axes.
+        The default is 0.
+    start : int or tuple/list/1D array of ints (m,), optional
+        Inclusive start index of the slice. The default is None.
+    stop : int or tuple/list/1D array of ints (m,), optional
+        Stop index of the slice. Inclusive if include is True, otherwise
+        exclusive as by standard python doctrine. The default is None.
+    step : int or tuple/list/1D array of ints (m,), optional
+        Step size between indices in the slice. The default is 1.
+    include : bool, optional
+        If True, makes the specified stop the last index of the slice.
+        The default is False.
+
+    Returns
+    -------
+    slice_inds : tuple of slice objects (dims,)
+        Indices for slicing along the given target axes.
+    &#34;&#34;&#34;
+    # Ensure 1D sequence-likes of equal length:
+    axis, start, stop, step = equal_sequences(axis, start, stop, step,
+                                              skip_None=False)
+
+    # Full slice along each dimension:
+    slice_inds = [slice(None)] * dims
+    for ax, first, last, interval in zip(axis, start, stop, step):
+        if include and last is not None:
+            # Ensure inclusive stop:
+            step_sign = np.sign(interval)
+            # Sanitize edge cases (specific combinations of stop and step):
+            if any(np.isin([-1, 0], last) &amp; np.isin([1, -1], step_sign)):
+                last = None
+            else:
+                # One more or less:
+                last += step_sign
+        # Adjust slice along each target axis:
+        slice_inds[ax] = slice(first, last, interval)
+    return tuple(slice_inds)</code></pre>
+</details>
+<div class="desc"><p>Indices to slice an N-dimensional array along one or multiple axes.
+Shamelessly stolen and adapted from scipy.signal._arraytools.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>dims</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number of dimensions of the target array.</dd>
+<dt><strong><code>axis</code></strong> :&ensp;<code>int</code> or <code>tuple/list/1D array</code> of <code>ints (m,)</code>, optional</dt>
+<dd>Target axis or axes along which to slice the array. If several, enables
+multi-dimensional slicing, also accepting sequence-like inputs for each
+of start, stop, and step. Single elements apply to all target axes.
+The default is 0.</dd>
+<dt><strong><code>start</code></strong> :&ensp;<code>int</code> or <code>tuple/list/1D array</code> of <code>ints (m,)</code>, optional</dt>
+<dd>Inclusive start index of the slice. The default is None.</dd>
+<dt><strong><code>stop</code></strong> :&ensp;<code>int</code> or <code>tuple/list/1D array</code> of <code>ints (m,)</code>, optional</dt>
+<dd>Stop index of the slice. Inclusive if include is True, otherwise
+exclusive as by standard python doctrine. The default is None.</dd>
+<dt><strong><code>step</code></strong> :&ensp;<code>int</code> or <code>tuple/list/1D array</code> of <code>ints (m,)</code>, optional</dt>
+<dd>Step size between indices in the slice. The default is 1.</dd>
+<dt><strong><code>include</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, makes the specified stop the last index of the slice.
+The default is False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>slice_inds</code></strong> :&ensp;<code>tuple</code> of <code>slice objects (dims,)</code></dt>
+<dd>Indices for slicing along the given target axes.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.arraytools.array_slice"><code class="name flex">
+<span>def <span class="ident">array_slice</span></span>(<span>array, axis=0, start=None, stop=None, step=1, include=False, squeeze=False, unpack=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def array_slice(array, axis=0, start=None, stop=None, step=1,
+                include=False, squeeze=False, unpack=False):
+    &#34;&#34;&#34; Slices an N-dimensional array along one or multiple target axes.
+        Returns a view of the sliced input array, preserving dimensionality.
+        Sliced arrays can optionally be squeezed to remove excess singleton
+        dimensions. Single-entry arrays can further be converted to scalars.
+        Shamelessly stolen and adapted from scipy.signal._arraytools.
+
+    Parameters
+    ----------
+    array : ND-array of arbitrary type and shape
+        Input array to be sliced.
+    axis : int or list of ints (m,), optional
+        Target axis or axes along which to slice the array. If several, enables
+        multi-dimensional slicing, also accepting list inputs for start, stop,
+        and step (integer inputs apply to all target axes). The default is 0.
+    start : int or list of ints (m,), optional
+        Inclusive start index of the slice. The default is None.
+    stop : int or list of ints (m,), optional
+        Stop index of the slice. Inclusive if include is True, otherwise
+        exclusive as by standard python doctrine. The default is None.
+    step : int or list of ints (m,), optional
+        Step size between indices in the slice. The default is 1.
+    include : bool, optional
+        If True, makes the specified stop the last index of the slice.
+        The default is False.
+    squeeze : bool, optional
+        If True, calls np.squeeze() on the sliced array to remove dimensions of
+        size 1, retaining at least a single dimension. The default is False.
+    unpack : bool, optional
+        If True and output would be an array of size 1, converts the array into
+        a single scalar. Applied after squeezing. The default is False.
+
+    Returns
+    -------
+    sliced : array of array.dtype or scalar of array.dtype
+        View of the sliced array with as many dimensions as the input array.
+        If squeeze is True, may have less dimensions (but will be at least 1D).
+        If unpack is True, may be a scalar instead of an array.
+    &#34;&#34;&#34;
+    slice_inds = slice_index(array.ndim, axis, start, stop, step, include)
+    return reduce_array(array[slice_inds], squeeze, unpack)</code></pre>
+</details>
+<div class="desc"><p>Slices an N-dimensional array along one or multiple target axes.
+Returns a view of the sliced input array, preserving dimensionality.
+Sliced arrays can optionally be squeezed to remove excess singleton
+dimensions. Single-entry arrays can further be converted to scalars.
+Shamelessly stolen and adapted from scipy.signal._arraytools.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>array</code></strong> :&ensp;<code>ND-array</code> of <code>arbitrary type and shape</code></dt>
+<dd>Input array to be sliced.</dd>
+<dt><strong><code>axis</code></strong> :&ensp;<code>int</code> or <code>list</code> of <code>ints (m,)</code>, optional</dt>
+<dd>Target axis or axes along which to slice the array. If several, enables
+multi-dimensional slicing, also accepting list inputs for start, stop,
+and step (integer inputs apply to all target axes). The default is 0.</dd>
+<dt><strong><code>start</code></strong> :&ensp;<code>int</code> or <code>list</code> of <code>ints (m,)</code>, optional</dt>
+<dd>Inclusive start index of the slice. The default is None.</dd>
+<dt><strong><code>stop</code></strong> :&ensp;<code>int</code> or <code>list</code> of <code>ints (m,)</code>, optional</dt>
+<dd>Stop index of the slice. Inclusive if include is True, otherwise
+exclusive as by standard python doctrine. The default is None.</dd>
+<dt><strong><code>step</code></strong> :&ensp;<code>int</code> or <code>list</code> of <code>ints (m,)</code>, optional</dt>
+<dd>Step size between indices in the slice. The default is 1.</dd>
+<dt><strong><code>include</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, makes the specified stop the last index of the slice.
+The default is False.</dd>
+<dt><strong><code>squeeze</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, calls np.squeeze() on the sliced array to remove dimensions of
+size 1, retaining at least a single dimension. The default is False.</dd>
+<dt><strong><code>unpack</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True and output would be an array of size 1, converts the array into
+a single scalar. Applied after squeezing. The default is False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>sliced</code></strong> :&ensp;<code>array</code> of <code>array.dtype</code> or <code>scalar</code> of <code>array.dtype</code></dt>
+<dd>View of the sliced array with as many dimensions as the input array.
+If squeeze is True, may have less dimensions (but will be at least 1D).
+If unpack is True, may be a scalar instead of an array.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.arraytools.remap_array"><code class="name flex">
+<span>def <span class="ident">remap_array</span></span>(<span>array, axes_map, dims=None, shape=None, invert=False, pass_scalars=False, validate=True)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def remap_array(array, axes_map, dims=None, shape=None,
+                invert=False, pass_scalars=False, validate=True):
+    &#34;&#34;&#34; Freely adds and moves array dimensions without changing the data.
+        Consists of a call to np.expand_dims() to match the required target
+        dimensionality, followed by np.moveaxis() to position the specified
+        input dimensions at the requested output dimensions. Allows to undo a
+        previous reshape operation based on the used axes_map input and the
+        original dimensionality using np.moveaxis() and np.squeeze().
+
+    Parameters
+    ----------
+    array : ND array of any type (any shape)
+        Input array to be reshaped.
+    axes_map : dict {ints: ints} or 1D array-like (&gt;=array.ndim,) of ints
+        Index mapping linking input dimensions to their respective output
+        dimension. If dict, moves only the input dimensions specified by the
+        keys while maintaining order of the remaining dimensions. Otherwise,
+        expects at least as many output dimensions as array.ndim, one for each
+        array dimension in original order, or more to add singleton dimensions. 
+        Input dimensions must be unique and in [-array.ndim, array.ndim - 1].
+        Output dimensions must be unique and in [-dims, dims - 1]. Provided
+        indices may be negative, regardless of input format.
+    dims : int, optional
+        Dimensionality of the output array. If specified while invert is False,
+        appends singleton dimensions until array matches this dimensionality.
+        If specified while invert is True, applies inverse index mapping, then
+        prunes singleton dimensions until array matches this dimensionality.
+        Replaced by shape. If neither is provided, falls back to the highest
+        provided output dimension, the dimensionality of array (invert=False),
+        or the number of non-singleton dimensions in array (invert=True),
+        whatever is larger. The default is None.
+    shape : 1D array-like (&gt;=array.ndim,) of ints, optional
+        Replaces dims by the number of dimensions in shape and executes as
+        usual. If specified while invert is False, validates that the remapped
+        array is broadcast-compatible with shape in every dimension. Functional
+        but not recomended for use while invert is True. The default is None.
+    invert : bool, optional
+        If True, switches to inverse index mapping by swapping the provided
+        input dimensions and output dimensions in order to undo a previous
+        reshape operation by this function that produced the array at hand.
+        Requires axes_map to be the same argument as used previously, and dims
+        to be the number of dimensions in the original array. If False, simply
+        applies the specified index mapping. The default is False.
+    pass_scalars : bool, optional
+        If True, immediately returns scalar array inputs such as ints, floats,
+        bools, None, or 0D arrays. If False, treats scalar inputs as 1D arrays
+        of size 1. The default is False.
+    validate : bool, optional
+        If True, extensively validates the input parameters. If False, skips
+        validation entirely and attempts direct execution. Has no effect on
+        the broadcasting validation triggered by shape. The default is True.
+
+    Returns
+    -------
+    array : ND array of any type
+        View on the reshaped array with the required target dimensionality.
+
+    Raises
+    ------
+    ValueError
+        Breaks if axes_map specifies duplicate input or output dimensions,
+        if any specified dimension is out of bounds with dims or array.ndim,
+        or if an array-like axes_map is not at least of length array.ndim.
+        Also breaks if the remapped array is not broadcast-compatible (equal
+        axis sizes or one singleton) with the provided shape in all dimensions.
+    &#34;&#34;&#34;    
+    # Input interpretation:
+    if np.ndim(array) == 0:
+        if pass_scalars:
+            return array
+        # Promote scalar to 1D array:
+        array = np.array(array, ndmin=1)
+    elif not isinstance(array, np.ndarray):
+        # Ensure ND array format:
+        array = np.array(array)
+
+    if isinstance(axes_map, dict):
+        # Selective mapping of individual dimensions:
+        input_axes, output_axes = zip(*axes_map.items())
+    elif np.iterable(axes_map):
+        # Full mapping, at least one for each array dimension: 
+        input_axes, output_axes = (*range(len(axes_map)),), axes_map
+        
+    if invert:
+        # Swap indices to undo a previous reshape:
+        input_axes, output_axes = output_axes, input_axes
+    if shape is not None:
+        # Replace/override:
+        dims = len(shape)
+
+    # Input validation:
+    n_in, n_out, n = len(input_axes), len(output_axes), array.ndim
+    out_of_bounds = lambda axes, d: any(ax &gt;= d or ax &lt; -d for ax in axes)
+    validate_dims = validate and (dims is not None)
+    dict_input = isinstance(axes_map, dict)
+    s = f&#39; (invert={invert})&#39;
+    if validate and invert and n_in != len(set(input_axes)):
+        msg = f&#39;Cannot remap from duplicate input dimensions{s}: {input_axes}&#39;
+        raise ValueError(msg)
+    elif validate and not invert and n_out != len(set(output_axes)):
+        msg = f&#39;Cannot remap to duplicate output dimensions{s}: {output_axes}&#39;
+        raise ValueError(msg)
+    elif validate_dims and invert and dims &gt; n:
+        msg = f&#39;Cannot remap array from {n} to {dims} dimensions. &#39;\
+              f&#39;Output cannot have more dimensions than input{s}.&#39;
+        raise ValueError(msg) 
+    elif validate_dims and not invert and dims &lt; n:
+        msg = f&#39;Cannot remap array from {n} to {dims} dimensions. &#39;\
+              f&#39;Output cannot have fewer dimensions than input{s}.&#39;
+        raise ValueError(msg)
+    elif validate_dims and not invert and out_of_bounds(output_axes, dims):
+        msg = f&#39;With {dims} output dimensions, cannot remap to dimensions &#39;\
+              f&#39;greater than {dims - 1} or less than {-dims}: {output_axes}&#39;
+        raise ValueError(msg)
+    elif validate and (dict_input or invert) and out_of_bounds(input_axes, n):
+        msg = f&#39;With {n} input dimensions, cannot remap from dimensions &#39;\
+              f&#39;greater than {n - 1} or less than {-n}{s}: {input_axes}&#39;
+        raise ValueError(msg)
+    elif validate and not (dict_input or invert) and n_out &lt; array.ndim:
+        msg = &#39;Without input dimensions to remap from, requires at least as &#39;\
+             f&#39;many output dimensions as array dimensions ({n}, got {n_out}).&#39;
+        raise ValueError(msg)
+
+    # Backward:
+    if invert:
+        if dims is None:
+            # Count non-singleton dimensions: 
+            n_full = sum(np.array(array.shape) &gt; 1)
+            # Maximize with the highest requested output dimension:
+            dims = max(max(output_axes) + 1, abs(min(output_axes)), n_full)
+        # Move array dimensions back into original positions:
+        array = np.moveaxis(array, input_axes, output_axes)
+        # Prune any trailing singleton dimensions:
+        return np.squeeze(array, tuple(range(dims, n)))
+
+    # Forward:
+    if dims is None:
+        # Maximize array dimensionality with highest output dimension:
+        dims = max((max(output_axes) + 1, abs(min(output_axes)), n))
+    # Append singleton axes to match target dimensionality:
+    array = np.expand_dims(array, tuple(range(n, dims)))
+    # Move array dimensions to their target positions:
+    array = np.moveaxis(array, input_axes, output_axes)
+    if shape is not None:
+        # Validate broadcasting compatibility with requested shape:
+        shape1, shape2 = np.array(array.shape), np.array(shape)
+        # Assert compatible axis sizes (equal or one) in each dimension:
+        if not all((shape1 == shape2) | (shape1 == 1) | (shape2 == 1)):
+            raise ValueError(f&#39;Remapped array shape {array.shape} is not &#39;\
+                             f&#39;compatible with the requested shape {shape}.&#39;)
+    return array</code></pre>
+</details>
+<div class="desc"><p>Freely adds and moves array dimensions without changing the data.
+Consists of a call to np.expand_dims() to match the required target
+dimensionality, followed by np.moveaxis() to position the specified
+input dimensions at the requested output dimensions. Allows to undo a
+previous reshape operation based on the used axes_map input and the
+original dimensionality using np.moveaxis() and np.squeeze().</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>array</code></strong> :&ensp;<code>ND array</code> of <code>any type (any shape)</code></dt>
+<dd>Input array to be reshaped.</dd>
+<dt><strong><code>axes_map</code></strong> :&ensp;<code>dict {ints: ints}</code> or <code>1D array-like (&gt;=array.ndim,)</code> of <code>ints</code></dt>
+<dd>Index mapping linking input dimensions to their respective output
+dimension. If dict, moves only the input dimensions specified by the
+keys while maintaining order of the remaining dimensions. Otherwise,
+expects at least as many output dimensions as array.ndim, one for each
+array dimension in original order, or more to add singleton dimensions.
+Input dimensions must be unique and in [-array.ndim, array.ndim - 1].
+Output dimensions must be unique and in [-dims, dims - 1]. Provided
+indices may be negative, regardless of input format.</dd>
+<dt><strong><code>dims</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Dimensionality of the output array. If specified while invert is False,
+appends singleton dimensions until array matches this dimensionality.
+If specified while invert is True, applies inverse index mapping, then
+prunes singleton dimensions until array matches this dimensionality.
+Replaced by shape. If neither is provided, falls back to the highest
+provided output dimension, the dimensionality of array (invert=False),
+or the number of non-singleton dimensions in array (invert=True),
+whatever is larger. The default is None.</dd>
+<dt><strong><code>shape</code></strong> :&ensp;<code>1D array-like (&gt;=array.ndim,)</code> of <code>ints</code>, optional</dt>
+<dd>Replaces dims by the number of dimensions in shape and executes as
+usual. If specified while invert is False, validates that the remapped
+array is broadcast-compatible with shape in every dimension. Functional
+but not recomended for use while invert is True. The default is None.</dd>
+<dt><strong><code>invert</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, switches to inverse index mapping by swapping the provided
+input dimensions and output dimensions in order to undo a previous
+reshape operation by this function that produced the array at hand.
+Requires axes_map to be the same argument as used previously, and dims
+to be the number of dimensions in the original array. If False, simply
+applies the specified index mapping. The default is False.</dd>
+<dt><strong><code>pass_scalars</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, immediately returns scalar array inputs such as ints, floats,
+bools, None, or 0D arrays. If False, treats scalar inputs as 1D arrays
+of size 1. The default is False.</dd>
+<dt><strong><code>validate</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, extensively validates the input parameters. If False, skips
+validation entirely and attempts direct execution. Has no effect on
+the broadcasting validation triggered by shape. The default is True.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>array</code></strong> :&ensp;<code>ND array</code> of <code>any type</code></dt>
+<dd>View on the reshaped array with the required target dimensionality.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>Breaks if axes_map specifies duplicate input or output dimensions,
+if any specified dimension is out of bounds with dims or array.ndim,
+or if an array-like axes_map is not at least of length array.ndim.
+Also breaks if the remapped array is not broadcast-compatible (equal
+axis sizes or one singleton) with the provided shape in all dimensions.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.arraytools.align_arrays"><code class="name flex">
+<span>def <span class="ident">align_arrays</span></span>(<span>arrays, new_axis=0, align='center', pad=0, dtype=builtins.float)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def align_arrays(arrays, new_axis=0, align=&#39;center&#39;, pad=0, dtype=float):
+    &#34;&#34;&#34; Appends arrays as aligned slices along a new dimension of the output.
+
+    Parameters
+    ----------
+    arrays : tuple or list (m,) of ND arrays
+        Arrays to be aligned in a new array. Must all have the same data type
+        and number of dimensions. Arrays are appended in the provided order.
+        Single arrays are 
+        If a single array is given, adds a singleton dimension along new_axis. 
+    new_axis : int, optional
+        Additional axis of the output array along which the input arrays are
+        appended. The order of other axes is preserved. The default is 0.
+    align : str, optional
+        Defines how input arrays are inserted in each output axis. Options are
+        # &#39;center&#39;: Aligns to the axis mid, padding both sides.
+        # &#39;start&#39;: Aligns to the axis beginning, padding afterwards.
+        # &#39;end&#39;: Aligns to the axis ending, padding before.
+        If &#39;center&#39;, padding at the ending may be one sample larger if the
+        number of padded samples is odd. The default is &#39;center&#39;.
+    pad : float or int or bool or np.nan, optional
+        Fill value to initialize the output array with. The default is 0.
+    dtype : dtype class, optional
+        Data type to initialize the output array with. Must be compatible
+        with the fill value specified by pad. The default is float.
+
+    Returns
+    -------
+    output : N+1D array (..., m, ...) of dtype
+        Output array with the input arrays inserted along new_axis.
+
+    Raises
+    ------
+    ValueError
+        Breaks if any input arrays have different dimensionality.
+    &#34;&#34;&#34;
+    if isinstance(arrays, np.ndarray):
+        # Simple axis insertion early exit:
+        return np.expand_dims(arrays, axis=new_axis)
+
+    # Determine extent of each array:
+    dims, shapes = zip(*[(array.ndim, array.shape) for array in arrays])
+    dims, max_dims = np.array(dims), max(dims)
+
+    # Validate equal dimensionality:
+    invalid = np.nonzero(dims &lt; max_dims)[0]
+    if invalid.size:
+        txt = string_series(invalid, prefix=[&#39;Array&#39;, &#39;Arrays&#39;], 
+                            suffix=[&#39;is &#39;, &#39;are &#39;], conj=&#39;and&#39;)
+        raise ValueError(f&#39;{txt} incompatible with dimensionality {max_dims}.&#39;)
+
+    # Get maximum extent per dimension:
+    shapes = np.array(shapes, dtype=int)
+    max_shape = np.max(shapes, axis=0)
+
+    # Determine unfilled spaces:
+    paddings = max_shape - shapes
+    if align == &#39;center&#39;:
+        starts = paddings // 2
+    elif align == &#39;start&#39;:
+        starts = np.zeros_like(paddings)
+    elif align == &#39;end&#39;:
+        starts = paddings
+    stops = starts + shapes
+
+    # Initialize output array with additional axis to merge arrays along:
+    full_shape = (*max_shape[:new_axis], dims.size, *max_shape[new_axis:])
+    output = np.full(full_shape, fill_value=pad, dtype=dtype)
+
+    # Prepare indices for array insertion:
+    slice_axes = list(range(output.ndim))
+    starts, stops = starts.tolist(), stops.tolist()
+
+    # Insert each aligned array slice into the output array:
+    for i, (array, start, stop) in enumerate(zip(arrays, starts, stops)):
+        start.insert(new_axis, i), stop.insert(new_axis, i + 1)
+        inds = slice_index(output.ndim, slice_axes, start, stop)
+        output[inds] = np.expand_dims(array, axis=new_axis)
+    return output</code></pre>
+</details>
+<div class="desc"><p>Appends arrays as aligned slices along a new dimension of the output.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>arrays</code></strong> :&ensp;<code>tuple</code> or <code>list (m,)</code> of <code>ND arrays</code></dt>
+<dd>Arrays to be aligned in a new array. Must all have the same data type
+and number of dimensions. Arrays are appended in the provided order.
+Single arrays are
+If a single array is given, adds a singleton dimension along new_axis.</dd>
+<dt><strong><code>new_axis</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Additional axis of the output array along which the input arrays are
+appended. The order of other axes is preserved. The default is 0.</dd>
+<dt><strong><code>align</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Defines how input arrays are inserted in each output axis. Options are<h1 id="center-aligns-to-the-axis-mid-padding-both-sides">'center': Aligns to the axis mid, padding both sides.</h1>
+<h1 id="start-aligns-to-the-axis-beginning-padding-afterwards">'start': Aligns to the axis beginning, padding afterwards.</h1>
+<h1 id="end-aligns-to-the-axis-ending-padding-before">'end': Aligns to the axis ending, padding before.</h1>
+If 'center', padding at the ending may be one sample larger if the
+number of padded samples is odd. The default is 'center'.</dd>
+<dt><strong><code>pad</code></strong> :&ensp;<code>float</code> or <code>int</code> or <code>bool</code> or <code>np.nan</code>, optional</dt>
+<dd>Fill value to initialize the output array with. The default is 0.</dd>
+<dt><strong><code>dtype</code></strong> :&ensp;<code>dtype class</code>, optional</dt>
+<dd>Data type to initialize the output array with. Must be compatible
+with the fill value specified by pad. The default is float.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>output</code></strong> :&ensp;<code>N+1D array (..., m, ...)</code> of <code>dtype</code></dt>
+<dd>Output array with the input arrays inserted along new_axis.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>Breaks if any input arrays have different dimensionality.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.arraytools.edge_along_axis"><code class="name flex">
+<span>def <span class="ident">edge_along_axis</span></span>(<span>array, axis=0, which=-1, validate=True, reduce=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def edge_along_axis(array, axis=0, which=-1, validate=True, reduce=False):
+    &#34;&#34;&#34; In a 2D array, finds first or last non-zero entry per column or row.
+        Designed for multiple distributions or multi-channel time series data,
+        but can handle 1D arrays by a separate processing branch. By default,
+        identified non-zero entries are returned as a tuple of 1D arrays that
+        can be used to index the original array (np.nonzero format). Output can
+        be reduced to a single 1D array of indices along the given axis.
+
+    Parameters
+    ----------
+    array : 2D array (m, n) or 1D array (m,) of arbitrary type 
+        Array in which to identify the requested edge indices.
+    axis : int, optional
+        Array dimension along which to find the requested edge indices. Options
+        are 0 or 1. If axis is 0, searches along each array column. If axis
+        is 1, searches along each array row. Must be 0 if array is 1D. The
+        default is 0.
+    which : int, optional
+        Specifies whether to find the first or last non-zero entry along the
+        given axis. Options are 0 (first) and -1 (last). The default is -1.
+    validate : bool, optional
+        If True and array contains all-zero columns/rows, omits corresponding
+        indices from the output. If False, returns indices for all slices (non-
+        sensical integers in case of all-zero slices). The default is True.
+    reduce : bool, optional
+        If False, returns a tuple of two 1D arrays (one if input array is 1D),
+        which provide the full index pair for each column/row. This format is
+        valid for indexing both 1D and 2D input arrays, producing 1D output. If
+        True, returns a single 1D array of indices along the given array axis,
+        with one entry per slice. This format is good to access the indices
+        themselves but may be unsuitable for indexing. The default is False.
+
+    Returns
+    -------
+    inds : 1D array (p,) or tuple (2, or 1,) of 1D arrays (p,)
+        Indices of the first or last non-zero entry per column or row in array.
+        If reduce is True, returns a single 1D array of indices along axis,
+        else a tuple of one or two 1D index arrays (depending on array.ndim).
+        Can at most hold as many entries as specified slices in array (less if
+        validate is True and and array contains all-zero slices).
+
+    Raises
+    ------
+    ValueError
+        Breaks if array is neither 1D nor 2D. Breaks immediately if array
+        contains no non-zero entries. If validate is True, breaks if no entries
+        remain after omitting all-zero slices.
+    &#34;&#34;&#34;
+    # All-zero early exit:
+    if not np.any(array):
+        raise ValueError(&#39;No non-zero entries found in the given array.&#39;) 
+
+    # Input interpretation:
+    if which == 0:
+        # Find first indices:
+        mask_value = np.inf
+        func = np.argmin
+    elif which == -1:
+        # Find last indices:
+        mask_value = -np.inf
+        func = np.argmax
+
+    # Univariate early exit:
+    if array.ndim == 1 or (array.ndim == 2 and 1 in array.shape):
+        # Get index coordinates of entry:
+        inds = np.argwhere(array)[which]
+        if reduce:
+            # Slice coordinates to single dimension (1D array):
+            return array_slice(inds, start=axis, stop=axis, include=True)
+        # Ensure index use (tuple of 1D arrays):
+        return tuple(i for i in inds[:, None])
+    # Shape validation:
+    elif array.ndim != 2:
+        raise ValueError(&#39;Input array must be 1D or 2D.&#39;)
+
+    # Draw parallel index gridlines along axis:
+    grid_inds = np.arange(array.shape[axis])
+    grid_inds = np.expand_dims(grid_inds, axis=1 - axis)
+    # Set non-zero entries to indices, hide others:
+    masked_array = np.where(array, grid_inds, mask_value)
+    # Find smallest/largest index per column/row:
+    inds = func(masked_array, axis=axis).astype(int)
+
+    # Return options:
+    if validate:
+        # Omit all-zero columns/rows:
+        is_valid = np.any(array, axis=axis)
+        inds = inds[is_valid]
+        if inds.size == 0:
+            # Break instead of returning empty index array:
+            raise ValueError(&#39;No non-zero entries found in the given array.&#39;)
+    if reduce:
+        # 1D array:
+        return inds
+    # Complete index pairs by each row/column:
+    other_inds = np.arange(array.shape[1 - axis])
+    if validate:
+        # Match to valid counterparts:
+        other_inds = other_inds[is_valid]
+    # Return sorted to enable index use (tuple of 1D arrays):
+    return (other_inds, inds) if axis else (inds, other_inds)</code></pre>
+</details>
+<div class="desc"><p>In a 2D array, finds first or last non-zero entry per column or row.
+Designed for multiple distributions or multi-channel time series data,
+but can handle 1D arrays by a separate processing branch. By default,
+identified non-zero entries are returned as a tuple of 1D arrays that
+can be used to index the original array (np.nonzero format). Output can
+be reduced to a single 1D array of indices along the given axis.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>array</code></strong> :&ensp;<code>2D array (m, n)</code> or <code>1D array (m,)</code> of <code>arbitrary type </code></dt>
+<dd>Array in which to identify the requested edge indices.</dd>
+<dt><strong><code>axis</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Array dimension along which to find the requested edge indices. Options
+are 0 or 1. If axis is 0, searches along each array column. If axis
+is 1, searches along each array row. Must be 0 if array is 1D. The
+default is 0.</dd>
+<dt><strong><code>which</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Specifies whether to find the first or last non-zero entry along the
+given axis. Options are 0 (first) and -1 (last). The default is -1.</dd>
+<dt><strong><code>validate</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True and array contains all-zero columns/rows, omits corresponding
+indices from the output. If False, returns indices for all slices (non-
+sensical integers in case of all-zero slices). The default is True.</dd>
+<dt><strong><code>reduce</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If False, returns a tuple of two 1D arrays (one if input array is 1D),
+which provide the full index pair for each column/row. This format is
+valid for indexing both 1D and 2D input arrays, producing 1D output. If
+True, returns a single 1D array of indices along the given array axis,
+with one entry per slice. This format is good to access the indices
+themselves but may be unsuitable for indexing. The default is False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>inds</code></strong> :&ensp;<code>1D array (p,)</code> or <code>tuple (2,</code> or <code>1,)</code> of <code>1D arrays (p,)</code></dt>
+<dd>Indices of the first or last non-zero entry per column or row in array.
+If reduce is True, returns a single 1D array of indices along axis,
+else a tuple of one or two 1D index arrays (depending on array.ndim).
+Can at most hold as many entries as specified slices in array (less if
+validate is True and and array contains all-zero slices).</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>Breaks if array is neither 1D nor 2D. Breaks immediately if array
+contains no non-zero entries. If validate is True, breaks if no entries
+remain after omitting all-zero slices.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.arraytools.safe_fraction"><code class="name flex">
+<span>def <span class="ident">safe_fraction</span></span>(<span>numerator, denominator, shape=None, value=nan, sign=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def safe_fraction(numerator, denominator, shape=None, value=np.nan, sign=None):
+    &#34;&#34;&#34; Divides two arrays element-wise, avoiding divisions by zero.
+        Wrapper to np.divide(). Skips invalid operations and sets the output to
+        the given replace value. Can filter further by the sign of the output.
+
+    Parameters
+    ----------
+    numerator : ND-array of floats or ints
+        Numerator of element-wise division. 
+    denominator : ND-array of floats or ints
+        Denominator of element-wise division, broadcastable to numerator.
+    shape : tuple of ints, optional
+        Shape of the output array. If not specified, inferred from the shapes
+        of numerator and denominator, if possible. The default is None.
+    value : scalar, optional
+        Value to replace the output of invalid or filtered operations.
+        The default is np.nan.
+    sign : int or array-like of ints
+        If specified, also skips operations that produce output with a sign
+        other than the specified ones. Options are 1 for positive, -1 for
+        negative, and 0. The default is None.
+
+    Returns
+    -------
+    output : ND-array of floats (shape)
+        Result of element-wise division of numerator by denominator.
+
+    Raises
+    ------
+    ValueError
+        Breaks if numerator and denominator are not broadcastable. 
+    &#34;&#34;&#34; 
+    # Input validation:
+    if shape is None:
+        valid, shape = broadcastable([numerator.shape, denominator.shape])
+        if not valid:
+            msg = &#39;Numerator and denominator must be broadcastable.&#39;
+            raise ValueError(msg)
+
+    # Initialize storage array and find zero divisions:
+    out, where = np.full(shape, value), denominator != 0
+    if sign is not None:
+        # Optional filtering of positive, negative, or zero output:
+        where &amp;= np.isin(np.sign(numerator) * np.sign(denominator), sign)
+    return np.divide(numerator, denominator, out=out, where=where)</code></pre>
+</details>
+<div class="desc"><p>Divides two arrays element-wise, avoiding divisions by zero.
+Wrapper to np.divide(). Skips invalid operations and sets the output to
+the given replace value. Can filter further by the sign of the output.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>numerator</code></strong> :&ensp;<code>ND-array</code> of <code>floats</code> or <code>ints</code></dt>
+<dd>Numerator of element-wise division.</dd>
+<dt><strong><code>denominator</code></strong> :&ensp;<code>ND-array</code> of <code>floats</code> or <code>ints</code></dt>
+<dd>Denominator of element-wise division, broadcastable to numerator.</dd>
+<dt><strong><code>shape</code></strong> :&ensp;<code>tuple</code> of <code>ints</code>, optional</dt>
+<dd>Shape of the output array. If not specified, inferred from the shapes
+of numerator and denominator, if possible. The default is None.</dd>
+<dt><strong><code>value</code></strong> :&ensp;<code>scalar</code>, optional</dt>
+<dd>Value to replace the output of invalid or filtered operations.
+The default is np.nan.</dd>
+<dt><strong><code>sign</code></strong> :&ensp;<code>int</code> or <code>array-like</code> of <code>ints</code></dt>
+<dd>If specified, also skips operations that produce output with a sign
+other than the specified ones. Options are 1 for positive, -1 for
+negative, and 0. The default is None.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>output</code></strong> :&ensp;<code>ND-array</code> of <code>floats (shape)</code></dt>
+<dd>Result of element-wise division of numerator by denominator.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>Breaks if numerator and denominator are not broadcastable.</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="thunderhopper" href="index.html">thunderhopper</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="thunderhopper.arraytools.is_valid_numpy_index" href="#thunderhopper.arraytools.is_valid_numpy_index">is_valid_numpy_index</a></code></li>
+<li><code><a title="thunderhopper.arraytools.broadcastable" href="#thunderhopper.arraytools.broadcastable">broadcastable</a></code></li>
+<li><code><a title="thunderhopper.arraytools.reduce_array" href="#thunderhopper.arraytools.reduce_array">reduce_array</a></code></li>
+<li><code><a title="thunderhopper.arraytools.slice_index" href="#thunderhopper.arraytools.slice_index">slice_index</a></code></li>
+<li><code><a title="thunderhopper.arraytools.array_slice" href="#thunderhopper.arraytools.array_slice">array_slice</a></code></li>
+<li><code><a title="thunderhopper.arraytools.remap_array" href="#thunderhopper.arraytools.remap_array">remap_array</a></code></li>
+<li><code><a title="thunderhopper.arraytools.align_arrays" href="#thunderhopper.arraytools.align_arrays">align_arrays</a></code></li>
+<li><code><a title="thunderhopper.arraytools.edge_along_axis" href="#thunderhopper.arraytools.edge_along_axis">edge_along_axis</a></code></li>
+<li><code><a title="thunderhopper.arraytools.safe_fraction" href="#thunderhopper.arraytools.safe_fraction">safe_fraction</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

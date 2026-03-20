@@ -1,0 +1,2563 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>thunderhopper.misctools API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>thunderhopper.misctools</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="thunderhopper.misctools.string_series"><code class="name flex">
+<span>def <span class="ident">string_series</span></span>(<span>series, delimit=', ', prefix='', suffix='', conj='', add_spaces=True)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def string_series(series, delimit=&#39;, &#39;, prefix=&#39;&#39;, suffix=&#39;&#39;, conj=&#39;&#39;,
+                  add_spaces=True):
+    &#34;&#34;&#34; Returns a single formatted string listing the elements of a sequence.
+        Series elements are separated by the given delimiter, which can be
+        modified with a conjuction at the last link. The full series may be
+        preceded or followed by additional singular/plural-selective text.
+
+    Parameters
+    ----------
+    series : iterable of arbitrary types (m,)
+        Sequence of elements to be listed in string format.
+    delimit : str, optional
+        Delimiter text to separate series elements. Not modified before joining
+        elements, any bordering spaces must be included. The default is &#39;, &#39;.
+    prefix : str or iterable (2,) of str, optional
+       Text to insert before the first element of the sequence. If some pair,
+       uses prefix[0] for single elements and prefix[1] for multiple elements.
+       The default is &#39;&#39;.
+    suffix : str or iterable (2,) of str, optional
+        Text to insert after the last element of the sequence. If some pair,
+        uses suffix[0] for single elements and suffix[1] for multiple elements.
+        The default is &#39;&#39;.
+    conj : str, optional
+        Text for modifying the last delimiter in the series. Ignored if series
+        contains only one element. Replaces the delimiter if series contains
+        two elements. Else, inserted between last delimiter and last element.
+        The default is &#39;&#39;.
+    add_spaces : bool, optional
+        If True, adds a space before the suffix and after the prefix as well as
+        the conjunction, if not already present. The default is True.
+
+    Returns
+    -------
+    str (n,)
+        Formatted string listing all elements of the sequence.
+    &#34;&#34;&#34;    
+    # Ensure strings in mutable wrapper:
+    series = [f&#39;{element}&#39; for element in series]
+    n = len(series)
+
+    # Manage text at series start:
+    if not isinstance(prefix, str):
+        prefix = prefix[n &gt; 1]
+    if prefix and add_spaces and not prefix.endswith(&#39; &#39;):
+        prefix += &#39; &#39;
+
+    # Manage text at series end:
+    if not isinstance(suffix, str):
+        suffix = suffix[n &gt; 1]
+    if suffix and add_spaces and not suffix.startswith(&#39; &#39;):
+        suffix = &#39; &#39; + suffix
+
+    # Manage linkage text:
+    if conj and n &gt; 1:
+        if add_spaces and not conj.endswith(&#39; &#39;):
+            conj += &#39; &#39;
+        if n == 2:
+            return f&#39;{prefix}{series[0]} {conj}{series[1]}{suffix}&#39;
+        series[-1] = f&#39;{conj}{series[-1]}&#39;
+    return f&#39;{prefix}{delimit.join(series)}{suffix}&#39;</code></pre>
+</details>
+<div class="desc"><p>Returns a single formatted string listing the elements of a sequence.
+Series elements are separated by the given delimiter, which can be
+modified with a conjuction at the last link. The full series may be
+preceded or followed by additional singular/plural-selective text.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>series</code></strong> :&ensp;<code>iterable</code> of <code>arbitrary types (m,)</code></dt>
+<dd>Sequence of elements to be listed in string format.</dd>
+<dt><strong><code>delimit</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Delimiter text to separate series elements. Not modified before joining
+elements, any bordering spaces must be included. The default is ', '.</dd>
+<dt><strong><code>prefix</code></strong> :&ensp;<code>str</code> or <code>iterable (2,)</code> of <code>str</code>, optional</dt>
+<dd>&nbsp;</dd>
+<dt>Text to insert before the first element of the sequence. If some pair,</dt>
+<dt>uses prefix[0] for single elements and prefix[1] for multiple elements.</dt>
+<dt>The default is ''.</dt>
+<dt><strong><code>suffix</code></strong> :&ensp;<code>str</code> or <code>iterable (2,)</code> of <code>str</code>, optional</dt>
+<dd>Text to insert after the last element of the sequence. If some pair,
+uses suffix[0] for single elements and suffix[1] for multiple elements.
+The default is ''.</dd>
+<dt><strong><code>conj</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Text for modifying the last delimiter in the series. Ignored if series
+contains only one element. Replaces the delimiter if series contains
+two elements. Else, inserted between last delimiter and last element.
+The default is ''.</dd>
+<dt><strong><code>add_spaces</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, adds a space before the suffix and after the prefix as well as
+the conjunction, if not already present. The default is True.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str (n,)</code></dt>
+<dd>Formatted string listing all elements of the sequence.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.check_list"><code class="name flex">
+<span>def <span class="ident">check_list</span></span>(<span>*variables, skip_None=True)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def check_list(*variables, skip_None=True):
+    &#34;&#34;&#34; Type-checks passed variables and wraps each non-list in a list.
+        Enables functions expecting iterable arguments (as in single for-loops)
+        to handle scalars. Nones are kept as is unless requested otherwise.
+
+    Parameters
+    ----------
+    *variables : arbitrary types (m,)
+        One or multiple variables to be type-checked and wrapped if required.
+    skip_None : bool, optional
+        If True, returns Nones as Nones (else treated as any other variables).
+
+    Returns
+    -------
+    vars : (generator of) lists or Nones (m,)
+        Type-checked and wrapped input variables, ready for unpacking.
+        Returns a single variable explicitly, else a generator.
+    &#34;&#34;&#34;
+    skip_var = lambda v: isinstance(v, list) or (skip_None and v is None)
+    checked = (var if skip_var(var) else [var] for var in variables)
+    return checked if len(variables) &gt; 1 else tuple(checked)[0]</code></pre>
+</details>
+<div class="desc"><p>Type-checks passed variables and wraps each non-list in a list.
+Enables functions expecting iterable arguments (as in single for-loops)
+to handle scalars. Nones are kept as is unless requested otherwise.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>*variables</code></strong> :&ensp;<code>arbitrary types (m,)</code></dt>
+<dd>One or multiple variables to be type-checked and wrapped if required.</dd>
+<dt><strong><code>skip_None</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, returns Nones as Nones (else treated as any other variables).</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>vars</code></strong> :&ensp;<code>(generator of) lists</code> or <code>Nones (m,)</code></dt>
+<dd>Type-checked and wrapped input variables, ready for unpacking.
+Returns a single variable explicitly, else a generator.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.equal_lists"><code class="name flex">
+<span>def <span class="ident">equal_lists</span></span>(<span>vars, skip_None=True)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def equal_lists(vars, skip_None=True):
+    &#34;&#34;&#34; Ensures that each variable is a list of length of longest passed list.
+        Wrapped variables of length 1 are repeated to match the longest list.
+        Ignores empty lists. Nones are kept as is unless requested otherwise.
+
+    Parameters
+    ----------
+    vars : tuple of arbitrary types (m,)
+        Multiple variables to type-check and equalize in length, if possible.
+    skip_None : bool, optional
+        If True, returns Nones as Nones (else treated as any other variables).
+
+    Returns
+    -------
+    vars : tuple of lists or Nones (m,)
+        Type-checked and equalized variables, ready for unpacking.
+
+    Raises
+    ------
+    ValueError
+        Breaks if any list has more than one element but less than the maximum.
+    &#34;&#34;&#34;    
+    # Assert iterables:
+    vars = tuple(check_list(*vars, skip_None=skip_None))
+
+    # Count elements:
+    n = 1 - skip_None
+    lengths = np.array([len(var) if var is not None else n for var in vars])
+    target = max(lengths)
+
+    # Control for lengths that are not directly adjustable:
+    if not all(n in (0, 1, target) for n in lengths):
+        msg = &#39;Cannot equalize list variables whose length is neither 1 nor &#39;\
+             f&#39;equal to the length of the longest list ({target},).&#39;
+        raise ValueError(msg)
+    return tuple(v * target if l == 1 else v for v, l in zip(vars, lengths))</code></pre>
+</details>
+<div class="desc"><p>Ensures that each variable is a list of length of longest passed list.
+Wrapped variables of length 1 are repeated to match the longest list.
+Ignores empty lists. Nones are kept as is unless requested otherwise.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>vars</code></strong> :&ensp;<code>tuple</code> of <code>arbitrary types (m,)</code></dt>
+<dd>Multiple variables to type-check and equalize in length, if possible.</dd>
+<dt><strong><code>skip_None</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, returns Nones as Nones (else treated as any other variables).</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>vars</code></strong> :&ensp;<code>tuple</code> of <code>lists</code> or <code>Nones (m,)</code></dt>
+<dd>Type-checked and equalized variables, ready for unpacking.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>Breaks if any list has more than one element but less than the maximum.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.ensure_sequence"><code class="name flex">
+<span>def <span class="ident">ensure_sequence</span></span>(<span>*vars, skip_None=True, unwrap=True)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ensure_sequence(*vars, skip_None=True, unwrap=True):
+    &#34;&#34;&#34; Ensures that all passed variables are iterable and sequence-like.
+        Allows functions expecting iterable inputs (e.g in single for-loops) to
+        handle scalar inputs, as well. &#34;Sequence-like&#34; refers to tuples, lists,
+        and ND arrays with at least one dimension (np.ndim(var) &gt; 0). Variables
+        of these types are returned unchanged. Scalars (ints/floats/bools) or
+        other iterables (dicts/strings/sets) are converted to single-element
+        tuples. 0D arrays are expanded to 1D arrays. Nones can be treated as
+        scalar variables or be passed through as None on request. 
+
+    Parameters
+    ----------
+    *vars : arbitrary types (m,)
+        One or multiple variables to be checked and converted if necessary.
+    skip_None : bool, optional
+        If True, returns Nones as Nones, else as single-element tuples (None,).
+        The default is True.
+    unwrap : bool, optional
+        If True and only a single variable is passed, returns the converted
+        variable without enclosing tuple. If False, output is always wrapped in
+        a tuple, even if only one variable is passed. The default is True.
+
+    Returns
+    -------
+    vars : tuple of arbitrary types (m,)
+        Checked and converted input variable or variables.
+    &#34;&#34;&#34;    
+    # Delegate type-checking and sequence enforcement to helpers:
+    skip_var = lambda v: np.ndim(v) &gt; 0 or (skip_None and v is None)
+    make_sequence = lambda v: v[None] if isinstance(v, np.ndarray) else (v,)
+    # Check each input variable and modify it if necessary:
+    vars = tuple(v if skip_var(v) else make_sequence(v) for v in vars)
+    return vars[0] if unwrap and len(vars) == 1 else vars</code></pre>
+</details>
+<div class="desc"><p>Ensures that all passed variables are iterable and sequence-like.
+Allows functions expecting iterable inputs (e.g in single for-loops) to
+handle scalar inputs, as well. "Sequence-like" refers to tuples, lists,
+and ND arrays with at least one dimension (np.ndim(var) &gt; 0). Variables
+of these types are returned unchanged. Scalars (ints/floats/bools) or
+other iterables (dicts/strings/sets) are converted to single-element
+tuples. 0D arrays are expanded to 1D arrays. Nones can be treated as
+scalar variables or be passed through as None on request. </p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>*vars</code></strong> :&ensp;<code>arbitrary types (m,)</code></dt>
+<dd>One or multiple variables to be checked and converted if necessary.</dd>
+<dt><strong><code>skip_None</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, returns Nones as Nones, else as single-element tuples (None,).
+The default is True.</dd>
+<dt><strong><code>unwrap</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True and only a single variable is passed, returns the converted
+variable without enclosing tuple. If False, output is always wrapped in
+a tuple, even if only one variable is passed. The default is True.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>vars</code></strong> :&ensp;<code>tuple</code> of <code>arbitrary types (m,)</code></dt>
+<dd>Checked and converted input variable or variables.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.equal_sequences"><code class="name flex">
+<span>def <span class="ident">equal_sequences</span></span>(<span>*vars, skip_None=True)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def equal_sequences(*vars, skip_None=True):
+    &#34;&#34;&#34; Ensures that all passed variables are sequence-likes of same length.
+        &#34;Sequence-like&#34; refers to tuples, lists, and ND arrays with at least
+        one dimension (np.ndim(var) &gt; 0). Calls ensure_sequence() to convert
+        any other variables to single-element tuples or 1D arrays. Nones can
+        either be tuple-wrapped or passed through as None. Single-element
+        sequences are repeated to match the length of the longest sequence,
+        converting all arrays to lists beforehand.
+
+    Parameters
+    ----------
+    *vars : arbitrary types (m,)
+        Multiple variables to be type-checked and equalized, if possible.
+    skip_None : bool, optional
+        If True, returns Nones as Nones. If False, treats Nones as single-
+        element tuples (None,) to be repeated. The default is True.
+
+    Returns
+    -------
+    vars : tuple of arbitrary types (m,)
+        Checked and equalized input variables.
+
+    Raises
+    ------
+    ValueError
+        Breaks if any sequence size is neither 1 nor the maximum across vars.
+    &#34;&#34;&#34;  
+    # Enforce tuples, letting lists and arrays &gt;0D pass through:
+    vars = ensure_sequence(*vars, skip_None=skip_None, unwrap=False)
+
+    # Count number of elements in each sequence:
+    sizes = [len(v) if v is not None else (1 - skip_None) for v in vars]
+    target = max(sizes)
+
+    # Validate compatibility of element counts:
+    if not all(n in (0, 1, target) for n in sizes):
+        msg = f&#39;With a maximum sequence length of {target}, variables can &#39;\
+              f&#39;only have length {target} or 1 or be None: {sizes}&#39;
+        raise ValueError(msg)
+
+    # Equalize sequence length across variables:
+    convert_var = lambda v: v.tolist() if isinstance(v, np.ndarray) else v
+    zipped = zip(vars, sizes)
+    return tuple(convert_var(v) * target if l == 1 else v for v, l in zipped)</code></pre>
+</details>
+<div class="desc"><p>Ensures that all passed variables are sequence-likes of same length.
+"Sequence-like" refers to tuples, lists, and ND arrays with at least
+one dimension (np.ndim(var) &gt; 0). Calls ensure_sequence() to convert
+any other variables to single-element tuples or 1D arrays. Nones can
+either be tuple-wrapped or passed through as None. Single-element
+sequences are repeated to match the length of the longest sequence,
+converting all arrays to lists beforehand.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>*vars</code></strong> :&ensp;<code>arbitrary types (m,)</code></dt>
+<dd>Multiple variables to be type-checked and equalized, if possible.</dd>
+<dt><strong><code>skip_None</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, returns Nones as Nones. If False, treats Nones as single-
+element tuples (None,) to be repeated. The default is True.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>vars</code></strong> :&ensp;<code>tuple</code> of <code>arbitrary types (m,)</code></dt>
+<dd>Checked and equalized input variables.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>Breaks if any sequence size is neither 1 nor the maximum across vars.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.ensure_iterable"><code class="name flex">
+<span>def <span class="ident">ensure_iterable</span></span>(<span>vars=None, var=None, equalize=False, convert=&lt;built-in function array&gt;)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ensure_iterable(vars=None, var=None, equalize=False, convert=np.array):
+    &#34;&#34;&#34; Type-checks passed variables and converts to some iterable, if needed.
+        Non-iterable variables (e.g. int, float, 0D array) are converted to
+        numpy arrays with ndmin=1. Other iterables (e.g. list, tuple, 1D array)
+        and Nones are left as is. Iterables can then be equalized in length,
+        if possible, or converted to a different iterable type. 
+
+    Parameters
+    ----------
+    vars : list or tuple (m,) of any type, optional
+        Multiple variables to check, convert, and equalize if requested.
+        Takes precedence over var. The default is None.
+    var : any type, optional
+        Single variable to check and convert. Allows to distinguish between a
+        tuple of multiple variables (vars) and a single variable of type tuple.
+        Overwritten by vars. The default is None.
+    equalize : bool, optional
+        If True, gets the number of elements to iterate over for each variable,
+        finds the maximum, and expands single-element iterables to match it.
+        Raises an error if the number of elements is ambiguous. Ignored if
+        input is a single variable. The default is False.
+    convert : func, optional
+        Function to convert all variables to a certain iterable type after
+        first conversion of non-iterables to 1D arrays. Should take an iterable
+        as only argument and return a new iterable, e.g. list() or tuple().
+        If None, no further conversion is performed. The default is np.array().  
+
+    Returns
+    -------
+    vars : tuple of iterables or Nones (m,)
+        Multiple type-checked and converted variables, ready for unpacking.
+        Returned in order of the input variables. Nones are returned as Nones.
+    var : iterable or None
+        Single type-checked and converted variable. Returned instead of vars
+        whenever a single input variable is passed. None is returned as None.
+
+    Raises
+    ------
+    ValueError
+        Breaks if equalize is True and the number of elements in each iterable
+        is ambiguous (may only be either 1 or a common maximum).
+    &#34;&#34;&#34;    
+    # Input interpretation:
+    if vars is None:
+        vars = [var]
+    elif not isinstance(vars, list):
+        # Ensure mutable:
+        vars = list(vars)
+
+    # Type-check and convert variables:
+    n_elements = np.zeros(len(vars)) - 1
+    for i, var in enumerate(vars):
+        if var is not None:
+            if not np.iterable(var):
+                vars[i] = np.array(var, ndmin=1)
+            if convert is not None:
+                vars[i] = convert(vars[i])
+            n_elements[i] = len(vars[i])
+
+    # Disabled or redundant length-check early exit:
+    if not equalize or all(n_elements == n_elements[0]):
+        return vars[0] if len(vars) == 1 else tuple(vars)
+
+    # Equalize iterable lengths:
+    n_target = max(n_elements)
+    if not all(np.isin(n_elements, [-1, 1, n_target])):
+        msg = f&#39;Cannot equalize ambiguous iterable lengths: {n_elements}.&#39;
+        raise ValueError(msg)
+        
+    # Expand each single-element iterable:
+    for ind in np.nonzero(n_elements == 1)[0]:
+        if n_elements[ind] == 1:
+            vars[ind] = np.repeat(vars[ind], n_target)
+            if convert is not None:
+                vars[ind] = convert(vars[ind])
+    return tuple(vars)</code></pre>
+</details>
+<div class="desc"><p>Type-checks passed variables and converts to some iterable, if needed.
+Non-iterable variables (e.g. int, float, 0D array) are converted to
+numpy arrays with ndmin=1. Other iterables (e.g. list, tuple, 1D array)
+and Nones are left as is. Iterables can then be equalized in length,
+if possible, or converted to a different iterable type. </p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>vars</code></strong> :&ensp;<code>list</code> or <code>tuple (m,)</code> of <code>any type</code>, optional</dt>
+<dd>Multiple variables to check, convert, and equalize if requested.
+Takes precedence over var. The default is None.</dd>
+<dt><strong><code>var</code></strong> :&ensp;<code>any type</code>, optional</dt>
+<dd>Single variable to check and convert. Allows to distinguish between a
+tuple of multiple variables (vars) and a single variable of type tuple.
+Overwritten by vars. The default is None.</dd>
+<dt><strong><code>equalize</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, gets the number of elements to iterate over for each variable,
+finds the maximum, and expands single-element iterables to match it.
+Raises an error if the number of elements is ambiguous. Ignored if
+input is a single variable. The default is False.</dd>
+<dt><strong><code>convert</code></strong> :&ensp;<code>func</code>, optional</dt>
+<dd>Function to convert all variables to a certain iterable type after
+first conversion of non-iterables to 1D arrays. Should take an iterable
+as only argument and return a new iterable, e.g. list() or tuple().
+If None, no further conversion is performed. The default is np.array().</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>vars</code></strong> :&ensp;<code>tuple</code> of <code>iterables</code> or <code>Nones (m,)</code></dt>
+<dd>Multiple type-checked and converted variables, ready for unpacking.
+Returned in order of the input variables. Nones are returned as Nones.</dd>
+<dt><strong><code>var</code></strong> :&ensp;<code>iterable</code> or <code>None</code></dt>
+<dd>Single type-checked and converted variable. Returned instead of vars
+whenever a single input variable is passed. None is returned as None.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>Breaks if equalize is True and the number of elements in each iterable
+is ambiguous (may only be either 1 or a common maximum).</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.ensure_array"><code class="name flex">
+<span>def <span class="ident">ensure_array</span></span>(<span>vars=None,<br>var=None,<br>copy=False,<br>dtype=builtins.float,<br>dims=None,<br>shape=None,<br>list_shapes=False,<br>verbose=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ensure_array(vars=None, var=None, copy=False, dtype=float,
+                 dims=None, shape=None, list_shapes=False, verbose=False):
+    &#34;&#34;&#34; Turns variables to arrays, validates dimensionality, and adjusts shape.
+        Calls np.array() with the specified dtype on the given variables. Can
+        be set to break if one of the resulting arrays has an unexpected number
+        of dimensions. Validated arrays can then be rearranged into a given
+        shape. Specify either vars as tuple to pass multiple variables, or var
+        to pass a single variable (ensures correct behavior if var is tuple).
+
+    Parameters
+    ----------
+    vars : tuple or list of arbitrary types (m,), optional
+        Multiple variables to be type-checked. Elements of vars that are tuples
+        are handled as expected. The default is None.
+    var : arbitrary type, optional
+        Single variable to be type-checked. Serves to distinguish between a
+        tuple of multiple variables and a single variable of tuple type. The
+        default is None.
+    copy : bool, optional
+        If True, calls np.array() on every variable, including those that are
+        already arrays. If False, calls np.array() only on non-array variables.
+        The default is False.
+    dtype : str, optional
+        If specified, calls np.array(dtype=dtype) where requested, depending on
+        the copy parameter. Else, set by np.array() to fit the contents of each
+        variable it is called upon. Forcing a given dtype may cause loss of
+        precision. The default is float.
+    dims : int or tuple or list or 1D array of ints (n,), optional
+        If specified, ensures that the number of dimensions of each (passed or
+        newly created) array is one of the specified values. Raises an error
+        for arrays with unexpected dimensionality. The default is None.
+    shape : tuple or list or 1D array of ints (p,), optional
+        If specified, attempts to force each array into the desired shape and
+        fails with an error if broadcast is not possible. By np.reshape()
+        default, one dimension can be set to -1 to be inferred from remaining
+        dimensions. In addition, one or several dimensions can be unspecified
+        as None. If an array has the same number of dimensions as the requested
+        shape, unspecified dimensions are adopted from the initial shape of the
+        array. If an array has as many dimensions as the requested shape minus
+        the number of unspecified dimensions, each unspecified dimension is set
+        to 1. All other cases are considered ambiguous and raise an error.
+        Unspecified dimensions can only be used to expand from a single lower
+        dimension (e.g. 1D) to some higher dimension (e.g. 2D), but not from
+        e.g. 1D to 3D and 2D to 3D at the same time. Use (-1, None) to turn 1D
+        arrays into single-column 2D arrays (2D arrays are accepted normally as
+        they are). Use (None, -1) to turn 1D arrays into single-row 2D arrays.
+        The default is None.
+    list_shapes : bool, optional
+        If True, returns the initial shape of each array (after conversion and
+        dimensionality validation, but before reshaping) in addition to the
+        arrays themselves. Can be used to retrieve the original shape of
+        converted non-array variables, if required. The default is False.
+    verbose : bool, optional
+        If True, prints a warning every time the shape of an array has been
+        changed, logging the initial and the new shape. The default is False.
+
+    Returns
+    -------
+    arrays : array or list (m,) of arrays (arbitrary shape)
+        One or several variables in array format with validated dimensionality.
+        Single variables are returned as an unwrapped array. Multiple variables
+        are returned as a list of arrays, ready for unpacking.
+    input_shapes : tuple or list (m,) of tuples (arbitrary length)
+        Original shape of each variable in array format (after conversion, but
+        before reshaping). Only returned if list_shapes is True.
+
+    Raises
+    ------
+    ValueError
+        Breaks if an array has invalid dimensionality (before reshaping).
+    ValueError
+        Breaks if unspecified dimensions (None) in the requested shape are
+        ambiguous for the initial shape of the array. Happens when the desired
+        number of dimensions is not equal to the initial number of dimensions,
+        or to the initial number of dimensions minus the number of unspecified
+        dimensions.
+    &#34;&#34;&#34;    
+    # Input interpretation:
+    if var is not None:
+        vars = (var,)
+    # Validate dimensionality:
+    if dims is not None:
+        # Assert iterable:
+        if not isinstance(dims, (list, tuple)):
+            dims = (dims,)
+        valid = string_series(dims, conj=&#39;or&#39;)
+        msg_dims = f&#34;Number of array dimensions must be {valid}.&#34;
+    # Prepare reshaping:
+    if shape is not None:
+        shape = np.array(shape)
+        buffer_dims = shape == None
+        n_buffers = sum(buffer_dims)
+
+    # Run type-checks:
+    arrays, input_shapes = [], []
+    for var in vars:
+        # Force into array format:
+        if copy or (not isinstance(var, np.ndarray)):
+            var = np.array(var, dtype)
+        # Optional dimensionality validation:
+        if dims is not None and var.ndim not in dims:
+            raise ValueError(msg_dims)
+        # Log initial array shape:
+        input_shapes.append(var.shape)
+        # Optional reshaping:
+        if shape is not None:
+            initial = np.array(var.shape)
+            target = shape.copy()
+            # Manage unspecified dimensions:    
+            if n_buffers and initial.size == shape.size:
+                # Preserve shapes of matching dimensionality:
+                target[buffer_dims] = initial[buffer_dims]
+            elif n_buffers and initial.size == shape.size - n_buffers:
+                # Expand if possible:
+                target[buffer_dims] = 1
+            elif n_buffers:
+                # Report failure to infer unspecified dimensions:
+                msg_shape = f&#39;Unspecified dimensions in {target} are &#39;\
+                            f&#39;ambiguous for initial shape {initial}.&#39; 
+                raise ValueError(msg_shape)
+            var = var.reshape(target)
+            if verbose and not np.array_equal(initial, var.shape):
+                # Report deviation from initial array shape:
+                print(f&#39;WARNING: Reshaped {tuple(initial)} to {var.shape}.&#39;)
+        if len(vars) == 1:
+            # Single variable early exit:
+            return (var, input_shapes[0]) if list_shapes else var
+        # Log finalized array:
+        arrays.append(var)
+    return (*arrays, input_shapes) if list_shapes else arrays</code></pre>
+</details>
+<div class="desc"><p>Turns variables to arrays, validates dimensionality, and adjusts shape.
+Calls np.array() with the specified dtype on the given variables. Can
+be set to break if one of the resulting arrays has an unexpected number
+of dimensions. Validated arrays can then be rearranged into a given
+shape. Specify either vars as tuple to pass multiple variables, or var
+to pass a single variable (ensures correct behavior if var is tuple).</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>vars</code></strong> :&ensp;<code>tuple</code> or <code>list</code> of <code>arbitrary types (m,)</code>, optional</dt>
+<dd>Multiple variables to be type-checked. Elements of vars that are tuples
+are handled as expected. The default is None.</dd>
+<dt><strong><code>var</code></strong> :&ensp;<code>arbitrary type</code>, optional</dt>
+<dd>Single variable to be type-checked. Serves to distinguish between a
+tuple of multiple variables and a single variable of tuple type. The
+default is None.</dd>
+<dt><strong><code>copy</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, calls np.array() on every variable, including those that are
+already arrays. If False, calls np.array() only on non-array variables.
+The default is False.</dd>
+<dt><strong><code>dtype</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>If specified, calls np.array(dtype=dtype) where requested, depending on
+the copy parameter. Else, set by np.array() to fit the contents of each
+variable it is called upon. Forcing a given dtype may cause loss of
+precision. The default is float.</dd>
+<dt><strong><code>dims</code></strong> :&ensp;<code>int</code> or <code>tuple</code> or <code>list</code> or <code>1D array</code> of <code>ints (n,)</code>, optional</dt>
+<dd>If specified, ensures that the number of dimensions of each (passed or
+newly created) array is one of the specified values. Raises an error
+for arrays with unexpected dimensionality. The default is None.</dd>
+<dt><strong><code>shape</code></strong> :&ensp;<code>tuple</code> or <code>list</code> or <code>1D array</code> of <code>ints (p,)</code>, optional</dt>
+<dd>If specified, attempts to force each array into the desired shape and
+fails with an error if broadcast is not possible. By np.reshape()
+default, one dimension can be set to -1 to be inferred from remaining
+dimensions. In addition, one or several dimensions can be unspecified
+as None. If an array has the same number of dimensions as the requested
+shape, unspecified dimensions are adopted from the initial shape of the
+array. If an array has as many dimensions as the requested shape minus
+the number of unspecified dimensions, each unspecified dimension is set
+to 1. All other cases are considered ambiguous and raise an error.
+Unspecified dimensions can only be used to expand from a single lower
+dimension (e.g. 1D) to some higher dimension (e.g. 2D), but not from
+e.g. 1D to 3D and 2D to 3D at the same time. Use (-1, None) to turn 1D
+arrays into single-column 2D arrays (2D arrays are accepted normally as
+they are). Use (None, -1) to turn 1D arrays into single-row 2D arrays.
+The default is None.</dd>
+<dt><strong><code>list_shapes</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, returns the initial shape of each array (after conversion and
+dimensionality validation, but before reshaping) in addition to the
+arrays themselves. Can be used to retrieve the original shape of
+converted non-array variables, if required. The default is False.</dd>
+<dt><strong><code>verbose</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, prints a warning every time the shape of an array has been
+changed, logging the initial and the new shape. The default is False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>arrays</code></strong> :&ensp;<code>array</code> or <code>list (m,)</code> of <code>arrays (arbitrary shape)</code></dt>
+<dd>One or several variables in array format with validated dimensionality.
+Single variables are returned as an unwrapped array. Multiple variables
+are returned as a list of arrays, ready for unpacking.</dd>
+<dt><strong><code>input_shapes</code></strong> :&ensp;<code>tuple</code> or <code>list (m,)</code> of <code>tuples (arbitrary length)</code></dt>
+<dd>Original shape of each variable in array format (after conversion, but
+before reshaping). Only returned if list_shapes is True.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>Breaks if an array has invalid dimensionality (before reshaping).</dd>
+<dt><code>ValueError</code></dt>
+<dd>Breaks if unspecified dimensions (None) in the requested shape are
+ambiguous for the initial shape of the array. Happens when the desired
+number of dimensions is not equal to the initial number of dimensions,
+or to the initial number of dimensions minus the number of unspecified
+dimensions.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.safe_zip"><code class="name flex">
+<span>def <span class="ident">safe_zip</span></span>(<span>*variables, crash=True)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def safe_zip(*variables, crash=True):
+    &#34;&#34;&#34; Zips input variables together after checking for size consistency.
+        Counts and compares the number of elements per variable using len().
+        On mismatch, can either raise an error or execute with a warning.   
+        Treats scalars as single-element tuples to be zipped if possible.
+
+    Parameters
+    ----------
+    variables : iterable (m,) of iterables (any shape)
+        Input variables to parallelize.
+    crash : bool, optional
+        If True, responds to size mismatches with a ValueError. If False,
+        prints a warning and proceeds with zipping. The default is True.
+
+    Returns
+    -------
+    zipped : zip generator
+        Parallelized input variables.
+
+    Raises
+    ------
+    ValueError
+        Breaks if crash is True and input variables differ in size.
+    &#34;&#34;&#34;
+    variables = [var if np.iterable(var) else (var,) for var in variables]
+    reference = len(variables[0])
+    if not all(len(var) == reference for var in variables):
+        if crash:
+            raise ValueError(&#39;Refusing to zip variables that differ in size.&#39;)
+        print(&#39;WARNING: Zipping variables that differ in size.&#39;)
+    return zip(*variables)</code></pre>
+</details>
+<div class="desc"><p>Zips input variables together after checking for size consistency.
+Counts and compares the number of elements per variable using len().
+On mismatch, can either raise an error or execute with a warning. <br>
+Treats scalars as single-element tuples to be zipped if possible.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>variables</code></strong> :&ensp;<code>iterable (m,)</code> of <code>iterables (any shape)</code></dt>
+<dd>Input variables to parallelize.</dd>
+<dt><strong><code>crash</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, responds to size mismatches with a ValueError. If False,
+prints a warning and proceeds with zipping. The default is True.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>zipped</code></strong> :&ensp;<code>zip generator</code></dt>
+<dd>Parallelized input variables.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>Breaks if crash is True and input variables differ in size.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.unsort_unique"><code class="name flex">
+<span>def <span class="ident">unsort_unique</span></span>(<span>data, axis=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def unsort_unique(data, axis=None):
+    &#34;&#34;&#34; Filters unique elements in data in the order of first occurence.
+        Reverses the output sorting of np.unique() by indexing along axis.
+
+    Parameters
+    ----------
+    data : array-like of floats or ints or str (any shape)
+        Data to be filtered for unique elements. Cannot handle object arrays.
+    axis : int, optional
+        Axis argument passed to np.unique(). If specified and data is &gt;1D,
+        returns unique slices along the specified axis, else unique entries
+        along the flattened data. The default is None.
+
+    Returns
+    -------
+    unsorted : ND array of floats or ints (n,)
+        Unique elements in the order of their first occurence in data. If axis
+        is specified and data is &gt;1D, maintains input dimensionality (else 1D).
+    &#34;&#34;&#34;
+    values, inds = np.unique(data, return_index=True, axis=axis)
+    if values.ndim &gt; 1:
+        slice_inds = [slice(None)] * values.ndim
+        slice_inds[axis] = np.argsort(inds)
+        return values[tuple(slice_inds)]
+    return values[np.argsort(inds)]</code></pre>
+</details>
+<div class="desc"><p>Filters unique elements in data in the order of first occurence.
+Reverses the output sorting of np.unique() by indexing along axis.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>data</code></strong> :&ensp;<code>array-like</code> of <code>floats</code> or <code>ints</code> or <code>str (any shape)</code></dt>
+<dd>Data to be filtered for unique elements. Cannot handle object arrays.</dd>
+<dt><strong><code>axis</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Axis argument passed to np.unique(). If specified and data is &gt;1D,
+returns unique slices along the specified axis, else unique entries
+along the flattened data. The default is None.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>unsorted</code></strong> :&ensp;<code>ND array</code> of <code>floats</code> or <code>ints (n,)</code></dt>
+<dd>Unique elements in the order of their first occurence in data. If axis
+is specified and data is &gt;1D, maintains input dimensionality (else 1D).</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.valid_decimals"><code class="name flex">
+<span>def <span class="ident">valid_decimals</span></span>(<span>value, n_decimal=15)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def valid_decimals(value, n_decimal=15):
+    &#34;&#34;&#34; Rounds number, counts non-zero decimals, and returns as fitting type.
+        Also returns number of non-zero decimals for the given rounding.
+        Useful as switch between float and int for printing and annotating.
+        Function is bound to limits of floating point representation.
+
+    Parameters
+    ----------
+    value : float
+        Value to format by conversion to f-string. Rounds to n_decimal places
+        and crops trailing zeros before counting non-zero decimals. 
+    n_decimal : int, optional
+        Number of decimal places to round the value. The default is 15, which
+        is the maximum amount for reliable float representation.
+
+    Returns
+    -------
+    value : float or int
+        Formatted value as the appropriate type for the remaining non-zero
+        decimals after rounding. If no non-zero decimals remain, returns int.
+        Else, returns float.
+    n_valid : int
+        Number of non-zero decimal places in the formatted value.
+    &#34;&#34;&#34;    
+    value = f&#39;{value:.{n_decimal}f}&#39;
+    n_valid = len(value.strip(&#39;0&#39;).split(&#39;.&#39;)[1])
+    return float(value) if n_valid else int(value.split(&#39;.&#39;)[0]), n_valid</code></pre>
+</details>
+<div class="desc"><p>Rounds number, counts non-zero decimals, and returns as fitting type.
+Also returns number of non-zero decimals for the given rounding.
+Useful as switch between float and int for printing and annotating.
+Function is bound to limits of floating point representation.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>value</code></strong> :&ensp;<code>float</code></dt>
+<dd>Value to format by conversion to f-string. Rounds to n_decimal places
+and crops trailing zeros before counting non-zero decimals.</dd>
+<dt><strong><code>n_decimal</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Number of decimal places to round the value. The default is 15, which
+is the maximum amount for reliable float representation.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>value</code></strong> :&ensp;<code>float</code> or <code>int</code></dt>
+<dd>Formatted value as the appropriate type for the remaining non-zero
+decimals after rounding. If no non-zero decimals remain, returns int.
+Else, returns float.</dd>
+<dt><strong><code>n_valid</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number of non-zero decimal places in the formatted value.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.round_decimal"><code class="name flex">
+<span>def <span class="ident">round_decimal</span></span>(<span>value, n_decimal=None, which='ceil')</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def round_decimal(value, n_decimal=None, which=&#39;ceil&#39;):
+    &#34;&#34;&#34; Ceil or floor rounding to the specified decimal place.
+
+    Parameters
+    ----------
+    value : float
+        Value to be rounded.
+    n_decimal : int, optional
+        Number of decimal places to round to. If unspecified, counts non-zero
+        decimals in value and rounds to next smaller decimal (one to the left).
+        If 0, rounds to nearest integer, which is the same as calling np.ceil()
+        or np.floor(). The default is None.
+    which : str, optional
+        Rounding direction. If &#39;ceil&#39;, rounds the given decimal place up to the
+        next-higher number. If &#39;floor&#39;, rounds decimal place down to the
+        next-lower number. Else, simply calls np.round(decimals=n_decimals) as
+        a fallback. The default is &#39;ceil&#39;.
+
+    Returns
+    -------
+    rounded : float
+        Rounded value according to the specified decimal place and direction.
+    &#34;&#34;&#34;    
+    if n_decimal is None:
+        # Auto-generate target decimal:
+        _, n_decimal = valid_decimals(value)
+        n_decimal -= 1
+    if which == &#39;ceil&#39;:
+        # Round up to nearest decimal place:
+        rounded = np.ceil(value * 10**n_decimal) / 10**n_decimal
+    elif which == &#39;floor&#39;:
+        # Round down to nearest decimal place:
+        rounded = int(value * 10**n_decimal) / 10**n_decimal
+    else:
+        # Fall-back (standard rounding):
+        rounded =  np.round(value, n_decimal)
+    return rounded</code></pre>
+</details>
+<div class="desc"><p>Ceil or floor rounding to the specified decimal place.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>value</code></strong> :&ensp;<code>float</code></dt>
+<dd>Value to be rounded.</dd>
+<dt><strong><code>n_decimal</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Number of decimal places to round to. If unspecified, counts non-zero
+decimals in value and rounds to next smaller decimal (one to the left).
+If 0, rounds to nearest integer, which is the same as calling np.ceil()
+or np.floor(). The default is None.</dd>
+<dt><strong><code>which</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Rounding direction. If 'ceil', rounds the given decimal place up to the
+next-higher number. If 'floor', rounds decimal place down to the
+next-lower number. Else, simply calls np.round(decimals=n_decimals) as
+a fallback. The default is 'ceil'.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>rounded</code></strong> :&ensp;<code>float</code></dt>
+<dd>Rounded value according to the specified decimal place and direction.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.as_power"><code class="name flex">
+<span>def <span class="ident">as_power</span></span>(<span>value, base=10)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def as_power(value, base=10):
+    &#34;&#34;&#34; Computes the exponent to represent value as a power of the given base.
+
+    Parameters
+    ----------
+    value : float or int
+        Value to represent as a power of base.
+    base : float or int
+        Base of the power representation. The default is 10.
+
+    Returns
+    -------
+    exponent : float
+        Exponent of the power representation, so that base**exponent = value.
+        Reverse calculation of value might result in floating point errors.
+    &#34;&#34;&#34;    
+    exponent = np.log(value) / np.log(base)
+    return exponent</code></pre>
+</details>
+<div class="desc"><p>Computes the exponent to represent value as a power of the given base.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>value</code></strong> :&ensp;<code>float</code> or <code>int</code></dt>
+<dd>Value to represent as a power of base.</dd>
+<dt><strong><code>base</code></strong> :&ensp;<code>float</code> or <code>int</code></dt>
+<dd>Base of the power representation. The default is 10.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>exponent</code></strong> :&ensp;<code>float</code></dt>
+<dd>Exponent of the power representation, so that base**exponent = value.
+Reverse calculation of value might result in floating point errors.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.round_power"><code class="name flex">
+<span>def <span class="ident">round_power</span></span>(<span>value, base, which='round')</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def round_power(value, base, which=&#39;round&#39;):
+    &#34;&#34;&#34; Closest approximation of value as an integer exponent raised to base.
+
+    Parameters
+    ----------
+    value : float or int
+        Value to approximate as a power of base.
+    base : float or int
+        Base of the power approximation.
+    which : str, optional
+        Direction to round exponent. If &#39;round&#39;, rounds to the nearest integer.
+        If &#39;ceil&#39;, rounds up to the next-higher integer. If &#39;floor&#39;, rounds
+        down to the next-lower integer. The default is &#39;round&#39;.
+
+    Returns
+    -------
+    rounded : float
+        Power approximation of value according to the given base and rounding.
+    exponent : int
+        Integer exponent that gives closest approximation of value as a power
+        of base.
+    &#34;&#34;&#34;    
+    if which == &#39;round&#39;:
+        exponent = int(np.round(np.log(value) / np.log(base)))
+    elif which == &#39;ceil&#39;:
+        exponent = int(np.ceil(np.log(value) / np.log(base)))
+    elif which == &#39;floor&#39;:
+        exponent = int(np.floor(np.log(value) / np.log(base)))
+    return base**exponent, exponent</code></pre>
+</details>
+<div class="desc"><p>Closest approximation of value as an integer exponent raised to base.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>value</code></strong> :&ensp;<code>float</code> or <code>int</code></dt>
+<dd>Value to approximate as a power of base.</dd>
+<dt><strong><code>base</code></strong> :&ensp;<code>float</code> or <code>int</code></dt>
+<dd>Base of the power approximation.</dd>
+<dt><strong><code>which</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Direction to round exponent. If 'round', rounds to the nearest integer.
+If 'ceil', rounds up to the next-higher integer. If 'floor', rounds
+down to the next-lower integer. The default is 'round'.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>rounded</code></strong> :&ensp;<code>float</code></dt>
+<dd>Power approximation of value according to the given base and rounding.</dd>
+<dt><strong><code>exponent</code></strong> :&ensp;<code>int</code></dt>
+<dd>Integer exponent that gives closest approximation of value as a power
+of base.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.remap_inds"><code class="name flex">
+<span>def <span class="ident">remap_inds</span></span>(<span>subsets, return_all=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def remap_inds(subsets, return_all=False):
+    &#34;&#34;&#34; Hierarchical remapping of indices between different subset levels.
+        Remapping is performed by np.searchsorted() from highest to lowest
+        level such that array[remap[0]]...[remap[i]] == array[subsets[i]].
+
+    Parameters
+    ----------
+    subsets : list or tuple (m,) of 1D arrays of ints
+        Indices on the target axis of the source array that define steadily
+        decreasing subsets of elements or slices. First subset is the highest
+        level. Each subsequent index array must be a subset of the previous.
+        Consequently, the lowest subset may also consist of a single index.  
+    return_all : bool, optional
+        If True, returns the full sequence of index arrays, where the first
+        subset is left unchanged and all subsequent subsets are remapped to
+        match their predecessors. If False, returns only the lowest subset.
+
+    Returns
+    -------
+    subsets : 1D array of ints or list (m,) of 1D arrays of ints
+        Remapped indices of the lowest subset level, or the full sequence of
+        index arrays if return_all is True. Index array size is maintained.
+
+    Raises
+    ------
+    ValueError
+        Breaks if hierarchical structure is violated, i.e. if any lower-level
+        subset contains indices that are not part of the first index array.
+    &#34;&#34;&#34;    
+    # Ensure mutable iterable:
+    if not isinstance(subsets, list):
+        subsets = list(subsets)
+    # Validate subset hierarchy:
+    if not all([np.isin(inds, subsets[0]).all() for inds in subsets[1:]]):
+        raise ValueError(&#39;Indices must form a hierarchical subset structure.&#39;)
+
+    # Iterative hierarchical remapping:
+    for i in range(len(subsets) - 1):
+        # Remap all lower index subsets to match the current index subset:
+        remap = [np.searchsorted(subsets[i], inds) for inds in subsets[i + 1:]]
+        # Update successors:
+        subsets[i + 1:] = remap
+    return subsets if return_all else subsets[-1]</code></pre>
+</details>
+<div class="desc"><p>Hierarchical remapping of indices between different subset levels.
+Remapping is performed by np.searchsorted() from highest to lowest
+level such that array[remap[0]]&hellip;[remap[i]] == array[subsets[i]].</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>subsets</code></strong> :&ensp;<code>list</code> or <code>tuple (m,)</code> of <code>1D arrays</code> of <code>ints</code></dt>
+<dd>Indices on the target axis of the source array that define steadily
+decreasing subsets of elements or slices. First subset is the highest
+level. Each subsequent index array must be a subset of the previous.
+Consequently, the lowest subset may also consist of a single index.</dd>
+<dt><strong><code>return_all</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, returns the full sequence of index arrays, where the first
+subset is left unchanged and all subsequent subsets are remapped to
+match their predecessors. If False, returns only the lowest subset.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>subsets</code></strong> :&ensp;<code>1D array</code> of <code>ints</code> or <code>list (m,)</code> of <code>1D arrays</code> of <code>ints</code></dt>
+<dd>Remapped indices of the lowest subset level, or the full sequence of
+index arrays if return_all is True. Index array size is maintained.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>Breaks if hierarchical structure is violated, i.e. if any lower-level
+subset contains indices that are not part of the first index array.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.merge_dicts"><code class="name flex">
+<span>def <span class="ident">merge_dicts</span></span>(<span>parent, child, prefix='', suffix='', overwrite=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def merge_dicts(parent, child, prefix=&#39;&#39;, suffix=&#39;&#39;, overwrite=False):
+    &#34;&#34;&#34; Returns the union of the parent dictionary and the child dictionary.
+        Child keys are prefixed or suffixed for distinction in the output. If
+        a child key is already in the parent dictionary, the parent entry can
+        either be replaced by or kept alongside the respective child entry.
+
+    Parameters
+    ----------
+    parent : dict
+        Primary dictionary for merging.
+    child : dict
+        Secondary dictionary for merging. May be larger than or contain any
+        subset of parent. Child keys are modified to be distinct in the output.
+    prefix : str, optional
+        Key tag prepended to child keys. If both prefix and suffix are empty,
+        disables tagging, preventing use of unmerge_dicts(). The default is &#39;&#39;.
+    suffix : str, optional
+        Key tag appended to child keys. If both prefix and suffix are empty,
+        disables tagging, preventing use of unmerge_dicts(). The default is &#39;&#39;.
+    overwrite : bool, optional
+        If True, child entries replace parent entries with the same key. Else,
+        the parent entry remains in the output and the child entry is added
+        under the modified key. The default is False. 
+
+    Returns
+    -------
+    union : dict
+        Single dictionary that contains the entries of both parent and child.
+        If overwrite is True, some parent entries might be removed from union.  
+    &#34;&#34;&#34;    
+    union = parent.copy()
+    for key, value in child.items():
+        if overwrite and key in union:
+            union.pop(key)
+        union[prefix + key + suffix] = value
+    return union</code></pre>
+</details>
+<div class="desc"><p>Returns the union of the parent dictionary and the child dictionary.
+Child keys are prefixed or suffixed for distinction in the output. If
+a child key is already in the parent dictionary, the parent entry can
+either be replaced by or kept alongside the respective child entry.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>parent</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Primary dictionary for merging.</dd>
+<dt><strong><code>child</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Secondary dictionary for merging. May be larger than or contain any
+subset of parent. Child keys are modified to be distinct in the output.</dd>
+<dt><strong><code>prefix</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Key tag prepended to child keys. If both prefix and suffix are empty,
+disables tagging, preventing use of unmerge_dicts(). The default is ''.</dd>
+<dt><strong><code>suffix</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Key tag appended to child keys. If both prefix and suffix are empty,
+disables tagging, preventing use of unmerge_dicts(). The default is ''.</dd>
+<dt><strong><code>overwrite</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, child entries replace parent entries with the same key. Else,
+the parent entry remains in the output and the child entry is added
+under the modified key. The default is False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>union</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Single dictionary that contains the entries of both parent and child.
+If overwrite is True, some parent entries might be removed from union.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.unmerge_dicts"><code class="name flex">
+<span>def <span class="ident">unmerge_dicts</span></span>(<span>union, prefix='', suffix='')</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def unmerge_dicts(union, prefix=&#39;&#39;, suffix=&#39;&#39;):
+    &#34;&#34;&#34; Splits the dictionary into a parent dictionary and a child dictionary.
+        Child entries are identified by their key prefix or suffix and removed
+        from union. The remainders are treated as parent entries. 
+
+    Parameters
+    ----------
+    union : dict
+        Result of merging parent and child, as returned by merge_dicts().
+    prefix : str, optional
+        Key tag prepended to child keys. If both prefix and suffix are empty,
+        all entries of union are treated as child entries. The default is &#39;&#39;.
+    suffix : str, optional
+        Key tag appended to child keys. If both prefix and suffix are empty,
+        all entries of union are treated as child entries. The default is &#39;&#39;.
+
+    Returns
+    -------
+    child : dict
+        Split-off secondary dictionary. Child entries have the key tags
+        removed. Returns union if both prefix and suffix are empty.
+    parent : dict
+        Remaining primary dictionary after extraction of tagged child entries.
+        Returns {} if both prefix and suffix are empty.
+    &#34;&#34;&#34;    
+    child = {}
+    for key in list(union.keys()):
+        if key.startswith(prefix) and key.endswith(suffix):
+            child[key[len(prefix):].replace(suffix, &#39;&#39;)] = union.pop(key)
+    return child, union</code></pre>
+</details>
+<div class="desc"><p>Splits the dictionary into a parent dictionary and a child dictionary.
+Child entries are identified by their key prefix or suffix and removed
+from union. The remainders are treated as parent entries. </p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>union</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Result of merging parent and child, as returned by merge_dicts().</dd>
+<dt><strong><code>prefix</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Key tag prepended to child keys. If both prefix and suffix are empty,
+all entries of union are treated as child entries. The default is ''.</dd>
+<dt><strong><code>suffix</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Key tag appended to child keys. If both prefix and suffix are empty,
+all entries of union are treated as child entries. The default is ''.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>child</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Split-off secondary dictionary. Child entries have the key tags
+removed. Returns union if both prefix and suffix are empty.</dd>
+<dt><strong><code>parent</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Remaining primary dictionary after extraction of tagged child entries.
+Returns {} if both prefix and suffix are empty.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.closest_value"><code class="name flex">
+<span>def <span class="ident">closest_value</span></span>(<span>array, value, tol=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def closest_value(array, value, tol=None):
+    &#34;&#34;&#34; Finds index of datapoint closest to given value.
+        Optionally, finds all datapoints within tolerated distance to value.
+
+    Parameters
+    ----------
+    array : array of floats (arbitrary shape)
+        Dataset in which to search for matches to the desired value.
+        Dimensionality of array slightly changes output. May not be 0D.
+    value : float
+        Reference value to compare with entries of array.
+    tol : float, optional
+        Optional tolerance criterion for matching. If specified, returns
+        indices of all entries whose absolute distance to value is below or
+        equal to tol, using np.nonzero(). Else, returns index of entry with
+        minimum absolute distance to value using np.argmin(). In this case,
+        returns only first match if multiple exist. The default is None.
+
+    Returns
+    -------
+    ind : int or 1D array of ints (m,) or tuple (n,) of (arrays) of ints (m,)
+        Index or indices of datapoint(s) closest to value, depending on
+        whether tol is specified or not. If tol is None, ind is a single scalar
+        for 1D data and a tuple of scalars for n-dimensional data. If tol is
+        specified, ind is a 1D array for 1D data and a tuple of 1D arrays for
+        n-dimensional data. Returned indices can be used to access the found
+        matches in array.
+    &#34;&#34;&#34;    
+    if tol is None:
+        # Index of first closest value:
+        ind = np.argmin(np.abs(array - value))
+        if array.ndim &gt; 1:
+            # Adjust index dimensions:
+            ind = np.unravel_index(ind, array.shape)
+    else:
+        # Indices of all values within tolerance:
+        ind = np.nonzero(np.abs(array - value) &lt;= tol)
+        if array.ndim == 1:
+            # Open tuple:
+            ind = ind[0]
+    return ind</code></pre>
+</details>
+<div class="desc"><p>Finds index of datapoint closest to given value.
+Optionally, finds all datapoints within tolerated distance to value.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>array</code></strong> :&ensp;<code>array</code> of <code>floats (arbitrary shape)</code></dt>
+<dd>Dataset in which to search for matches to the desired value.
+Dimensionality of array slightly changes output. May not be 0D.</dd>
+<dt><strong><code>value</code></strong> :&ensp;<code>float</code></dt>
+<dd>Reference value to compare with entries of array.</dd>
+<dt><strong><code>tol</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Optional tolerance criterion for matching. If specified, returns
+indices of all entries whose absolute distance to value is below or
+equal to tol, using np.nonzero(). Else, returns index of entry with
+minimum absolute distance to value using np.argmin(). In this case,
+returns only first match if multiple exist. The default is None.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>ind</code></strong> :&ensp;<code>int</code> or <code>1D array</code> of <code>ints (m,)</code> or <code>tuple (n,)</code> of <code>(arrays)</code> of <code>ints (m,)</code></dt>
+<dd>Index or indices of datapoint(s) closest to value, depending on
+whether tol is specified or not. If tol is None, ind is a single scalar
+for 1D data and a tuple of scalars for n-dimensional data. If tol is
+specified, ind is a 1D array for 1D data and a tuple of 1D arrays for
+n-dimensional data. Returned indices can be used to access the found
+matches in array.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.nonzero_inds"><code class="name flex">
+<span>def <span class="ident">nonzero_inds</span></span>(<span>array, grouping='dim', single_entry=False, single_dim=True, axis=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def nonzero_inds(array, grouping=&#39;dim&#39;, single_entry=False,
+                 single_dim=True, axis=None):
+    &#34;&#34;&#34; Wrapper for np.nonzero() or np.argwhere() to extract non-zero indices.
+        Returns indices of M non-zero entries in an N-dimensional array, which
+        are grouped by either array dimension (nonzero: tuple of N 1D arrays of
+        length M) or entry (argwhere: MxN 2D row array). Depending on grouping,
+        the output can be unpacked in case of single non-zero entries or
+        dimensions in array, e.g. converting arrays to scalars, or removing the
+        tuple wrapper.
+
+    Parameters
+    ----------
+    array : ND-array of arbitrary type and shape
+        Input array for extracting indices of non-zero entries.
+    grouping : str, optional
+        Specifies the function to use, which in turn determines output index
+        format and keyword argument interpretation. Options are &#39;dim&#39; to group
+        indices by array dimension (nonzero) or &#39;entry&#39; to group by non-zero
+        entries (argwhere). The default is &#39;dim&#39;.
+    single_entry : bool, optional
+        If True, applies if array contains only a single non-zero entry, and 
+        adjusts the output format. If grouping is &#39;dim&#39;, converts 1D arrays of
+        length 1 into a single numpy integer per array dimension (tuple-wrapped
+        by default). If grouping is &#39;entry&#39;, converts the single-row 2D array
+        to 1D (or 1D array to scalar if single_dim applies as well).
+        The default is False.
+    single_dim : bool, optional
+        If True, applies if array is 1D or axis is specified, and adjusts the
+        output format. If grouping is &#39;dim&#39;, removes the tuple wrapper and
+        returns a single 1D array (or integer if single_entry applies as well).
+        If grouping is &#39;entry&#39;, converts the single-column 2D array to 1D.
+        The default is True.
+    axis : int, optional
+        If specified, returns the indices of non-zero entries only along the
+        given array dimension. Automatically triggers single_dim.
+        The default is None.
+
+    Returns
+    -------
+    inds : (tuple of) int(s) or 1D-array(s) of int(s)
+        Indices of non-zero entries in array in the specified format. Different
+        formats have different use cases, and only np.nonzero() indices can be
+        used directly for indexing the entries in array. Index formats accepted
+        by numpy include integers (yields scalars), 1D arrays (yields arrays),
+        and tuples of the former two, with one entry per array dimension. 
+    &#34;&#34;&#34;    
+    # Per dimension:
+    if grouping == &#39;dim&#39;:
+        # Tuple of 1D arrays:
+        inds = np.nonzero(array)
+        # Array to scalar for each dimension:
+        if single_entry and inds[0].size == 1:
+            inds = tuple(ind[0] for ind in inds)
+        # Subset special case:
+        if axis is not None:
+            return inds[axis]
+        # Tuple to single array/integer:
+        elif single_dim and len(inds) == 1:
+            return inds[0]
+
+    # Per non-zero entry:
+    elif grouping == &#39;entry&#39;:
+        # 2D row array:
+        inds = np.argwhere(array)
+        # Subset special case:
+        if axis is not None:
+            inds = inds[:, axis]
+        # Flatten single 2D column:
+        if single_dim and inds.shape[1] == 1:
+            inds = inds[:, 0]
+        # Return single 1D array/scalar:
+        if single_entry and inds.shape[0] == 1:
+            return inds[0]
+        # Adjust to standard output format:
+        return tuple(entry for entry in inds)
+    return inds</code></pre>
+</details>
+<div class="desc"><p>Wrapper for np.nonzero() or np.argwhere() to extract non-zero indices.
+Returns indices of M non-zero entries in an N-dimensional array, which
+are grouped by either array dimension (nonzero: tuple of N 1D arrays of
+length M) or entry (argwhere: MxN 2D row array). Depending on grouping,
+the output can be unpacked in case of single non-zero entries or
+dimensions in array, e.g. converting arrays to scalars, or removing the
+tuple wrapper.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>array</code></strong> :&ensp;<code>ND-array</code> of <code>arbitrary type and shape</code></dt>
+<dd>Input array for extracting indices of non-zero entries.</dd>
+<dt><strong><code>grouping</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Specifies the function to use, which in turn determines output index
+format and keyword argument interpretation. Options are 'dim' to group
+indices by array dimension (nonzero) or 'entry' to group by non-zero
+entries (argwhere). The default is 'dim'.</dd>
+<dt><strong><code>single_entry</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, applies if array contains only a single non-zero entry, and
+adjusts the output format. If grouping is 'dim', converts 1D arrays of
+length 1 into a single numpy integer per array dimension (tuple-wrapped
+by default). If grouping is 'entry', converts the single-row 2D array
+to 1D (or 1D array to scalar if single_dim applies as well).
+The default is False.</dd>
+<dt><strong><code>single_dim</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, applies if array is 1D or axis is specified, and adjusts the
+output format. If grouping is 'dim', removes the tuple wrapper and
+returns a single 1D array (or integer if single_entry applies as well).
+If grouping is 'entry', converts the single-column 2D array to 1D.
+The default is True.</dd>
+<dt><strong><code>axis</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>If specified, returns the indices of non-zero entries only along the
+given array dimension. Automatically triggers single_dim.
+The default is None.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>inds</code></strong> :&ensp;<code>(tuple of) int(s)</code> or <code>1D-array(s)</code> of <code>int(s)</code></dt>
+<dd>Indices of non-zero entries in array in the specified format. Different
+formats have different use cases, and only np.nonzero() indices can be
+used directly for indexing the entries in array. Index formats accepted
+by numpy include integers (yields scalars), 1D arrays (yields arrays),
+and tuples of the former two, with one entry per array dimension.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.rank_extremes"><code class="name flex">
+<span>def <span class="ident">rank_extremes</span></span>(<span>array, n_ranks=1, ordered=True)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rank_extremes(array, n_ranks=1, ordered=True):
+    &#34;&#34;&#34; Indices of smallest and largest values in array, including duplicates.
+
+    Parameters
+    ----------
+    array : 1D array of floats or ints (m,)
+        Dataset in which to identify entries that are among the n_ranks
+        smallest and largest unique ranked values, respectively.
+    n_ranks : int, optional
+        Number of largest and smallest ranks to consider, respectively. The
+        default is 1, which returns the indices of all entries that yield the
+        global minimum and maximum of array.
+    ordered : bool, optional
+        If True, returns indices of identified entries for each rank, sorted
+        after their position in array. Else, returns indices of all entries
+        within the specified range of ranks at once, sorted after their
+        position in array but not separated by rank. The default is True.
+
+    Returns
+    -------
+    max_inds : list (n,) of 1D arrays of ints (p,) or 1D array of ints (q,)
+        Indeces of entries in array that are among the n_ranks largest unique
+        values. If ordered is True, returns a list of arrays, each containing
+        the entries for one rank (starting with the global maximum). If ordered
+        is False, returns a single array with all entries within the specified
+        range of ranks.
+    min_inds : list (n,) of 1D arrays of ints (r,) or 1D array of ints (s,)
+        Indeces of entries in array that are among the n_ranks smallest unique
+        values. If ordered is True, returns a list of arrays, each containing
+        the entries for one rank (starting with the global minimum). If ordered
+        is False, returns a single array with all entries within the specified
+        range of ranks.
+    &#34;&#34;&#34;    
+    uni = np.unique(array)
+    if ordered:
+        # Separate indices for each rank:
+        max_inds, min_inds = [], []
+        for i in range(n_ranks):
+            # Find entries with next-smaller maximum value:
+            max_inds.append(np.nonzero(array == uni[-(i + 1)])[0])
+            # Find entries with next-larger minimum value:
+            min_inds.append(np.nonzero(array == uni[i])[0])
+    else:
+        # Indices for whole range of ranks:
+        max_inds = np.nonzero(array &gt;= uni[-n_ranks])[0]
+        min_inds = np.nonzero(array &lt;= uni[n_ranks - 1])[0]
+    return max_inds, min_inds</code></pre>
+</details>
+<div class="desc"><p>Indices of smallest and largest values in array, including duplicates.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>array</code></strong> :&ensp;<code>1D array</code> of <code>floats</code> or <code>ints (m,)</code></dt>
+<dd>Dataset in which to identify entries that are among the n_ranks
+smallest and largest unique ranked values, respectively.</dd>
+<dt><strong><code>n_ranks</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Number of largest and smallest ranks to consider, respectively. The
+default is 1, which returns the indices of all entries that yield the
+global minimum and maximum of array.</dd>
+<dt><strong><code>ordered</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, returns indices of identified entries for each rank, sorted
+after their position in array. Else, returns indices of all entries
+within the specified range of ranks at once, sorted after their
+position in array but not separated by rank. The default is True.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>max_inds</code></strong> :&ensp;<code>list (n,)</code> of <code>1D arrays</code> of <code>ints (p,)</code> or <code>1D array</code> of <code>ints (q,)</code></dt>
+<dd>Indeces of entries in array that are among the n_ranks largest unique
+values. If ordered is True, returns a list of arrays, each containing
+the entries for one rank (starting with the global maximum). If ordered
+is False, returns a single array with all entries within the specified
+range of ranks.</dd>
+<dt><strong><code>min_inds</code></strong> :&ensp;<code>list (n,)</code> of <code>1D arrays</code> of <code>ints (r,)</code> or <code>1D array</code> of <code>ints (s,)</code></dt>
+<dd>Indeces of entries in array that are among the n_ranks smallest unique
+values. If ordered is True, returns a list of arrays, each containing
+the entries for one rank (starting with the global minimum). If ordered
+is False, returns a single array with all entries within the specified
+range of ranks.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.longest_segment"><code class="name flex">
+<span>def <span class="ident">longest_segment</span></span>(<span>array)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def longest_segment(array):
+    &#34;&#34;&#34; Finds the longest segment of consecutive non-zero values in array.
+        Individual segments must be separated by at least one zero value.
+        Different consecutive non-zero values are treated as a single segment.
+        Values of zero or False are not considered as segments.
+
+    Parameters
+    ----------
+    array : 1D array of floats, ints or bools (m,)
+        Array to check for longest segment. Must contain some values of zero or
+        False against which to identify non-zero segments.
+
+    Returns
+    -------
+    longest : 1D array of bools (m,)
+        Indices of longest non-zero segment in array. If several segments have
+        the same length, returns the first one.
+    &#34;&#34;&#34;    
+    # Label consecutive segments:
+    labeled_array, _ = label(array)
+    # Get segment lengths (ignore zeros):
+    counts = np.bincount(labeled_array)
+    counts[0] = 0
+    # Indices of longest segment:
+    longest_segment = (labeled_array == counts.argmax())
+    return longest_segment</code></pre>
+</details>
+<div class="desc"><p>Finds the longest segment of consecutive non-zero values in array.
+Individual segments must be separated by at least one zero value.
+Different consecutive non-zero values are treated as a single segment.
+Values of zero or False are not considered as segments.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>array</code></strong> :&ensp;<code>1D array</code> of <code>floats, ints</code> or <code>bools (m,)</code></dt>
+<dd>Array to check for longest segment. Must contain some values of zero or
+False against which to identify non-zero segments.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>longest</code></strong> :&ensp;<code>1D array</code> of <code>bools (m,)</code></dt>
+<dd>Indices of longest non-zero segment in array. If several segments have
+the same length, returns the first one.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.mirror_linspace"><code class="name flex">
+<span>def <span class="ident">mirror_linspace</span></span>(<span>max_val=None, rate=None, n_half=None, delta=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mirror_linspace(max_val=None, rate=None, n_half=None, delta=None):
+    &#34;&#34;&#34; Linearly scaled axis, precisely mirrored around zero.
+        Axis consists of two half-ranges plus zero. Arguments are optimized for
+        time axis generation, but function can be used for any linear axis.
+        Must be provided with either max_val or n_half, everything else is
+        optional.
+
+    Parameters
+    ----------
+    max_val : float or int, optional
+        Largest absolute non-zero value in half-range. Always included in axis,
+        but may not always be the precise endpoint (depending on specified
+        sampling). Used to calculate number of values per half-range if n_half
+        is None, else ignored. The default is None.
+    rate : float or int, optional
+        If specified, used as sampling rate of axis (in Hz, if a time axis is
+        desired). Else, calculated from sampling interval delta, or set to 1 if
+        neither is given. The default is None.
+    n_half : int, optional
+        Number of values per half-range. If specified, overrides max_val and
+        adjusts limits of axis to contain the desired number of samples,
+        according to rate. The default is None.
+    delta : float, optional
+        If specified, used as sampling interval of axis (in s, if a time axis
+        is desired). Used to calculate sampling rate if rate is not specified,
+        else ignored. The default is None.
+
+    Returns
+    -------
+    full_range : 1D array of floats (2 * n_half + 1,)
+        Linear axis with equal negative and positive values, centered around a
+        value of zero.
+    &#34;&#34;&#34;    
+    # Input interpretation:
+    if rate is None:
+        rate = 1 / delta if delta is not None else 1
+    if n_half is None:
+        n_half = int(np.ceil(max_val * rate))
+    # Initialize array and generate half-range:
+    full_range = np.zeros(2 * n_half + 1)    
+    half_range = np.arange(1, n_half + 1) / rate
+    # Mirror half-range around zero:
+    full_range[:n_half] = -half_range[::-1]
+    full_range[-n_half:] = half_range
+    return full_range</code></pre>
+</details>
+<div class="desc"><p>Linearly scaled axis, precisely mirrored around zero.
+Axis consists of two half-ranges plus zero. Arguments are optimized for
+time axis generation, but function can be used for any linear axis.
+Must be provided with either max_val or n_half, everything else is
+optional.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>max_val</code></strong> :&ensp;<code>float</code> or <code>int</code>, optional</dt>
+<dd>Largest absolute non-zero value in half-range. Always included in axis,
+but may not always be the precise endpoint (depending on specified
+sampling). Used to calculate number of values per half-range if n_half
+is None, else ignored. The default is None.</dd>
+<dt><strong><code>rate</code></strong> :&ensp;<code>float</code> or <code>int</code>, optional</dt>
+<dd>If specified, used as sampling rate of axis (in Hz, if a time axis is
+desired). Else, calculated from sampling interval delta, or set to 1 if
+neither is given. The default is None.</dd>
+<dt><strong><code>n_half</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Number of values per half-range. If specified, overrides max_val and
+adjusts limits of axis to contain the desired number of samples,
+according to rate. The default is None.</dd>
+<dt><strong><code>delta</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>If specified, used as sampling interval of axis (in s, if a time axis
+is desired). Used to calculate sampling rate if rate is not specified,
+else ignored. The default is None.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>full_range</code></strong> :&ensp;<code>1D array</code> of <code>floats (2 * n_half + 1,)</code></dt>
+<dd>Linear axis with equal negative and positive values, centered around a
+value of zero.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.mirror_logspace"><code class="name flex">
+<span>def <span class="ident">mirror_logspace</span></span>(<span>n_half, exp_low, exp_high)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mirror_logspace(n_half, exp_low, exp_high):
+    &#34;&#34;&#34; Logarithmically scaled axis (base 10), precisely mirrored around zero.
+        Axis consists of two half-ranges (each with n_half values) plus zero.
+
+    Parameters
+    ----------
+    n_half : int
+        Number of values per half-range.
+    exp_low : float or int
+        Exponent of smallest absolute non-zero value in half-range.
+    exp_high : float or int
+        Exponent of largest absolute non-zero value in half-range. Determines
+        minimum (negative) and maximum (positive) value of the full axis.
+
+    Returns
+    -------
+    full_range : 1D array of floats (2 * n_half + 1,)
+        Logarithmic axis with equal negative and positive values, centered
+        around a value of zero.
+    &#34;&#34;&#34;
+    # Initialize array and generate half-range:    
+    full_range = np.zeros(2 * n_half + 1)
+    half_range = np.logspace(exp_low, exp_high, n_half, endpoint=True)
+    # Mirror half-range around zero:
+    full_range[:n_half] = -half_range[::-1]
+    full_range[-n_half:] = half_range
+    return full_range</code></pre>
+</details>
+<div class="desc"><p>Logarithmically scaled axis (base 10), precisely mirrored around zero.
+Axis consists of two half-ranges (each with n_half values) plus zero.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>n_half</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number of values per half-range.</dd>
+<dt><strong><code>exp_low</code></strong> :&ensp;<code>float</code> or <code>int</code></dt>
+<dd>Exponent of smallest absolute non-zero value in half-range.</dd>
+<dt><strong><code>exp_high</code></strong> :&ensp;<code>float</code> or <code>int</code></dt>
+<dd>Exponent of largest absolute non-zero value in half-range. Determines
+minimum (negative) and maximum (positive) value of the full axis.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>full_range</code></strong> :&ensp;<code>1D array</code> of <code>floats (2 * n_half + 1,)</code></dt>
+<dd>Logarithmic axis with equal negative and positive values, centered
+around a value of zero.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.make_circle"><code class="name flex">
+<span>def <span class="ident">make_circle</span></span>(<span>radius=1.0, x_off=0.0, y_off=0.0, n=1000, full=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def make_circle(radius=1., x_off=0., y_off=0., n=1000, full=False):
+    &#34;&#34;&#34; Generates x- and y-coordinates for a (half) circle of given radius.
+
+    Parameters
+    ----------
+    radius : float or int, optional
+        Radius of the circle. The default is 1.0.
+    x_off : float or int, optional
+        Offset of the circle along the x-axis. The default is 0.
+    y_off : float or int, optional
+        Offset of the circle along the y-axis. The default is 0.
+    n : int, optional
+        Number of coordinates to generate. The default is 1000.
+    full : bool, optional
+        If True, returns x and y for a full circle, where each x-value has two
+        corresponding y-values. Else, returns only the top half of the circle,
+        which is a proper single-valued function. The default is False.
+
+    Returns
+    -------
+    x : 1D array of floats (n,)
+        The x-coordinates of the circle. Contains duplicates if full is True.
+    y : 1D array of floats (n,)
+        The y-coordinates of the circle.
+    &#34;&#34;&#34;    
+    if full:
+        phase = np.linspace(0, 2 * np.pi, n)
+        x = radius * np.cos(phase)
+        y = radius * np.sin(phase)
+    else:
+        x = np.linspace(-radius, radius, n)
+        y = np.sqrt(radius**2 - x**2)
+    return x + x_off, y + y_off</code></pre>
+</details>
+<div class="desc"><p>Generates x- and y-coordinates for a (half) circle of given radius.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>radius</code></strong> :&ensp;<code>float</code> or <code>int</code>, optional</dt>
+<dd>Radius of the circle. The default is 1.0.</dd>
+<dt><strong><code>x_off</code></strong> :&ensp;<code>float</code> or <code>int</code>, optional</dt>
+<dd>Offset of the circle along the x-axis. The default is 0.</dd>
+<dt><strong><code>y_off</code></strong> :&ensp;<code>float</code> or <code>int</code>, optional</dt>
+<dd>Offset of the circle along the y-axis. The default is 0.</dd>
+<dt><strong><code>n</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Number of coordinates to generate. The default is 1000.</dd>
+<dt><strong><code>full</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, returns x and y for a full circle, where each x-value has two
+corresponding y-values. Else, returns only the top half of the circle,
+which is a proper single-valued function. The default is False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>1D array</code> of <code>floats (n,)</code></dt>
+<dd>The x-coordinates of the circle. Contains duplicates if full is True.</dd>
+<dt><strong><code>y</code></strong> :&ensp;<code>1D array</code> of <code>floats (n,)</code></dt>
+<dd>The y-coordinates of the circle.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.flat_list"><code class="name flex">
+<span>def <span class="ident">flat_list</span></span>(<span>nested)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def flat_list(nested):
+    &#34;&#34;&#34; Recursive list flattening over arbitrary levels of nested sub-lists.
+
+    Parameters
+    ----------
+    nested : list of nested lists (arbitrary length and content)
+        Primary list to flatten until it contains no more sub-lists. Sub-lists
+        can be nested to an arbitrary depth. May contain non-list data types at
+        any given level.
+
+    Returns
+    -------
+    flattened : list (m,)
+        Fully flattened primary list without any remaining sublists. Retains
+        original order of elements.
+    &#34;&#34;&#34;
+    # Append elements of next-deeper nesting level:
+    wrapped = [item if isinstance(item, list) else [item] for item in nested]  
+    flattened = sum(wrapped, [])
+    # Check for remaining sub-lists and recurse if necessary:                                               
+    has_sublist = any(isinstance(item, list) for item in flattened)      
+    return flat_list(flattened) if has_sublist else flattened</code></pre>
+</details>
+<div class="desc"><p>Recursive list flattening over arbitrary levels of nested sub-lists.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>nested</code></strong> :&ensp;<code>list</code> of <code>nested lists (arbitrary length and content)</code></dt>
+<dd>Primary list to flatten until it contains no more sub-lists. Sub-lists
+can be nested to an arbitrary depth. May contain non-list data types at
+any given level.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>flattened</code></strong> :&ensp;<code>list (m,)</code></dt>
+<dd>Fully flattened primary list without any remaining sublists. Retains
+original order of elements.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.flat_iterable"><code class="name flex">
+<span>def <span class="ident">flat_iterable</span></span>(<span>nested, same_type=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def flat_iterable(nested, same_type=False):
+    &#34;&#34;&#34; Recursively flattens a nested structure of lists, tuples, or arrays.
+
+    Parameters
+    ----------
+    nested : list or tuple or np.ndarray
+        Wrapper iterable to flatten until it holds no more nested structures.
+    same_type : bool, optional
+        If True, assumes that any nested element is of the same type as the
+        wrapper iterable for all levels of nesting. If False, type-checks for
+        lists, tuples, and arrays, excluding strings. The default is False.
+
+    Returns
+    -------
+    nested : type(nested)
+        Fully flattened wrapper iterable of the same type as the input thats
+        holds no more lists, tuples or arrays. Retains order of input elements.
+    &#34;&#34;&#34;    
+    # Simple numpy early exit:
+    if isinstance(nested, np.ndarray):
+        return nested.flat()
+    # Flatten list or tuple input:
+    type_class = nested.__class__
+    if same_type:
+        # All elements have type of first nesting level:
+        check_type = lambda v: isinstance(v, type_class)
+        wrap = lambda v: v if check_type(v) else type_class((v,))
+    else:
+        # Recognize list, tuple, and array elements, excluding strings:
+        check_type = lambda v: isinstance(v, (list, tuple, np.ndarray))
+        wrap = lambda v: type_class((*v,) if check_type(v) else (v,))
+    # Collapse the current first nesting level of the input:
+    nested = sum(type_class(wrap(v) for v in nested), start=type_class())
+    # Check for deeper levels of nesting:
+    sublevels = any(check_type(v) for v in nested)
+    return flat_iterable(nested, same_type) if sublevels else nested</code></pre>
+</details>
+<div class="desc"><p>Recursively flattens a nested structure of lists, tuples, or arrays.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>nested</code></strong> :&ensp;<code>list</code> or <code>tuple</code> or <code>np.ndarray</code></dt>
+<dd>Wrapper iterable to flatten until it holds no more nested structures.</dd>
+<dt><strong><code>same_type</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, assumes that any nested element is of the same type as the
+wrapper iterable for all levels of nesting. If False, type-checks for
+lists, tuples, and arrays, excluding strings. The default is False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>nested</code></strong> :&ensp;<code>type(nested)</code></dt>
+<dd>Fully flattened wrapper iterable of the same type as the input thats
+holds no more lists, tuples or arrays. Retains order of input elements.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.combination_array"><code class="name flex">
+<span>def <span class="ident">combination_array</span></span>(<span>components)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def combination_array(components):
+    &#34;&#34;&#34; Unique element combinations from multiple hierachically nested arrays.
+        Elements of arrays in tuple containers are combined cross-wise using
+        itertools.product() into n = n1 * n2 * ... * ni possible combinations.
+        Elements of same-size arrays in list containers are combined pair-wise
+        by zip() into n = n1 = n2 = ... = ni combinations. Recursively resolves
+        deeper levels of nesting until no more containers remain and flattens
+        the final result into a 2D array (combinations x components).
+
+    Parameters
+    ----------
+    components : tuple or list of (nested containers of) 1D arrays
+        Hierarchically nested tuple/list container structure holding arrays
+        whose elements are to be combined. Tuples mean cross-combination, lists
+        pair-wise combination (parallelization, requires equal array lengths).
+        Note that (a, b, c) is equivalent to ((a, b), c) and (a, (b, c)), since
+        nesting within the product is not preserved in the flattened output.
+
+    Returns
+    -------
+    combinations : 2D array
+        Unique combinations of elements from the input components. Each row
+        corresponds to one combination, each column to one array in components.
+    &#34;&#34;&#34;    
+    # Prepare type-dependent component linking:
+    link_func = {list: safe_zip, tuple: product}
+    link_components = link_func[type(components)]
+
+    # Identify tuple and list containers in wrapper as nested components:
+    check_nesting = lambda comp: [isinstance(c, (tuple, list)) for c in comp]
+    is_nested = check_nesting(components)
+
+    # Input interpretation:
+    if not any(is_nested):
+        return np.array(list(link_components(*components)))
+
+    # Ensure mutable wrapper:
+    components = [*components]
+
+    # Iteratively resolve nested components:
+    for ind in np.nonzero(is_nested)[0]:
+        # Check for any nested sub-components:
+        if any(check_nesting(components[ind])):
+            # Recursively resolve next-deeper nesting level:
+            components[ind] = combination_array(components[ind])
+            continue
+        link_subcomponents = link_func[type(components[ind])]
+        components[ind] = np.array(list(link_subcomponents(*components[ind])))
+    return np.array([flat_iterable(c) for c in link_components(*components)])</code></pre>
+</details>
+<div class="desc"><p>Unique element combinations from multiple hierachically nested arrays.
+Elements of arrays in tuple containers are combined cross-wise using
+itertools.product() into n = n1 * n2 * &hellip; * ni possible combinations.
+Elements of same-size arrays in list containers are combined pair-wise
+by zip() into n = n1 = n2 = &hellip; = ni combinations. Recursively resolves
+deeper levels of nesting until no more containers remain and flattens
+the final result into a 2D array (combinations x components).</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>components</code></strong> :&ensp;<code>tuple</code> or <code>list</code> of <code>(nested containers of) 1D arrays</code></dt>
+<dd>Hierarchically nested tuple/list container structure holding arrays
+whose elements are to be combined. Tuples mean cross-combination, lists
+pair-wise combination (parallelization, requires equal array lengths).
+Note that (a, b, c) is equivalent to ((a, b), c) and (a, (b, c)), since
+nesting within the product is not preserved in the flattened output.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>combinations</code></strong> :&ensp;<code>2D array</code></dt>
+<dd>Unique combinations of elements from the input components. Each row
+corresponds to one combination, each column to one array in components.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.spread_shuffle"><code class="name flex">
+<span>def <span class="ident">spread_shuffle</span></span>(<span>data, n_near=1, attempts=100)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def spread_shuffle(data, n_near=1, attempts=100):
+    &#34;&#34;&#34; Shuffles data so that neighbouring entries are separated.
+        Restarts recursively when running into dead ends.
+
+    Parameters
+    ----------
+    data : list or 1D array of ints or floats (m,)
+        Data to be shuffled. If list, shuffles only top-level entries.
+    n_near : int, optional
+        Number of entries that define the neighbourhood left and right of each
+        value in data. Neighbouring entries of the last picked value are 
+        blocked for the next random pick. If too large (so that neighbourhood
+        of a central entry would cover all of data), throws a warning and
+        reduces n_near to len(data) // 2 - 1. The default is 1, corresponding
+        to the two direct neighbours of the last pick.
+    attempts : int, optional
+        Number of times to retry shuffling when running into dead ends before
+        giving up. The default is 100.
+
+    Returns
+    -------
+    new_data : list or 1D array of ints or floats (m,)
+        Shuffled data that satisfies the specified neighbourhood requirement.
+        Throws a warning and returns original data if no valid shuffle could be
+        found within the specified number of attempts.
+    &#34;&#34;&#34;                                   
+    # Input interpretation:
+    n = len(data)
+    new_data = np.zeros(n) if &#39;np&#39; in str(type(data)) else np.zeros(n).tolist()
+    if n_near &gt;= n // 2:
+        # Reduce if n_near covers entire data (for entry at center):
+        print(&#39;WARNING: n_near is too large for shuffling. &#39;\
+              f&#39;Reduced n_near from {n_near} to {n // 2 - 1}.&#39;)
+        n_near = n // 2 - 1
+    # Initiate shuffle:
+    free = np.full(n, True)
+    # Pick first entry:
+    ind = np.random.choice(n)
+    new_data[0] = data[ind]
+    free[ind] = False
+    for i in range(1, n):
+        # Neighbourhood of last pick:            
+        lower = max(0, ind - n_near)                                        
+        upper = min(n - 1, ind + n_near)
+        # Indices of neighbouring and available entries:                                       
+        nearby = np.isin(np.arange(n), np.arange(lower, upper + 1))
+        options = free &amp; ~nearby
+        # Handle dead ends:
+        if np.sum(options) == 0:
+            attempts -= 1
+            if attempts == 0:
+                # Return unsuccessful:
+                print(&#39;WARNING: Used all attempts. Shuffling failed!&#39;)
+                return data
+            else:
+                # Retry:
+                return spread_shuffle(data, n_near, attempts)
+        # Pick next entry:                                               
+        ind = np.random.choice(np.arange(n)[options])
+        new_data[i] = data[ind]
+        free[ind] = False
+    return new_data</code></pre>
+</details>
+<div class="desc"><p>Shuffles data so that neighbouring entries are separated.
+Restarts recursively when running into dead ends.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>data</code></strong> :&ensp;<code>list</code> or <code>1D array</code> of <code>ints</code> or <code>floats (m,)</code></dt>
+<dd>Data to be shuffled. If list, shuffles only top-level entries.</dd>
+<dt><strong><code>n_near</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Number of entries that define the neighbourhood left and right of each
+value in data. Neighbouring entries of the last picked value are
+blocked for the next random pick. If too large (so that neighbourhood
+of a central entry would cover all of data), throws a warning and
+reduces n_near to len(data) // 2 - 1. The default is 1, corresponding
+to the two direct neighbours of the last pick.</dd>
+<dt><strong><code>attempts</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Number of times to retry shuffling when running into dead ends before
+giving up. The default is 100.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>new_data</code></strong> :&ensp;<code>list</code> or <code>1D array</code> of <code>ints</code> or <code>floats (m,)</code></dt>
+<dd>Shuffled data that satisfies the specified neighbourhood requirement.
+Throws a warning and returns original data if no valid shuffle could be
+found within the specified number of attempts.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.lowpass_props"><code class="name flex">
+<span>def <span class="ident">lowpass_props</span></span>(<span>cutoff=None, tau=None, rise=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def lowpass_props(cutoff=None, tau=None, rise=None):
+    &#34;&#34;&#34; Cut-off frequency, time constant and rise time of a low-pass filter.
+        Estimates the two missing properties based on the specified one.
+        Estimated properties are only valid for a first-order low-pass filter!
+
+    Parameters
+    ----------
+    cutoff : float, optional
+        Cut-off frequency of the low-pass filter in Hz. Used to estimate tau
+        and, from that, rise. The default is None.
+    tau : float, optional
+        Time constant of the low-pass filter in seconds. Used to estimate
+        cutoff and rise time. The default is None.
+    rise : float, optional
+        Rise time (to change signal from 10% to 90% of final value) of the
+        low-pass filter in seconds. Used to estimate tau and, from that,
+        cutoff. The default is None.
+
+    Returns
+    -------
+    properties : dict
+        Properties of the first-order low-pass filter in the order &#39;cutoff&#39;,
+        &#39;tau&#39; and &#39;rise&#39;. Always returns all three parameters, including the 
+        one that was specified.
+    &#34;&#34;&#34;    
+    if cutoff is not None:
+        tau = 1 / (2 * np.pi * cutoff)
+        rise = 2.197 * tau
+    elif tau is not None:
+        cutoff = 1 / (2 * np.pi * tau)
+        rise = 2.197 * tau
+    elif rise is not None:
+        tau = rise / 2.197
+        cutoff = 1 / (2 * np.pi * tau)
+    properties = {&#39;cutoff&#39;: cutoff, &#39;tau&#39;: tau, &#39;rise&#39;: rise}
+    return properties</code></pre>
+</details>
+<div class="desc"><p>Cut-off frequency, time constant and rise time of a low-pass filter.
+Estimates the two missing properties based on the specified one.
+Estimated properties are only valid for a first-order low-pass filter!</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>cutoff</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Cut-off frequency of the low-pass filter in Hz. Used to estimate tau
+and, from that, rise. The default is None.</dd>
+<dt><strong><code>tau</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Time constant of the low-pass filter in seconds. Used to estimate
+cutoff and rise time. The default is None.</dd>
+<dt><strong><code>rise</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Rise time (to change signal from 10% to 90% of final value) of the
+low-pass filter in seconds. Used to estimate tau and, from that,
+cutoff. The default is None.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>properties</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Properties of the first-order low-pass filter in the order 'cutoff',
+'tau' and 'rise'. Always returns all three parameters, including the
+one that was specified.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.artificial_song"><code class="name flex">
+<span>def <span class="ident">artificial_song</span></span>(<span>rate,<br>pause=None,<br>syllable=None,<br>n_cycles=5,<br>duration=None,<br>period=None,<br>duty_cycle=None,<br>pause_value=-1.0,<br>syl_values=1.0,<br>syl_segments=None,<br>syllable_first=False,<br>center_mean=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def artificial_song(rate, pause=None, syllable=None, n_cycles=5,
+                    duration=None, period=None, duty_cycle=None,
+                    pause_value=-1.0, syl_values=1.0, syl_segments=None,
+                    syllable_first=False, center_mean=False):
+    &#34;&#34;&#34; Customizable &#34;grasshopper song&#34; of alternating pauses and syllables.
+        Basic structure is that of a box-car function with varying temporal
+        parameters and amplitude values. Syllables may have a more complex
+        shape defined by a sequence of sub-segments with different values.       
+        Temporal characteristics may be specified by various argument
+        combinations (in the order of evaluation):
+            1) Syllable duration and pause duration
+            2) Duty cycle and period duration
+            3) Period duration and pause duration
+            4) Period duration and syllable duration
+        Invalid combinations of arguments will raise a ValueError.
+
+    Parameters
+    ----------
+    rate : float or int
+        Sampling rate of the song in Hz. All temporal input parameters are
+        are given in seconds and will be converted to points using this rate.
+    pause : float or int, optional
+        Pause duration of a single song cycle in seconds. Used to calculate
+        period if specified together with syllable. Used to calculate syllable
+        if specified together with period. Calculated from period and syllable
+        or period and duty_cycle if those are specified, respectively. The
+        default is None.
+    syllable : float or int, optional
+        Syllable duration of a single song cycle in seconds. Used to calculate
+        period if specified together with pause. Used to calculate pause if
+        specified together with period. Calculated from period and syllable or
+        period and duty_cycle if those are specified, respectively. The default
+        is None.
+    n_cycles : int, optional
+        Number of repetitions of the song cycle, which consists of a pause and
+        a syllable. Ignored if duration is specified. The default is 5.
+    duration : float or int, optional
+        Total song duration in seconds. Overrides n_cycles if specified.
+        Expanded to fit an integer number of song cycles. The default is None.
+    period : float or int, optional
+        Duration of a single song cycle in seconds. Calculated from pause and
+        syllable if those are specified. Used to calculate syllable if
+        specified together with pause (and vice versa). Used to calculate both
+        pause and syllable if specified together with duty_cycle. The default
+        is None.
+    duty_cycle : float, optional
+        Ratio of syllable duration to period duration. Used to calculate both
+        pause and syllable if specified together with period. The default is
+        None.
+    pause_value : float or int, optional
+        Constant value of the song amplitude during pauses. The default is -1.
+    syl_segments : list of floats (m,), optional
+        If specified, defines the relative length of different syllable sub-
+        segments. The sum of all segments must be 1 to produce correct results.
+        The default is None.
+    syl_values : float or list (m,) of floats/tuples of floats (2,), optional
+        Value(s) of the song amplitude during syllables. If scalar, results in
+        a constant amplitude, similar to pause_value. If list, must be given
+        together with syl_segments. Scalar entries result in a flat plateau for
+        a given sub-segment. Tuples result in a linear ramp from the first to
+        the second value. If pause is 0, this argument allows to control the 
+        structure of the entire song cycle. The default is 1.
+    syllable_first : bool, optional
+        If True, starts each song cycle with a syllable. If False, start with
+        a pause. The default is False.
+    center_mean : bool, optional
+        If True, subtracts the mean from the finalized song to balance positive
+        and negative integrals. The default is False.
+
+    Returns
+    -------
+    song : array of floats (n,)
+        Artificial grasshopper song with the specified parameters.
+
+    Raises
+    ------
+    ValueError
+        Breaks if the combination of provided temporal parameters (pause,
+        syllable, period, and/or duty_cycle) is not sufficient to characterize
+        the song cycle.
+    &#34;&#34;&#34;    
+    # Input interpretation (cycle parameters):
+    if pause is not None and syllable is not None:
+        period = syllable + pause   
+    elif duty_cycle is not None and period is not None:
+        syllable = period * duty_cycle
+        pause = period - syllable
+    elif syllable is None and period is not None and pause is not None:
+        syllable = period - pause
+    elif pause is None and period is not None and syllable is not None:
+        pause = period - syllable
+    else:
+        msg = &#39;Invalid combination of pause, syllable, period, and duty_cycle.&#39;
+        raise ValueError(msg)
+    # Input interpretation (cycle repetitions):
+    if duration is not None:
+        n_cycles = int(np.ceil(duration / period))
+    # Basic cycle components:
+    period_unit = np.zeros(int(period * rate)) + pause_value
+    syl_unit = np.ones(int(syllable * rate))
+    if isinstance(syl_values, (float, int)):
+        syl_unit *= syl_values
+    # Optional customized syllable shape:
+    if syl_segments is not None and syl_values is not None:
+        # Length of and transitions between syllable segments in points:
+        intervals = [int(segment * len(syl_unit)) for segment in syl_segments]
+        steps = np.cumsum([0] + intervals)
+        # Fill segments with different values:
+        for i, value in enumerate(syl_values):
+            if isinstance(value, (list, tuple)):
+                # Linear ramp instead of flat plateau:
+                value = np.linspace(value[0], value[1], intervals[i])
+            syl_unit[steps[i]:steps[i + 1]] = value
+    # Pause-syllable order:
+    if syllable_first:
+        period_unit[:len(syl_unit)] = syl_unit
+    else:
+        period_unit[-len(syl_unit):] = syl_unit
+    # Assemble song:
+    song = np.tile(period_unit, n_cycles)
+    if center_mean:
+        song -= np.mean(song)
+    return song</code></pre>
+</details>
+<div class="desc"><p>Customizable "grasshopper song" of alternating pauses and syllables.
+Basic structure is that of a box-car function with varying temporal
+parameters and amplitude values. Syllables may have a more complex
+shape defined by a sequence of sub-segments with different values.
+<br>
+Temporal characteristics may be specified by various argument
+combinations (in the order of evaluation):
+1) Syllable duration and pause duration
+2) Duty cycle and period duration
+3) Period duration and pause duration
+4) Period duration and syllable duration
+Invalid combinations of arguments will raise a ValueError.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>rate</code></strong> :&ensp;<code>float</code> or <code>int</code></dt>
+<dd>Sampling rate of the song in Hz. All temporal input parameters are
+are given in seconds and will be converted to points using this rate.</dd>
+<dt><strong><code>pause</code></strong> :&ensp;<code>float</code> or <code>int</code>, optional</dt>
+<dd>Pause duration of a single song cycle in seconds. Used to calculate
+period if specified together with syllable. Used to calculate syllable
+if specified together with period. Calculated from period and syllable
+or period and duty_cycle if those are specified, respectively. The
+default is None.</dd>
+<dt><strong><code>syllable</code></strong> :&ensp;<code>float</code> or <code>int</code>, optional</dt>
+<dd>Syllable duration of a single song cycle in seconds. Used to calculate
+period if specified together with pause. Used to calculate pause if
+specified together with period. Calculated from period and syllable or
+period and duty_cycle if those are specified, respectively. The default
+is None.</dd>
+<dt><strong><code>n_cycles</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Number of repetitions of the song cycle, which consists of a pause and
+a syllable. Ignored if duration is specified. The default is 5.</dd>
+<dt><strong><code>duration</code></strong> :&ensp;<code>float</code> or <code>int</code>, optional</dt>
+<dd>Total song duration in seconds. Overrides n_cycles if specified.
+Expanded to fit an integer number of song cycles. The default is None.</dd>
+<dt><strong><code>period</code></strong> :&ensp;<code>float</code> or <code>int</code>, optional</dt>
+<dd>Duration of a single song cycle in seconds. Calculated from pause and
+syllable if those are specified. Used to calculate syllable if
+specified together with pause (and vice versa). Used to calculate both
+pause and syllable if specified together with duty_cycle. The default
+is None.</dd>
+<dt><strong><code>duty_cycle</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Ratio of syllable duration to period duration. Used to calculate both
+pause and syllable if specified together with period. The default is
+None.</dd>
+<dt><strong><code>pause_value</code></strong> :&ensp;<code>float</code> or <code>int</code>, optional</dt>
+<dd>Constant value of the song amplitude during pauses. The default is -1.</dd>
+<dt><strong><code>syl_segments</code></strong> :&ensp;<code>list</code> of <code>floats (m,)</code>, optional</dt>
+<dd>If specified, defines the relative length of different syllable sub-
+segments. The sum of all segments must be 1 to produce correct results.
+The default is None.</dd>
+<dt><strong><code>syl_values</code></strong> :&ensp;<code>float</code> or <code>list (m,)</code> of <code>floats/tuples</code> of <code>floats (2,)</code>, optional</dt>
+<dd>Value(s) of the song amplitude during syllables. If scalar, results in
+a constant amplitude, similar to pause_value. If list, must be given
+together with syl_segments. Scalar entries result in a flat plateau for
+a given sub-segment. Tuples result in a linear ramp from the first to
+the second value. If pause is 0, this argument allows to control the
+structure of the entire song cycle. The default is 1.</dd>
+<dt><strong><code>syllable_first</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, starts each song cycle with a syllable. If False, start with
+a pause. The default is False.</dd>
+<dt><strong><code>center_mean</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, subtracts the mean from the finalized song to balance positive
+and negative integrals. The default is False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>song</code></strong> :&ensp;<code>array</code> of <code>floats (n,)</code></dt>
+<dd>Artificial grasshopper song with the specified parameters.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>Breaks if the combination of provided temporal parameters (pause,
+syllable, period, and/or duty_cycle) is not sufficient to characterize
+the song cycle.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.misctools.song_series"><code class="name flex">
+<span>def <span class="ident">song_series</span></span>(<span>rate, varied, n_iter, fixed={})</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def song_series(rate, varied, n_iter, fixed={}):
+    &#34;&#34;&#34; Wrapper for repeated calls to artificial_song() with varying arguments.
+        Generates and appends a new segment to the song for each iteration.
+
+    Parameters
+    ----------
+    rate : float or int
+        Sampling rate of the song in Hz. All temporal input parameters are
+        are given in seconds and will be converted to points using this rate.
+    varied : dict of iterables
+        Varied input arguments (keys) and their respective values for each
+        iteration. All iterables must have length n_iter. Keys must match
+        keyword argument names of artificial_song().
+    n_iter : int
+        Number of song segments to append. Must be equal to the length of each
+        iterable in varied.
+    fixed : dict, optional
+        Constant input arguments (keys) and their respective values, which are
+        the same for each iteration. Keys must match keyword argument names of
+        artificial_song(). Default is {}.
+
+    Returns
+    -------
+    song : 1D array of floats (m,)
+        Artificial &#34;grasshopper song&#34; with changing parameters over time.
+    segment_code : 1D array of ints (m,)
+        Segment-specific labels for each datapoint in the song. Tag values are 
+        in the range [0, n_iter - 1].
+    &#34;&#34;&#34;    
+    # Initialize parameter configuration:
+    kwargs = {&#39;rate&#39;: rate}
+    kwargs.update(fixed)
+    song, segment_code = [], []
+    for i in range(n_iter):
+        # Iterate and update to next version of varied parameters:
+        [kwargs.update({key: value[i]}) for key, value in varied.items()]
+        # Generate song and encode segment:
+        song.append(artificial_song(**kwargs))
+        segment_code.append(np.ones(len(song[-1]), dtype=int) * i)
+    return np.concatenate(song), np.concatenate(segment_code)</code></pre>
+</details>
+<div class="desc"><p>Wrapper for repeated calls to artificial_song() with varying arguments.
+Generates and appends a new segment to the song for each iteration.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>rate</code></strong> :&ensp;<code>float</code> or <code>int</code></dt>
+<dd>Sampling rate of the song in Hz. All temporal input parameters are
+are given in seconds and will be converted to points using this rate.</dd>
+<dt><strong><code>varied</code></strong> :&ensp;<code>dict</code> of <code>iterables</code></dt>
+<dd>Varied input arguments (keys) and their respective values for each
+iteration. All iterables must have length n_iter. Keys must match
+keyword argument names of artificial_song().</dd>
+<dt><strong><code>n_iter</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number of song segments to append. Must be equal to the length of each
+iterable in varied.</dd>
+<dt><strong><code>fixed</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>Constant input arguments (keys) and their respective values, which are
+the same for each iteration. Keys must match keyword argument names of
+artificial_song(). Default is {}.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>song</code></strong> :&ensp;<code>1D array</code> of <code>floats (m,)</code></dt>
+<dd>Artificial "grasshopper song" with changing parameters over time.</dd>
+<dt><strong><code>segment_code</code></strong> :&ensp;<code>1D array</code> of <code>ints (m,)</code></dt>
+<dd>Segment-specific labels for each datapoint in the song. Tag values are
+in the range [0, n_iter - 1].</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="thunderhopper" href="index.html">thunderhopper</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="thunderhopper.misctools.string_series" href="#thunderhopper.misctools.string_series">string_series</a></code></li>
+<li><code><a title="thunderhopper.misctools.check_list" href="#thunderhopper.misctools.check_list">check_list</a></code></li>
+<li><code><a title="thunderhopper.misctools.equal_lists" href="#thunderhopper.misctools.equal_lists">equal_lists</a></code></li>
+<li><code><a title="thunderhopper.misctools.ensure_sequence" href="#thunderhopper.misctools.ensure_sequence">ensure_sequence</a></code></li>
+<li><code><a title="thunderhopper.misctools.equal_sequences" href="#thunderhopper.misctools.equal_sequences">equal_sequences</a></code></li>
+<li><code><a title="thunderhopper.misctools.ensure_iterable" href="#thunderhopper.misctools.ensure_iterable">ensure_iterable</a></code></li>
+<li><code><a title="thunderhopper.misctools.ensure_array" href="#thunderhopper.misctools.ensure_array">ensure_array</a></code></li>
+<li><code><a title="thunderhopper.misctools.safe_zip" href="#thunderhopper.misctools.safe_zip">safe_zip</a></code></li>
+<li><code><a title="thunderhopper.misctools.unsort_unique" href="#thunderhopper.misctools.unsort_unique">unsort_unique</a></code></li>
+<li><code><a title="thunderhopper.misctools.valid_decimals" href="#thunderhopper.misctools.valid_decimals">valid_decimals</a></code></li>
+<li><code><a title="thunderhopper.misctools.round_decimal" href="#thunderhopper.misctools.round_decimal">round_decimal</a></code></li>
+<li><code><a title="thunderhopper.misctools.as_power" href="#thunderhopper.misctools.as_power">as_power</a></code></li>
+<li><code><a title="thunderhopper.misctools.round_power" href="#thunderhopper.misctools.round_power">round_power</a></code></li>
+<li><code><a title="thunderhopper.misctools.remap_inds" href="#thunderhopper.misctools.remap_inds">remap_inds</a></code></li>
+<li><code><a title="thunderhopper.misctools.merge_dicts" href="#thunderhopper.misctools.merge_dicts">merge_dicts</a></code></li>
+<li><code><a title="thunderhopper.misctools.unmerge_dicts" href="#thunderhopper.misctools.unmerge_dicts">unmerge_dicts</a></code></li>
+<li><code><a title="thunderhopper.misctools.closest_value" href="#thunderhopper.misctools.closest_value">closest_value</a></code></li>
+<li><code><a title="thunderhopper.misctools.nonzero_inds" href="#thunderhopper.misctools.nonzero_inds">nonzero_inds</a></code></li>
+<li><code><a title="thunderhopper.misctools.rank_extremes" href="#thunderhopper.misctools.rank_extremes">rank_extremes</a></code></li>
+<li><code><a title="thunderhopper.misctools.longest_segment" href="#thunderhopper.misctools.longest_segment">longest_segment</a></code></li>
+<li><code><a title="thunderhopper.misctools.mirror_linspace" href="#thunderhopper.misctools.mirror_linspace">mirror_linspace</a></code></li>
+<li><code><a title="thunderhopper.misctools.mirror_logspace" href="#thunderhopper.misctools.mirror_logspace">mirror_logspace</a></code></li>
+<li><code><a title="thunderhopper.misctools.make_circle" href="#thunderhopper.misctools.make_circle">make_circle</a></code></li>
+<li><code><a title="thunderhopper.misctools.flat_list" href="#thunderhopper.misctools.flat_list">flat_list</a></code></li>
+<li><code><a title="thunderhopper.misctools.flat_iterable" href="#thunderhopper.misctools.flat_iterable">flat_iterable</a></code></li>
+<li><code><a title="thunderhopper.misctools.combination_array" href="#thunderhopper.misctools.combination_array">combination_array</a></code></li>
+<li><code><a title="thunderhopper.misctools.spread_shuffle" href="#thunderhopper.misctools.spread_shuffle">spread_shuffle</a></code></li>
+<li><code><a title="thunderhopper.misctools.lowpass_props" href="#thunderhopper.misctools.lowpass_props">lowpass_props</a></code></li>
+<li><code><a title="thunderhopper.misctools.artificial_song" href="#thunderhopper.misctools.artificial_song">artificial_song</a></code></li>
+<li><code><a title="thunderhopper.misctools.song_series" href="#thunderhopper.misctools.song_series">song_series</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

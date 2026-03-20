@@ -1,0 +1,1813 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>thunderhopper.filetools API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>thunderhopper.filetools</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="thunderhopper.filetools.assert_dir"><code class="name flex">
+<span>def <span class="ident">assert_dir</span></span>(<span>dir_path, as_path=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def assert_dir(dir_path, as_path=False):
+    &#34;&#34;&#34; Checks if folder exists and creates it, if necessary.
+        Returns pathlib-standardized version of the given path as either a
+        string or a pathlib.Path object.
+
+    Parameters
+    ----------
+    dir_path : str or pathlib.Path object
+        Relative or absolute path to folder. Creates full directory tree,
+        including any missing parent folders.
+    as_path : bool, optional
+        If True, returns folder path as a pathlib.Path object. Else, returns a
+        string. The default is False.
+    &#34;&#34;&#34;
+    # Input interpretation:
+    if not isinstance(dir_path, pathlib.Path):
+        dir_path = pathlib.Path(dir_path)
+    # Ensure folder existence:
+    if not dir_path.exists():
+        print(f&#39;WARNING: Directory &#34;{str(dir_path)}&#34; does not exist. &#39;\
+              &#39;Added missing folders.&#39;)
+        dir_path.mkdir(parents=True)
+    return dir_path if as_path else str(dir_path)</code></pre>
+</details>
+<div class="desc"><p>Checks if folder exists and creates it, if necessary.
+Returns pathlib-standardized version of the given path as either a
+string or a pathlib.Path object.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>dir_path</code></strong> :&ensp;<code>str</code> or <code>pathlib.Path object</code></dt>
+<dd>Relative or absolute path to folder. Creates full directory tree,
+including any missing parent folders.</dd>
+<dt><strong><code>as_path</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, returns folder path as a pathlib.Path object. Else, returns a
+string. The default is False.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.check_extension"><code class="name flex">
+<span>def <span class="ident">check_extension</span></span>(<span>path, extension, n_suffixes=1)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def check_extension(path, extension, n_suffixes=1):
+    &#34;&#34;&#34; Ensures that the given path has a correct file extension.
+        Controls for presence of the specified target extension(s) in path. If
+        path has no extension, appends the first target extension. If path has
+        a different extension, replaces it accordingly. Can handle paths
+        with multiple suffixes (more than a single &#34;.&#34; in path).
+
+    Parameters
+    ----------
+    path : str
+        Absolute or relative path to check. Always treated as a file path.
+    extension : str or tuple or list of str
+        Target extension(s) to search for in path. Returns the given path if it
+        contains any target extension. Else, uses the first provided target
+        extension to complete the path or replace the current extension.
+    n_suffixes : int, optional
+        Number of path suffixes (segments starting with &#34;.&#34;) to treat as the
+        current file extension to be checked and replaced, if necessary. If 0,
+        appends the target extension to the path regardless of any existing
+        suffixes. If &gt; 1, assumes a chained extension (e.g., &#34;.tar.gz&#34;) that
+        comprises the last n_suffixes segments. Warns about paths that contain
+        more suffixes than expected. The default is 1.
+
+    Returns
+    -------
+    path : str
+        Checked path with the correct file extension. Returns either the given
+        path or a modified version with the target extension appended or in
+        place of the current extension.
+    &#34;&#34;&#34;    
+    # Assert iterable:
+    if not isinstance(extension, (list, tuple)):
+        extension = [extension] 
+    # Assert leading dot in given target extension(s):
+    extension = [ex if ex.startswith(&#39;.&#39;) else &#39;.&#39; + ex for ex in extension]
+
+    # Get path segments with a leading dot:
+    suffixes = pathlib.Path(path).suffixes
+    # Take all identified:
+    if n_suffixes is None:
+        n_suffixes = len(suffixes)
+    # Report violated expectations:
+    if len(suffixes) &gt; n_suffixes:
+        print(&#39;WARNING: Path contains more suffixes (&#34;.&#34;) than expected.&#39;)
+
+    # Append (first) target extension:
+    if not suffixes or n_suffixes == 0:
+        return path + extension[0]
+    # Keep or replace current extension:
+    current_ext = &#39;&#39;.join(suffixes[-n_suffixes:])
+    if current_ext in extension:
+        return path
+    return path[:-len(current_ext)] + extension[0]</code></pre>
+</details>
+<div class="desc"><p>Ensures that the given path has a correct file extension.
+Controls for presence of the specified target extension(s) in path. If
+path has no extension, appends the first target extension. If path has
+a different extension, replaces it accordingly. Can handle paths
+with multiple suffixes (more than a single "." in path).</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Absolute or relative path to check. Always treated as a file path.</dd>
+<dt><strong><code>extension</code></strong> :&ensp;<code>str</code> or <code>tuple</code> or <code>list</code> of <code>str</code></dt>
+<dd>Target extension(s) to search for in path. Returns the given path if it
+contains any target extension. Else, uses the first provided target
+extension to complete the path or replace the current extension.</dd>
+<dt><strong><code>n_suffixes</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Number of path suffixes (segments starting with ".") to treat as the
+current file extension to be checked and replaced, if necessary. If 0,
+appends the target extension to the path regardless of any existing
+suffixes. If &gt; 1, assumes a chained extension (e.g., ".tar.gz") that
+comprises the last n_suffixes segments. Warns about paths that contain
+more suffixes than expected. The default is 1.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Checked path with the correct file extension. Returns either the given
+path or a modified version with the target extension appended or in
+place of the current extension.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.crop_paths"><code class="name flex">
+<span>def <span class="ident">crop_paths</span></span>(<span>paths)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def crop_paths(paths):
+    &#34;&#34;&#34; Crops parent folders from paths and removes any file extensions.
+
+    Parameters
+    ----------
+    paths : str or list of str (m,)
+        Absolute or relative paths to the desired target folders or files.
+
+    Returns
+    -------
+    cropped : list of str (m,)
+        Bare names of the folders and files in paths.
+    &#34;&#34;&#34;    
+    # Assert iterable:
+    paths = check_list(paths)
+    # Reduce paths to filenames:
+    cropped = [pathlib.Path(path).stem for path in paths]
+    return cropped</code></pre>
+</details>
+<div class="desc"><p>Crops parent folders from paths and removes any file extensions.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>paths</code></strong> :&ensp;<code>str</code> or <code>list</code> of <code>str (m,)</code></dt>
+<dd>Absolute or relative paths to the desired target folders or files.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>cropped</code></strong> :&ensp;<code>list</code> of <code>str (m,)</code></dt>
+<dd>Bare names of the folders and files in paths.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.search_files"><code class="name flex">
+<span>def <span class="ident">search_files</span></span>(<span>keywords='*',<br>excl=[],<br>incl=[],<br>dir='../data/raw/',<br>ext='*',<br>subdirs=False,<br>resolve=True,<br>as_path=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def search_files(keywords=&#39;*&#39;, excl=[], incl=[], dir=&#39;../data/raw/&#39;, ext=&#39;*&#39;,
+                 subdirs=False, resolve=True, as_path=False):
+    &#34;&#34;&#34; Multi-keyword search among file paths in the given directory.
+        Allows for post-search exclusion/inclusion criteria before returning.
+        Uses pathlib&#39;s globbing, supporting path resolution and recursive
+        subdirectory search.
+
+        KEYWORD SYNTAX (current songdetector archive):
+        Genus: Uppercase (&#39;Chorthippus&#39;)
+        Species: Lowercase (&#39;_mollis&#39;)
+        (Sub-species: Lowercase (&#39;-ignifer&#39;))
+        Full name: &#39;Chorthippus_mollis-ignifer&#39;
+        Source: &#39;BM93&#39;, &#39;BM04&#39;, &#39;DJN&#39;, &#39;GBC&#39;, &#39;FTN&#39;
+        Temperature: &#39;_T&#39; or &#39;C_&#39;
+        Doubletag: &#39;DT&#39; (potential duplicate segments within recording)
+        Caution: &#39;CAUTION&#39; (Only BM: &#39;93/&#39;04 might be same recording)      
+
+    Parameters
+    ----------
+    keywords : str or list of str (m,)
+        Search keywords for repetitive globbing of file paths. Multiple keyword
+        hits do not result in duplicates in the returned file list. If any
+        keyword is &#39;*&#39;, performs an all-out wildcard search for the given file
+        extension(s) in the specified directory. Excluder and includer keywords
+        are applied normally, if present. The default is &#39;*&#39;.
+    excl : str or list of str (n,), optional
+        Excluder keywords. Omits all globbed paths that contain any excluders.
+        Excluders are applied before and take precedence over includers. The
+        default is [].
+    incl : str or list of str (p,), optional
+        Includer keywords. Omits all globbed paths that lack any includers.
+        Includers are applied after excluders. The default is [].
+    dir : str or pathlib.Path object, optional
+        Relative or absolute path to the wider directory in which to perform
+        the keyword search. The default is &#39;../data/Raw/&#39;.
+    ext : str, optional
+        File extension to narrow keyword search to the desired format (for
+        example, &#39;wav&#39;). Does not have to start with &#39;.&#39; The default is &#39;*&#39;,
+        corresponding to any file type.
+    subdirs : bool, optional
+        If True, performs recursive search in all sub-directories of dir. Else,
+        strictly searches the given folder only. The default is False.
+    resolve : bool, optional
+        If True, converts dir to an absolute path, resolving any symbolic links
+        such as &#39;..&#39;. Raises an error if the given directory does not exist.
+        Determines the format of the returned file paths (absolute/relative).
+        The default is True.
+    as_path : bool, optional
+        If True, returns file paths as pathlib.Path objects. Else, returns
+        strings. The default is False.
+
+    Returns
+    -------
+    file_list : list of str (q,)
+        Paths to files that match the specified keyword criteria in
+        alphabetical order. Each path in the list is unique, regardless of the
+        number of matching keywords.
+    &#34;&#34;&#34;
+    # Input interpretation:
+    if not ext.startswith(&#39;.&#39;):
+        ext = &#39;.&#39; + ext
+    if not isinstance(dir, pathlib.Path):
+        dir = pathlib.Path(dir)
+    # Assert iterables:
+    keywords, excl, incl = check_list(keywords, excl, incl)
+    # Enable recursive folder search:
+    wild_dir = &#39;**/&#39; if subdirs else &#39;&#39;
+    if resolve:
+        # Make absolute, check existence:
+        dir = dir.resolve(strict=True)
+    if &#39;*&#39; in keywords:
+        # Pure wildcard search:
+        keywords = [&#39;*&#39;]
+    else:
+        # Wildcard buffer:
+        ext = &#39;*&#39; + ext
+        wild_dir += &#39;*&#39;
+
+    # Search for files that contain any search keywords:
+    files = [list(dir.glob(f&#39;{wild_dir}{kw}{ext}&#39;)) for kw in keywords]
+    # Join lists, remove duplicates, sort alphabetically, Path to string:
+    file_list = [str(file) for file in sorted(list(set(sum(files, []))))]
+    if excl:
+        # Omit all files that contain any excluder keywords:
+        file_list = [f for f in file_list if not any(ex in f for ex in excl)]
+    if incl:
+        # Omit all files that lack any includer keywords:
+        file_list = [f for f in file_list if all(inc in f for inc in incl)]
+    if as_path:
+        # Convert strings back to Path objects:
+        file_list = [pathlib.Path(f) for f in file_list]
+    return file_list</code></pre>
+</details>
+<div class="desc"><p>Multi-keyword search among file paths in the given directory.
+Allows for post-search exclusion/inclusion criteria before returning.
+Uses pathlib's globbing, supporting path resolution and recursive
+subdirectory search.</p>
+<pre><code>KEYWORD SYNTAX (current songdetector archive):
+Genus: Uppercase ('Chorthippus')
+Species: Lowercase ('_mollis')
+(Sub-species: Lowercase ('-ignifer'))
+Full name: 'Chorthippus_mollis-ignifer'
+Source: 'BM93', 'BM04', 'DJN', 'GBC', 'FTN'
+Temperature: '_T' or 'C_'
+Doubletag: 'DT' (potential duplicate segments within recording)
+Caution: 'CAUTION' (Only BM: '93/'04 might be same recording)
+</code></pre>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>keywords</code></strong> :&ensp;<code>str</code> or <code>list</code> of <code>str (m,)</code></dt>
+<dd>Search keywords for repetitive globbing of file paths. Multiple keyword
+hits do not result in duplicates in the returned file list. If any
+keyword is '<em>', performs an all-out wildcard search for the given file
+extension(s) in the specified directory. Excluder and includer keywords
+are applied normally, if present. The default is '</em>'.</dd>
+<dt><strong><code>excl</code></strong> :&ensp;<code>str</code> or <code>list</code> of <code>str (n,)</code>, optional</dt>
+<dd>Excluder keywords. Omits all globbed paths that contain any excluders.
+Excluders are applied before and take precedence over includers. The
+default is [].</dd>
+<dt><strong><code>incl</code></strong> :&ensp;<code>str</code> or <code>list</code> of <code>str (p,)</code>, optional</dt>
+<dd>Includer keywords. Omits all globbed paths that lack any includers.
+Includers are applied after excluders. The default is [].</dd>
+<dt><strong><code>dir</code></strong> :&ensp;<code>str</code> or <code>pathlib.Path object</code>, optional</dt>
+<dd>Relative or absolute path to the wider directory in which to perform
+the keyword search. The default is '../data/Raw/'.</dd>
+<dt><strong><code>ext</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>File extension to narrow keyword search to the desired format (for
+example, 'wav'). Does not have to start with '.' The default is '*',
+corresponding to any file type.</dd>
+<dt><strong><code>subdirs</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, performs recursive search in all sub-directories of dir. Else,
+strictly searches the given folder only. The default is False.</dd>
+<dt><strong><code>resolve</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, converts dir to an absolute path, resolving any symbolic links
+such as '..'. Raises an error if the given directory does not exist.
+Determines the format of the returned file paths (absolute/relative).
+The default is True.</dd>
+<dt><strong><code>as_path</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, returns file paths as pathlib.Path objects. Else, returns
+strings. The default is False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>file_list</code></strong> :&ensp;<code>list</code> of <code>str (q,)</code></dt>
+<dd>Paths to files that match the specified keyword criteria in
+alphabetical order. Each path in the list is unique, regardless of the
+number of matching keywords.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.to_archive"><code class="name flex">
+<span>def <span class="ident">to_archive</span></span>(<span>data)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_archive(data):
+    &#34;&#34;&#34; Re-codes None entries as empty 1D arrays for writing to a npz archive.
+        Avoids creation of arrays of data type object, which require pickling.
+
+    Parameters
+    ----------
+    data : dict
+        Data to be written to file using np.savez(). Other hard-to-serialize
+        types like dictionaries, sets, or inhomogenous lists are not treated.
+
+    Returns
+    -------
+    data : dict
+        Data in storable format.
+    &#34;&#34;&#34;
+    return {k: np.array([]) if v is None else v for k, v in data.items()}</code></pre>
+</details>
+<div class="desc"><p>Re-codes None entries as empty 1D arrays for writing to a npz archive.
+Avoids creation of arrays of data type object, which require pickling.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>data</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Data to be written to file using np.savez(). Other hard-to-serialize
+types like dictionaries, sets, or inhomogenous lists are not treated.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>data</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Data in storable format.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.from_archive"><code class="name flex">
+<span>def <span class="ident">from_archive</span></span>(<span>data)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def from_archive(data):
+    &#34;&#34;&#34; Retrieves data from a npz archive, restoring much of the original form.
+        Unpacks single ints, floats, bools, and strings from their 0D array
+        containers. Converts empty 1D arrays back to Nones.
+
+    Parameters
+    ----------
+    data : dict or NPZ archive object
+        Data loaded from a npz archive using np.load(). Arrays of other
+        or more complex data types like object are not treated.
+
+    Returns
+    -------
+    data : dict
+        Data in working format.
+    &#34;&#34;&#34;
+    # Input interpreation:
+    if not isinstance(data, dict):
+        data = dict(data)
+
+    # Convert arrays where necessary:
+    for key, value in data.items():
+        # Restore Nones from empty 1D arrays:
+        if value.ndim == 1 and not value.size:
+            data[key] = None
+        # Restore singular entries from 0D arrays:
+        elif value.ndim == 0 and value.size == 1:
+            try:
+                if np.isdtype(value.dtype, &#39;signed integer&#39;):
+                    data[key] = int(value)
+                elif np.isdtype(value.dtype, &#39;real floating&#39;):
+                    data[key] = float(value)
+                elif np.isdtype(value.dtype, &#39;bool&#39;):
+                    data[key] = bool(value)
+                elif np.isdtype(value.dtype, np.str_):
+                    data[key] = str(value)
+            except AttributeError:
+                # np.isdtype() was added in numpy version 2.0!
+                # This might also work:
+                data[key] = value.item()
+    return data</code></pre>
+</details>
+<div class="desc"><p>Retrieves data from a npz archive, restoring much of the original form.
+Unpacks single ints, floats, bools, and strings from their 0D array
+containers. Converts empty 1D arrays back to Nones.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>data</code></strong> :&ensp;<code>dict</code> or <code>NPZ archive object</code></dt>
+<dd>Data loaded from a npz archive using np.load(). Arrays of other
+or more complex data types like object are not treated.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>data</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Data in working format.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.load_npz"><code class="name flex">
+<span>def <span class="ident">load_npz</span></span>(<span>path, files=[], keywords=[], prefix='', suffix='')</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_npz(path, files=[], keywords=[], prefix=&#39;&#39;, suffix=&#39;&#39;):
+    #TODO: Document prefix and suffix keyword arguments.
+    &#34;&#34;&#34; Pre-loads npz archive and loads the contained npy files into memory.
+        Returns a dictionary of arrays. Output can be limited to files whose
+        names are explicitly given or contain any of the specified keywords.
+        The archive is closed again upon retrieving the requested data.
+
+    Parameters
+    ----------
+    path : str or pathlib.Path
+        Absolute or relative path to the npz archive.
+    files : str or list or tuple of str (m,), optional
+        Selection of names of npy files to load from the archive. Ignores file
+        names that cannot be found in archive.files. The default is [].
+    keywords : str or list or tuple of str (n,), optional
+        Keywords to match against npy file names. The default is [].
+
+    Returns
+    -------
+    data : dict of arrays (p,)
+        Contents of the loaded npy files retrieved from the npz archive. If no
+        files or keywords are specified, returns the entire archive. Else, only
+        returns the subset of files that match the given criteria.
+    &#34;&#34;&#34;    
+    # Get zipped npy files:
+    archive = np.load(path)
+
+    # Load data into memory:
+    if not files and not keywords:
+        # Unselective early exit:
+        data = dict(archive)
+    else:
+        # Ensure iterable:
+        if isinstance(keywords, str):
+            keywords = [keywords]
+
+        # Select files to load by name or keywords:
+        selected = lambda f: f in files or any(kw in f for kw in keywords)
+        data = {f: archive[f] for f in filter(selected, archive.files)}
+
+    # Safe return:
+    archive.close()
+    return unmerge_dicts(data, prefix, suffix) if prefix or suffix else data</code></pre>
+</details>
+<div class="desc"><p>Pre-loads npz archive and loads the contained npy files into memory.
+Returns a dictionary of arrays. Output can be limited to files whose
+names are explicitly given or contain any of the specified keywords.
+The archive is closed again upon retrieving the requested data.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code> or <code>pathlib.Path</code></dt>
+<dd>Absolute or relative path to the npz archive.</dd>
+<dt><strong><code>files</code></strong> :&ensp;<code>str</code> or <code>list</code> or <code>tuple</code> of <code>str (m,)</code>, optional</dt>
+<dd>Selection of names of npy files to load from the archive. Ignores file
+names that cannot be found in archive.files. The default is [].</dd>
+<dt><strong><code>keywords</code></strong> :&ensp;<code>str</code> or <code>list</code> or <code>tuple</code> of <code>str (n,)</code>, optional</dt>
+<dd>Keywords to match against npy file names. The default is [].</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>data</code></strong> :&ensp;<code>dict</code> of <code>arrays (p,)</code></dt>
+<dd>Contents of the loaded npy files retrieved from the npz archive. If no
+files or keywords are specified, returns the entire archive. Else, only
+returns the subset of files that match the given criteria.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.expand_npz"><code class="name flex">
+<span>def <span class="ident">expand_npz</span></span>(<span>path, **data)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def expand_npz(path, **data):
+    &#34;&#34;&#34; Appends passed variables to an existing npz archive of npy files.
+        Variables must be compatible with np.save(). Each variable is first
+        saved as in-memory buffer, so no extra files are created on disk apart
+        from those added to the ZIP archive. Does not support file overwriting.
+
+    Parameters
+    ----------
+    path : str or pathlib.Path
+        Absolute or relative path to the existing npz archive.
+    **data : dict
+        Keyword arguments defining each variable and the name of the npy file
+        to be created in the archive. Must be compatible with np.save(). May
+        not contain any file names that are already present in the archive.
+    &#34;&#34;&#34;    
+    for name, variable in data.items():
+        # Create in-memory npy file:
+        file_buffer = io.BytesIO()
+        np.save(file_buffer, variable)
+        # Rewind to start:
+        file_buffer.seek(0)
+        # Write npy file to existing npz archive:
+        with zipfile.ZipFile(path, mode=&#39;a&#39;) as zipf:
+            zipf.writestr(name + &#39;.npy&#39;, file_buffer.read())
+    return None</code></pre>
+</details>
+<div class="desc"><p>Appends passed variables to an existing npz archive of npy files.
+Variables must be compatible with np.save(). Each variable is first
+saved as in-memory buffer, so no extra files are created on disk apart
+from those added to the ZIP archive. Does not support file overwriting.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code> or <code>pathlib.Path</code></dt>
+<dd>Absolute or relative path to the existing npz archive.</dd>
+<dt><strong><code>**data</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Keyword arguments defining each variable and the name of the npy file
+to be created in the archive. Must be compatible with np.save(). May
+not contain any file names that are already present in the archive.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.trim_npz"><code class="name flex">
+<span>def <span class="ident">trim_npz</span></span>(<span>path, files=[], keywords=[])</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def trim_npz(path, files=[], keywords=[]):
+    &#34;&#34;&#34; Removes specified npy files from an existing npz archive.
+        Deleted files can be specified by name or by the presence of keywords.
+        If any files are to be deleted, rewrites the archive without them.
+
+    Parameters
+    ----------
+    path : str or pathlib.Path
+        Absolute or relative path to the existing npz archive.
+    files : str or list or tuple of str (m,), optional
+        Selection of names of npy files to remove from the archive. Ignores
+        file names that cannot be found in archive.files. The default is [].
+    keywords : str or list or tuple of str (n,), optional
+        Keywords to match against npy file names. The default is [].
+    &#34;&#34;&#34;    
+    # Ensure iterable:
+    if isinstance(keywords, str):
+        keywords = [keywords]
+    if isinstance(files, str):
+        files = [files]
+
+    # Select files to keep by name or keywords:
+    files = [f&#39;{file}.npy&#39; for file in files]
+    selected = lambda f: f not in files and not any(kw in f for kw in keywords)
+
+    # List existing npy files in npz archive:
+    with zipfile.ZipFile(path, mode=&#39;r&#39;) as zipf:
+        archive_files = zipf.namelist()
+        keep = {f: zipf.read(f) for f in filter(selected, archive_files)}
+
+    # Check if rewrite can be avoided:
+    if len(keep) == len(archive_files):
+        return None
+    
+    # Recreate archive without deleted files:
+    with zipfile.ZipFile(path, &#39;w&#39;) as zipf:
+        for name, file in keep.items():
+            zipf.writestr(name, file)
+    return None</code></pre>
+</details>
+<div class="desc"><p>Removes specified npy files from an existing npz archive.
+Deleted files can be specified by name or by the presence of keywords.
+If any files are to be deleted, rewrites the archive without them.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code> or <code>pathlib.Path</code></dt>
+<dd>Absolute or relative path to the existing npz archive.</dd>
+<dt><strong><code>files</code></strong> :&ensp;<code>str</code> or <code>list</code> or <code>tuple</code> of <code>str (m,)</code>, optional</dt>
+<dd>Selection of names of npy files to remove from the archive. Ignores
+file names that cannot be found in archive.files. The default is [].</dd>
+<dt><strong><code>keywords</code></strong> :&ensp;<code>str</code> or <code>list</code> or <code>tuple</code> of <code>str (n,)</code>, optional</dt>
+<dd>Keywords to match against npy file names. The default is [].</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.update_npz"><code class="name flex">
+<span>def <span class="ident">update_npz</span></span>(<span>path, **data)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_npz(path, **data):
+    &#34;&#34;&#34; Inserts passed variables to an existing npz archive of npy files.
+        Variables must be compatible with np.save(). If all variables are novel
+        to the archive, calls expand_npz() to append them. If any file name is
+        already present in the archive, rewrites the archive without the files
+        to be overwritten, then calls expand_npz() to append the new variables.
+
+    Parameters
+    ----------
+    path : str or pathlib.Path
+        Absolute or relative path to the existing npz archive.
+    **data : dict
+        Keyword arguments defining each variable and the name of the npy file
+        to be inserted in the archive. Must be compatible with np.save().
+    &#34;&#34;&#34;    
+    # List existing npy files in npz archive:
+    with zipfile.ZipFile(path, mode=&#39;r&#39;) as zipf:
+        # Get current archive contents:
+        archive_files = zipf.namelist()
+        # Identify archive files that will not be updated:
+        untouched = [f for f in archive_files if f[:-4] not in data.keys()]
+        # Check if file overwrite can be avoided:
+        if len(untouched) == len(archive_files):
+            # Pure append early exit:
+            expand_npz(path, **data)
+            return None
+        # Gather contents of non-updated files:
+        untouched = {f: zipf.read(f) for f in untouched}
+
+    # Recreate archive without overwrites:
+    with zipfile.ZipFile(path, &#39;w&#39;) as zipf:
+        for name, file in untouched.items():
+            zipf.writestr(name, file)
+    # Append to new archive:
+    expand_npz(path, **data)
+    return None</code></pre>
+</details>
+<div class="desc"><p>Inserts passed variables to an existing npz archive of npy files.
+Variables must be compatible with np.save(). If all variables are novel
+to the archive, calls expand_npz() to append them. If any file name is
+already present in the archive, rewrites the archive without the files
+to be overwritten, then calls expand_npz() to append the new variables.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code> or <code>pathlib.Path</code></dt>
+<dd>Absolute or relative path to the existing npz archive.</dd>
+<dt><strong><code>**data</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Keyword arguments defining each variable and the name of the npy file
+to be inserted in the archive. Must be compatible with np.save().</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.write_json"><code class="name flex">
+<span>def <span class="ident">write_json</span></span>(<span>data, path, make_dir=True)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def write_json(data, path, make_dir=True):
+    &#34;&#34;&#34; Writes data collection in dictionary format to .json or .txt file.
+
+    Parameters
+    ----------
+    data : dict
+        Data to be saved. May contain different types of data. Data is rendered
+        JSON-serializable before writing: Numpy int/float scalars to built-in
+        types, Numpy ndarrays (and ndarrays in a list) to lists. Conversion
+        may cause loss of precision!
+    path : str
+        Absolute or relative path to file in which data is saved.
+    make_dir : bool, optional
+        If True, creates missing parent folders in path. Else, raises a
+        FileNotFoundError if directory does not exist. The default is True.
+    &#34;&#34;&#34;    
+    # JSON serialization:
+    dictionary = data.copy()
+    for key in dictionary.keys():
+        value = dictionary[key]
+        data_type = str(type(value))
+        # Numpy integer types to built-in int:
+        if &#39;int&#39; in data_type and &#39;numpy&#39; in data_type:                        
+            dictionary.update({key: int(value)})
+        # Numpy float types to built-in float:
+        elif &#39;float&#39; in data_type and &#39;numpy&#39; in data_type:                    
+            dictionary.update({key: float(value)})
+        # Numpy ndarrays to list:
+        elif &#39;ndarray&#39; in data_type:                                           
+            dictionary.update({key: value.tolist()})
+        # Numpy ndarrays in list to lists:
+        elif &#39;list&#39; in data_type:                                              
+            for i, val in enumerate(value):
+                if &#39;ndarray&#39; in str(type(val)):
+                    value[i] = val.tolist()
+            dictionary.update({key: value})
+    if make_dir:
+        # Optional folder creation:
+        assert_dir(str(pathlib.Path(path).parent))
+    # Write data to file:
+    with open(path, &#39;w&#39;) as file:
+        json.dump(dictionary, file, ensure_ascii=False, indent=4)
+    return None</code></pre>
+</details>
+<div class="desc"><p>Writes data collection in dictionary format to .json or .txt file.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>data</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Data to be saved. May contain different types of data. Data is rendered
+JSON-serializable before writing: Numpy int/float scalars to built-in
+types, Numpy ndarrays (and ndarrays in a list) to lists. Conversion
+may cause loss of precision!</dd>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Absolute or relative path to file in which data is saved.</dd>
+<dt><strong><code>make_dir</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, creates missing parent folders in path. Else, raises a
+FileNotFoundError if directory does not exist. The default is True.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.load_json"><code class="name flex">
+<span>def <span class="ident">load_json</span></span>(<span>path, restore=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_json(path, restore=None):
+    &#34;&#34;&#34; Loads data collection in dictionary format from .json or .txt file.
+
+    Parameters
+    ----------
+    path : str
+        Absolute or relative path to file in which data is stored.
+    restore : str, optional
+        If specified, converts stored lists back to Numpy ndarrays. If &#39;full&#39;,
+        calls np.array() on entire list. If &#39;inner&#39;, leaves outer wrapper list
+        as is and calls np.array() on all of its elements that are lists. Lists
+        that contain any strings are always treated in the latter way. May have
+        unexpected outcomes for higher levels of nesting! The default is None.
+
+    Returns
+    -------
+    data : dict
+        Dictionary containing loaded data.
+    &#34;&#34;&#34;    
+    # Read data from file:
+    with open(path, &#39;r&#39;) as file:
+        data = json.load(file)
+    if restore in [&#39;full&#39;, &#39;inner&#39;]:
+        # Revert array JSON serialization:
+        for key in data.keys():
+            value = data[key]
+            # Skip scalars and strings:
+            if type(value) is not list:
+                continue
+            # Check data type of list elements:
+            types = [type(val) for val in value]
+            if restore == &#39;inner&#39; or (str in types):
+                # Inner lists to arrays:
+                for i, val in enumerate(value):
+                    if type(val) is list:
+                        value[i] = np.array(val)
+                data.update({key: value})
+            else:
+                # Entire list to array:
+                data.update({key: np.array(value)})
+    return data</code></pre>
+</details>
+<div class="desc"><p>Loads data collection in dictionary format from .json or .txt file.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>Absolute or relative path to file in which data is stored.</dd>
+<dt><strong><code>restore</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>If specified, converts stored lists back to Numpy ndarrays. If 'full',
+calls np.array() on entire list. If 'inner', leaves outer wrapper list
+as is and calls np.array() on all of its elements that are lists. Lists
+that contain any strings are always treated in the latter way. May have
+unexpected outcomes for higher levels of nesting! The default is None.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>data</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary containing loaded data.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.merge_wavs"><code class="name flex">
+<span>def <span class="ident">merge_wavs</span></span>(<span>file_paths, save_path=None, return_out=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def merge_wavs(file_paths, save_path=None, return_out=False):
+    &#34;&#34;&#34; Loads and concatenates audio recording data from multiple .wav files.
+        Merged data can be written to a new .wav file and/or returned directly.
+        Wrapper to audioio&#39;s load_audio() and write_audio() functions. 
+
+    Parameters
+    ----------
+    file_paths : list or tuple (m,) of str
+        Collection of paths to several .wav files for merging. Recording data
+        must have the same sampling rate and channel count. Arrays are stacked
+        vertically along the time axis in order of the input list, so that data
+        from the first file is on top.
+    save_path : str, optional
+        If specified, writes the merged recording data to a new .wav file at
+        the given path. The default is None.
+    return_out : bool, optional
+        If True, returns the merged recording data as a numpy array together
+        with the underlying sampling rate in Hz as float. Auto-enabled if
+        save_path is not specified. The default is False.
+
+    Returns
+    -------
+    merged : 2D array of floats (n, p)
+        Merged recording data from all input files. Rows correspond to time,
+        columns to individual channels. Only returned if return_out is True or
+        save_path is None.
+    rate : float
+        Sampling rate of the merged recording data in Hz. Only returned if
+        return_out is True or save_path is None.
+
+    Raises
+    ------
+    ValueError
+        Breaks if any input file has a different sampling rate than the others.
+        Breals without dedicated error if channel count differs between files.
+    &#34;&#34;&#34;    
+    # Load recording data from audio files:
+    signals, rates = zip(*[load_audio(str(path)) for path in file_paths])
+    if len(set(rates)) &gt; 1:
+        # Validate sampling rate consistency:
+        raise ValueError(&#39;All recordings must have the same sampling rate.&#39;)
+
+    # Merge recording list:
+    merged = np.vstack(signals)
+    if save_path is not None:
+        # Optional saving to new audio file:
+        write_audio(save_path, merged, rates[0])
+    if return_out or save_path is None:
+        # Optional outputting:
+        return merged, rates[0]
+    return None</code></pre>
+</details>
+<div class="desc"><p>Loads and concatenates audio recording data from multiple .wav files.
+Merged data can be written to a new .wav file and/or returned directly.
+Wrapper to audioio's load_audio() and write_audio() functions. </p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>file_paths</code></strong> :&ensp;<code>list</code> or <code>tuple (m,)</code> of <code>str</code></dt>
+<dd>Collection of paths to several .wav files for merging. Recording data
+must have the same sampling rate and channel count. Arrays are stacked
+vertically along the time axis in order of the input list, so that data
+from the first file is on top.</dd>
+<dt><strong><code>save_path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>If specified, writes the merged recording data to a new .wav file at
+the given path. The default is None.</dd>
+<dt><strong><code>return_out</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, returns the merged recording data as a numpy array together
+with the underlying sampling rate in Hz as float. Auto-enabled if
+save_path is not specified. The default is False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>merged</code></strong> :&ensp;<code>2D array</code> of <code>floats (n, p)</code></dt>
+<dd>Merged recording data from all input files. Rows correspond to time,
+columns to individual channels. Only returned if return_out is True or
+save_path is None.</dd>
+<dt><strong><code>rate</code></strong> :&ensp;<code>float</code></dt>
+<dd>Sampling rate of the merged recording data in Hz. Only returned if
+return_out is True or save_path is None.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>Breaks if any input file has a different sampling rate than the others.
+Breals without dedicated error if channel count differs between files.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.merge_wav_series"><code class="name flex">
+<span>def <span class="ident">merge_wav_series</span></span>(<span>rec_dur=20.0,<br>unit='seconds',<br>format='%Y%m%dT%H%M%S',<br>n_tag=15,<br>save_dir=None,<br>return_out=False,<br>return_paths=False,<br>**search_kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def merge_wav_series(rec_dur=20., unit=&#39;seconds&#39;, format=&#39;%Y%m%dT%H%M%S&#39;,
+                     n_tag=15, save_dir=None, return_out=False,
+                     return_paths=False, **search_kwargs):
+    &#34;&#34;&#34; Automatic identification and merging of consecutive audio recordings.
+        Uses search_files() to fetch all .wav files in the target directory
+        that match the given search criteria, then extracts the time stamp from
+        the end of each file name. Recordings whose start times are separated
+        by an interval matching the specified duration are appended into a
+        series and written to a new .wav file. Can return the merged recording
+        data and/or a dictionary of paths to the new files and the merged ones.
+
+    Parameters
+    ----------
+    rec_dur : float, optional
+        Standard recording duration in the given unit. Must be the same for all
+        files in a series for correct identification. The default is 20.0.
+    unit : str, optional
+        Unit of the recording duration. Must be known to datetime&#39;s timedelta
+        class. The default is &#39;seconds&#39;. 
+    format : str, optional
+        Standard time stamp format used in all file names. Must be readable by
+        datetime&#39;s strptime/strftime functions. Newly created files are tagged
+        in the same format. May contain non-coding letters (no leading &#34;%&#34;),
+        which are inherited by the time stamps of new files. The default is
+        &#39;%Y%m%dT%H%M%S&#39;, so 19980330T102700 for March 30th 1998 at 10:27 am.
+    n_tag : int, optional
+        Number of characters occupied by the time stamp at the end of each file
+        name. This is not the same as the length of the format string! The
+        default is 15, matching the default format.
+    save_dir : str or pathlib.Path object, optional
+        Path to the folder where the merged recording data should be written to
+        file. If None, saves into sub-folder &#34;merged&#34; in the target directory.
+        The directory is created if missing in both cases. The default is None. 
+    return_out : bool, optional
+        If True, returns a list of tuples containing the merged recording data
+        and the corresponding sampling rate per series. If both return options
+        are True, returns a tuple (data, paths). The default is False.
+    return_paths : bool, optional
+        If True, returns a dictionary of the paths to the new .wav files (keys)
+        and lists of paths to the merged original files (values) for reference.
+        If both return options are True, returns a tuple (data, paths). The
+        default is False.
+    **search_kwargs : dict
+        Keyword arguments passed to search_files() for specifying the search
+        criteria when fetching .wav files. Use &#39;dir&#39; to set the target
+        directory (default is current directory). Use &#39;keywords&#39;, &#39;incl&#39;, and
+        &#39;excl&#39; to filter by file name (default is any .wav file). Forces &#39;ext&#39;
+        to &#39;wav&#39; and &#39;as_path&#39; to True. The default is {}.
+
+    Returns
+    -------
+    merge_data : list (m,) of tuples (2,) of 2D array (n, p) and float
+        For each identified recording series, the merged recording data from
+        all matching .wav files as a numpy array and the corresponding sampling
+        rate in Hz as float. Rows correspond to time, columns to individual
+        channels. Only returned if return_out is True.
+    merge_files : dict
+        For each identified recording series, the path to the newly created
+        .wav file in the given storage folder (keys) and a list of paths to the
+        original .wav files that have been merged (values). All paths are 
+        returned as pathlib.Path object. Only returned if return_paths is True.
+    &#34;&#34;&#34;    
+    # Enforce function-specific default search settings:
+    search_kwargs.update({&#39;ext&#39;: &#39;wav&#39;, &#39;as_path&#39;: True})
+    # Optional default settings:
+    if &#39;dir&#39; not in search_kwargs:
+        search_kwargs[&#39;dir&#39;] = &#39;.&#39;
+    if &#39;resolve&#39; not in search_kwargs:
+        search_kwargs[&#39;resolve&#39;] = False
+
+    # Fetch all matching .wav files:
+    paths = search_files(**search_kwargs)
+    if not paths:
+        # Early exit for unsuccessful file search in target directory:
+        print(&#39;WARNING: No .wav files found matching the search criteria.&#39;)
+        return None
+
+    # Extract time stamp from end of file names and convert to precise times:
+    times = [datetime.strptime(path.stem[-n_tag:], format) for path in paths]
+    delta = timedelta(**{unit: rec_dur})
+    # Sort start times chronologically:
+    sorted_inds = np.argsort(times)
+    times, paths = np.array(times)[sorted_inds], np.array(paths)[sorted_inds]
+    # Match start-to-start intervals against standard recording duration:
+    break_inds = np.nonzero(np.append(np.diff(times) != delta, True))[0]
+
+    # Identify and extract recording series:
+    series_paths, series_times, start_ind = [], [], 0
+    for end_ind in break_inds:
+        if end_ind - start_ind:
+            # Series must contain at least two consecutive recordings:
+            series_paths.append(paths[start_ind : end_ind + 1].tolist())
+            series_times.append(times[start_ind : end_ind + 1].tolist())
+        start_ind = end_ind + 1
+    if not series_paths:
+        # Early exit for failure to identify any recording series:
+        print(&#39;WARNING: No recording series found among the given .wav files.&#39;\
+              &#39;\nA series must contain at least two recordings with a time&#39;\
+              f&#39;stamp interval of {rec_dur} {unit}.&#39;)
+        return None
+
+    # Prepare storage:
+    if save_dir is None:
+        # Default to sub-folder &#34;merged&#34; in target directory:
+        save_dir = pathlib.Path(search_kwargs[&#39;dir&#39;]) / &#39;merged&#39;
+    # Ensure folder existence (given or default):
+    save_dir = assert_dir(save_dir, as_path=True)
+
+    # Merge each recording series:
+    merge_data, merge_files = [], {}
+    for series, start_times in zip(series_paths, series_times):
+        # Adapt series time stamp (full duration):
+        t_start = start_times[0].strftime(format)
+        t_end = (start_times[-1] + delta).strftime(format)
+        # Assemble path to save new .wav file into storage folder:
+        name = pathlib.Path(series[0]).stem[:-n_tag] + f&#39;{t_start}-{t_end}.wav&#39;
+        name = str(save_dir / name)
+        # Merge recording data and write array to file:
+        out = merge_wavs(series, name, return_out=return_out)
+        # Log signal and rate:
+        merge_data.append(out)
+        # Log new and merged files:
+        merge_files[name] = series
+
+    # Return options:
+    if return_out and return_paths:
+        return (merge_data, merge_files)
+    elif return_out:
+        return merge_data
+    elif return_paths:
+        return merge_files
+    return None</code></pre>
+</details>
+<div class="desc"><p>Automatic identification and merging of consecutive audio recordings.
+Uses search_files() to fetch all .wav files in the target directory
+that match the given search criteria, then extracts the time stamp from
+the end of each file name. Recordings whose start times are separated
+by an interval matching the specified duration are appended into a
+series and written to a new .wav file. Can return the merged recording
+data and/or a dictionary of paths to the new files and the merged ones.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>rec_dur</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Standard recording duration in the given unit. Must be the same for all
+files in a series for correct identification. The default is 20.0.</dd>
+<dt><strong><code>unit</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Unit of the recording duration. Must be known to datetime's timedelta
+class. The default is 'seconds'.</dd>
+<dt><strong><code>format</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Standard time stamp format used in all file names. Must be readable by
+datetime's strptime/strftime functions. Newly created files are tagged
+in the same format. May contain non-coding letters (no leading "%"),
+which are inherited by the time stamps of new files. The default is
+'%Y%m%dT%H%M%S', so 19980330T102700 for March 30th 1998 at 10:27 am.</dd>
+<dt><strong><code>n_tag</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Number of characters occupied by the time stamp at the end of each file
+name. This is not the same as the length of the format string! The
+default is 15, matching the default format.</dd>
+<dt><strong><code>save_dir</code></strong> :&ensp;<code>str</code> or <code>pathlib.Path object</code>, optional</dt>
+<dd>Path to the folder where the merged recording data should be written to
+file. If None, saves into sub-folder "merged" in the target directory.
+The directory is created if missing in both cases. The default is None.</dd>
+<dt><strong><code>return_out</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, returns a list of tuples containing the merged recording data
+and the corresponding sampling rate per series. If both return options
+are True, returns a tuple (data, paths). The default is False.</dd>
+<dt><strong><code>return_paths</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, returns a dictionary of the paths to the new .wav files (keys)
+and lists of paths to the merged original files (values) for reference.
+If both return options are True, returns a tuple (data, paths). The
+default is False.</dd>
+<dt><strong><code>**search_kwargs</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Keyword arguments passed to search_files() for specifying the search
+criteria when fetching .wav files. Use 'dir' to set the target
+directory (default is current directory). Use 'keywords', 'incl', and
+'excl' to filter by file name (default is any .wav file). Forces 'ext'
+to 'wav' and 'as_path' to True. The default is {}.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>merge_data</code></strong> :&ensp;<code>list (m,)</code> of <code>tuples (2,)</code> of <code>2D array (n, p) and float</code></dt>
+<dd>For each identified recording series, the merged recording data from
+all matching .wav files as a numpy array and the corresponding sampling
+rate in Hz as float. Rows correspond to time, columns to individual
+channels. Only returned if return_out is True.</dd>
+<dt><strong><code>merge_files</code></strong> :&ensp;<code>dict</code></dt>
+<dd>For each identified recording series, the path to the newly created
+.wav file in the given storage folder (keys) and a list of paths to the
+original .wav files that have been merged (values). All paths are
+returned as pathlib.Path object. Only returned if return_paths is True.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.species_collection"><code class="name flex">
+<span>def <span class="ident">species_collection</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def species_collection():
+    &#34;&#34;&#34; Shortcut to retrieve the current species scope of the songdetector.
+        Add or remove species to modify model scope.
+
+    Returns
+    -------
+    species_list : list of str (m,)
+        Species names in alphabetical order.
+    &#34;&#34;&#34;
+    species_list = [&#34;Arcyptera_fusca&#34;,
+                    &#34;Chorthippus_albomarginatus&#34;,
+                    &#34;Chorthippus_apricarius&#34;,
+                    &#34;Chorthippus_biguttulus&#34;,
+                    &#34;Chorthippus_bornhalmi&#34;,
+                    &#34;Chorthippus_brunneus&#34;,
+                    &#34;Chorthippus_dorsatus&#34;,
+                    &#34;Chorthippus_mollis&#34;,
+                    &#34;Chorthippus_pullus&#34;,
+                    &#34;Chorthippus_vagans&#34;,
+                    &#34;Chrysochraon_dispar&#34;,
+                    &#34;Euthystira_brachyptera&#34;,
+                    &#34;Gomphocerippus_rufus&#34;,
+                    &#34;Gomphocerus_sibiricus&#34;,
+                    &#34;Omocestus_haemorrhoidalis&#34;,
+                    &#34;Omocestus_rufipes&#34;,
+                    &#34;Omocestus_viridulus&#34;,
+                    &#34;Pseudochorthippus_montanus&#34;,
+                    &#34;Pseudochorthippus_parallelus&#34;,
+                    &#34;Sphingonotus_caerulans&#34;,
+                    &#34;Stauroderus_scalaris&#34;,
+                    &#34;Stenobothrus_lineatus&#34;,
+                    &#34;Stenobothrus_nigromaculatus&#34;,
+                    &#34;Stenobothrus_rubicundulus&#34;,
+                    &#34;Stenobothrus_stigmaticus&#34;,
+                    &#34;Stethophyma_grossum&#34;]
+    return species_list</code></pre>
+</details>
+<div class="desc"><p>Shortcut to retrieve the current species scope of the songdetector.
+Add or remove species to modify model scope.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>species_list</code></strong> :&ensp;<code>list</code> of <code>str (m,)</code></dt>
+<dd>Species names in alphabetical order.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.genus_collection"><code class="name flex">
+<span>def <span class="ident">genus_collection</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def genus_collection():
+    &#34;&#34;&#34; Retrieves each unique genus in the current species_collection().
+
+    Returns
+    -------
+    list of str (m,)
+        Genus names in alphabetical order.
+    &#34;&#34;&#34;
+    genus_list = [spec.split(&#39;_&#39;)[0] for spec in species_collection()]
+    return list(np.unique(genus_list))</code></pre>
+</details>
+<div class="desc"><p>Retrieves each unique genus in the current species_collection().</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code> of <code>str (m,)</code></dt>
+<dd>Genus names in alphabetical order.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.extract_species"><code class="name flex">
+<span>def <span class="ident">extract_species</span></span>(<span>paths,<br>omit_noise=True,<br>omit_subspec=True,<br>pretty_format=False,<br>short_genus=False,<br>tex_it=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def extract_species(paths, omit_noise=True, omit_subspec=True,
+                    pretty_format=False, short_genus=False, tex_it=False):
+    &#34;&#34;&#34; Extracts unique species names from a collection of file paths.
+        Filenames must start with species names in the format &#34;Genus_species_*&#34;
+        or &#34;Genus_species-subspecies_*&#34;. Remainders of filenames are ignored.
+
+    Parameters
+    ----------
+    paths : str or list of str (m,)
+        Paths to files whose name contains a species name.
+    omit_noise : bool, optional
+        If True, skips any filename that contains the word &#34;noise&#34;. The default
+        is True.
+    omit_subspec : bool, optional
+        If True, removes sub-species designations from species names. The
+        default is True.
+    pretty_format : bool, optional
+        If True, replaces original separators (&#39;_&#39;, &#39;-&#39;) with whitespace for
+        pretty printing. This behavior also applies if short_genus or tex_it
+        are True, regardless of pretty_format. The default is False.
+    short_genus : bool, optional
+        If True, abbreviates genus designations to their first letter and uses
+        whitespace as separators. The default is False.
+    tex_it : bool, optional
+        If True, formats species names to Latex italic font and uses whitespace
+        as separators. The default is False.
+
+    Returns
+    -------
+    species_list : list of str (n,)
+        Formatted unique species names in the given collection of file paths. 
+    &#34;&#34;&#34;    
+    # Set up separators for different formatting styles:
+    sep = [&#39; &#39;, &#39; &#39;] if pretty_format or short_genus or tex_it else [&#39;_&#39;, &#39;-&#39;]
+    # Extract filenames from paths:
+    paths = crop_paths(paths)
+    species_list = []
+    for path in paths:
+        # Skip over noise files:
+        if omit_noise and &#39;noise&#39; in path:
+            continue
+        # Split filename into segments:
+        path_segments = path.split(&#39;_&#39;)
+        if omit_subspec:
+            # Remove sub-species designation:
+            species_segment = path_segments[1].split(&#39;-&#39;)[0]
+        else:
+            # Keep sub-species with desired separator:
+            species_segment = path_segments[1].replace(&#39;-&#39;, sep[1])
+        if short_genus:
+            # Abbreviate genus designation:
+            name = path_segments[0][0] + &#39;.&#39; + sep[0] + species_segment
+        else:
+            # Keep full genus with desired separator:
+            name = path_segments[0] + sep[0] + species_segment
+        if name not in species_list:
+            # Add novel species:
+            species_list.append(name)
+    if tex_it:
+        # Format species names in italic LaTeX font:
+        species_list = [f&#39;\\textit{{{species}}}&#39; for species in species_list]
+    return species_list</code></pre>
+</details>
+<div class="desc"><p>Extracts unique species names from a collection of file paths.
+Filenames must start with species names in the format "Genus_species_<em>"
+or "Genus_species-subspecies_</em>". Remainders of filenames are ignored.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>paths</code></strong> :&ensp;<code>str</code> or <code>list</code> of <code>str (m,)</code></dt>
+<dd>Paths to files whose name contains a species name.</dd>
+<dt><strong><code>omit_noise</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, skips any filename that contains the word "noise". The default
+is True.</dd>
+<dt><strong><code>omit_subspec</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, removes sub-species designations from species names. The
+default is True.</dd>
+<dt><strong><code>pretty_format</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, replaces original separators ('_', '-') with whitespace for
+pretty printing. This behavior also applies if short_genus or tex_it
+are True, regardless of pretty_format. The default is False.</dd>
+<dt><strong><code>short_genus</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, abbreviates genus designations to their first letter and uses
+whitespace as separators. The default is False.</dd>
+<dt><strong><code>tex_it</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, formats species names to Latex italic font and uses whitespace
+as separators. The default is False.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>species_list</code></strong> :&ensp;<code>list</code> of <code>str (n,)</code></dt>
+<dd>Formatted unique species names in the given collection of file paths.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.count_files"><code class="name flex">
+<span>def <span class="ident">count_files</span></span>(<span>paths, spec_list=None, as_array=False, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def count_files(paths, spec_list=None, as_array=False, **kwargs):
+    &#34;&#34;&#34; Counts the occurrences of target species in a collection of file paths.
+        Format of species names must be consistent between paths and spec_list.
+
+    Parameters
+    ----------
+    paths : str or list of str (m,)
+        Paths to files whose name contains a species name. The name of one
+        species must follow the same format across paths to avoid miscounts.
+    spec_list : str or list of str (n,), optional
+        Species names to search for in paths. If None, uses extract_species()
+        to retrieve all unique species names from paths. The default is None.
+    as_array : bool, optional
+        If True, returns file counts as Numpy array (in order of spec_list).
+        Else, returns a dictionary with species names as keys for readability
+        and saving. The default is False.
+    **kwargs : dict, optional
+        Keyword arguments passed to extract_species() if spec_list is None.
+        Can be used to format dictionary keys or to treat sub-species as
+        separate categories during counting.
+
+    Returns
+    -------
+    file_count : dict or 1D array of ints (n,)
+        Counts of files containing each target species in the specified format.
+    &#34;&#34;&#34;    
+    if spec_list is None:
+        # Auto-generate target species:
+        spec_list = extract_species(paths, **kwargs)
+    # Assert iterable:
+    spec_list = check_list(spec_list)
+    # Count occurrences of each species:
+    file_count = np.zeros(len(spec_list), dtype=int) if as_array else {}
+    for i, species in enumerate(spec_list):
+        species_count = np.sum([species in path for path in paths])
+        file_count[i if as_array else species] = species_count
+    return file_count</code></pre>
+</details>
+<div class="desc"><p>Counts the occurrences of target species in a collection of file paths.
+Format of species names must be consistent between paths and spec_list.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>paths</code></strong> :&ensp;<code>str</code> or <code>list</code> of <code>str (m,)</code></dt>
+<dd>Paths to files whose name contains a species name. The name of one
+species must follow the same format across paths to avoid miscounts.</dd>
+<dt><strong><code>spec_list</code></strong> :&ensp;<code>str</code> or <code>list</code> of <code>str (n,)</code>, optional</dt>
+<dd>Species names to search for in paths. If None, uses extract_species()
+to retrieve all unique species names from paths. The default is None.</dd>
+<dt><strong><code>as_array</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, returns file counts as Numpy array (in order of spec_list).
+Else, returns a dictionary with species names as keys for readability
+and saving. The default is False.</dd>
+<dt><strong><code>**kwargs</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>Keyword arguments passed to extract_species() if spec_list is None.
+Can be used to format dictionary keys or to treat sub-species as
+separate categories during counting.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>file_count</code></strong> :&ensp;<code>dict</code> or <code>1D array</code> of <code>ints (n,)</code></dt>
+<dd>Counts of files containing each target species in the specified format.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.create_subsets"><code class="name flex">
+<span>def <span class="ident">create_subsets</span></span>(<span>paths, amount_train, spec_list=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_subsets(paths, amount_train, spec_list=None):
+    &#34;&#34;&#34; Splits a collection of file paths into a training and a test subsets.
+        Randomly assigns the given amount of species-specific files to the
+        training set and any remainders to the test set. Format of species
+        names must be consistent between paths and spec_list.
+
+    Parameters
+    ----------
+    paths : list of str (m,)
+        Paths to files from which to create subsets. Each filename must
+        contain a species name to identify species-specific files.
+    amount_train : int or float
+        If int, the absolute number of training files per species. 
+        If float, the proportion of training files per species (ensures at
+        least one file per species). Training takes precedence over testing, so
+        that there may be no files left for the test set if too many training
+        files are requested.
+    spec_list : str or list of str (n,), optional
+        Species to consider in file collection when creating subsets. If None,
+        uses extract_species() to retrieve all unique species names from paths.
+        The default is None.
+
+    Returns
+    -------
+    train_subset : list of str (p,)
+        Randomly assigned species-specific training files.
+    test_subset : list of str (q,)
+        Remaining species-specific test files.
+    &#34;&#34;&#34;    
+    if spec_list is None:
+        # Auto-generate target species:
+        spec_list = extract_species(paths)
+    train_subset = []
+    test_subset = []
+    # Assemble file subsets:
+    for species in spec_list:
+        # Get species-specific files:
+        species_files = [file for file in paths if species in file]
+        n_files = len(species_files)
+        if isinstance(amount_train, int):
+            # Absolute number of training files (not more than available):
+            n_train = amount_train if amount_train &lt; n_files else n_files
+        elif isinstance(amount_train, float):
+            # Proportion of training files (at least one):
+            n_train = np.max([int(np.round(n_files*amount_train)), 1])
+        # Shuffle and split:
+        np.random.shuffle(species_files)
+        train_subset += species_files[:n_train]
+        test_subset += species_files[n_train:]
+    return train_subset, test_subset</code></pre>
+</details>
+<div class="desc"><p>Splits a collection of file paths into a training and a test subsets.
+Randomly assigns the given amount of species-specific files to the
+training set and any remainders to the test set. Format of species
+names must be consistent between paths and spec_list.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>paths</code></strong> :&ensp;<code>list</code> of <code>str (m,)</code></dt>
+<dd>Paths to files from which to create subsets. Each filename must
+contain a species name to identify species-specific files.</dd>
+<dt><strong><code>amount_train</code></strong> :&ensp;<code>int</code> or <code>float</code></dt>
+<dd>If int, the absolute number of training files per species.
+If float, the proportion of training files per species (ensures at
+least one file per species). Training takes precedence over testing, so
+that there may be no files left for the test set if too many training
+files are requested.</dd>
+<dt><strong><code>spec_list</code></strong> :&ensp;<code>str</code> or <code>list</code> of <code>str (n,)</code>, optional</dt>
+<dd>Species to consider in file collection when creating subsets. If None,
+uses extract_species() to retrieve all unique species names from paths.
+The default is None.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>train_subset</code></strong> :&ensp;<code>list</code> of <code>str (p,)</code></dt>
+<dd>Randomly assigned species-specific training files.</dd>
+<dt><strong><code>test_subset</code></strong> :&ensp;<code>list</code> of <code>str (q,)</code></dt>
+<dd>Remaining species-specific test files.</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.file_subsets"><code class="name flex">
+<span>def <span class="ident">file_subsets</span></span>(<span>learn_files, nolearn_files, amount_train, verbose=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def file_subsets(learn_files, nolearn_files, amount_train, verbose=None):
+    &#34;&#34;&#34; Wraps create_subsets() to split both learn and nolearn file collection.
+        Learn files contain data that the model should learn to recognize.
+        Nolearn files contain data that the model should learn to avoid.
+        Both are split into training and test subsets.
+
+    Parameters
+    ----------
+    learn_files : list of str (m,)
+        Paths to files that contain desired learn data. Each filename must
+        contain a species name to identify species-specific files.
+    nolearn_files : list of str (n,)
+        Paths to files that contain desired nolearn data. Each filename must
+        contain a species name to identify species-specific files.
+    amount_train : int or float
+        If int, the absolute number of training files per species. 
+        If float, the proportion of training files per species (ensures at
+        least one file per species). Training takes precedence over testing, so
+        that there may be no files left for the test set if too many training
+        files are requested.
+    verbose : str, optional
+        If &#39;short&#39;, prints summary of file and species counts for each subset.
+        If &#39;full&#39;, prints additional metadata for each subset: Doubletag (file
+        may contain duplicate segments), Caution (file may not be unique), 
+        Temp (file has some temperature information). The default is None.
+
+    Returns
+    -------
+    learn_train : list of str (p,)
+        Randomly assigned species-specific training files (learn data).
+    nolearn_train : list of str (q,)
+        Randomly assigned species-specific training files (nolearn data).
+    test_files : list of str (r,)
+        Remaining species-specific test files (both learn and nolearn data).
+    &#34;&#34;&#34;    
+    # Create separate subsets for learn and nolearn data:
+    learn_train, learn_test = create_subsets(learn_files, amount_train)
+    nolearn_train, nolearn_test = create_subsets(nolearn_files, amount_train)
+    test_files = learn_test + nolearn_test
+    # Optional feedback:
+    if verbose in [&#39;short&#39;, &#39;full&#39;]:
+        # Count included files:
+        n_all = len(learn_files) + len(nolearn_files)
+        n_learn = len(learn_train)
+        n_nolearn = len(nolearn_train)
+        n_test = len(test_files)
+        # Count included species:
+        learn_species = len(extract_species(learn_train))
+        nolearn_species = len(extract_species(nolearn_train))
+        test_species = len(extract_species(test_files))
+        all_species = learn_species + nolearn_species
+        # Print short summary:
+        print(f&#39;\nfetched {n_all} files / {all_species} species&#39;\
+              f&#39;\nlearn: {n_learn} / {learn_species}&#39;\
+              f&#39;\nnolearn: {n_nolearn} / {nolearn_species}&#39;\
+              f&#39;\ntest: {n_test} / {test_species}\n&#39;)
+        if verbose == &#39;full&#39;:
+            # Gather additional metadata per subset:
+            subsets = [learn_train, nolearn_train, test_files]
+            strings = [&#39;learn:&#39;, &#39;nolearn:&#39;, &#39;test:&#39;]
+            print(&#39;files with special tags:&#39;)
+            for subset, string in zip(subsets, strings):
+                # Count and print occurences of file tags:
+                n_dt = len([f for f in subset if &#39;DT&#39; in f])
+                n_caution = len([f for f in subset if &#39;CAUTION&#39; in f])
+                n_temp = len([f for f in subset if &#39;_T&#39; in f])
+                print(f&#39;{string} doubletag: {n_dt}, caution: {n_caution}, &#39;\
+                      f&#39;temp: {n_temp}&#39;)
+    return learn_train, nolearn_train, test_files</code></pre>
+</details>
+<div class="desc"><p>Wraps create_subsets() to split both learn and nolearn file collection.
+Learn files contain data that the model should learn to recognize.
+Nolearn files contain data that the model should learn to avoid.
+Both are split into training and test subsets.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>learn_files</code></strong> :&ensp;<code>list</code> of <code>str (m,)</code></dt>
+<dd>Paths to files that contain desired learn data. Each filename must
+contain a species name to identify species-specific files.</dd>
+<dt><strong><code>nolearn_files</code></strong> :&ensp;<code>list</code> of <code>str (n,)</code></dt>
+<dd>Paths to files that contain desired nolearn data. Each filename must
+contain a species name to identify species-specific files.</dd>
+<dt><strong><code>amount_train</code></strong> :&ensp;<code>int</code> or <code>float</code></dt>
+<dd>If int, the absolute number of training files per species.
+If float, the proportion of training files per species (ensures at
+least one file per species). Training takes precedence over testing, so
+that there may be no files left for the test set if too many training
+files are requested.</dd>
+<dt><strong><code>verbose</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>If 'short', prints summary of file and species counts for each subset.
+If 'full', prints additional metadata for each subset: Doubletag (file
+may contain duplicate segments), Caution (file may not be unique),
+Temp (file has some temperature information). The default is None.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>learn_train</code></strong> :&ensp;<code>list</code> of <code>str (p,)</code></dt>
+<dd>Randomly assigned species-specific training files (learn data).</dd>
+<dt><strong><code>nolearn_train</code></strong> :&ensp;<code>list</code> of <code>str (q,)</code></dt>
+<dd>Randomly assigned species-specific training files (nolearn data).</dd>
+<dt><strong><code>test_files</code></strong> :&ensp;<code>list</code> of <code>str (r,)</code></dt>
+<dd>Remaining species-specific test files (both learn and nolearn data).</dd>
+</dl></div>
+</dd>
+<dt id="thunderhopper.filetools.organize_files"><code class="name flex">
+<span>def <span class="ident">organize_files</span></span>(<span>target, amount_train, auto_complete=False, verbose=None, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def organize_files(target, amount_train, auto_complete=False, verbose=None,
+                   **kwargs):
+    &#34;&#34;&#34; Top-level file search and creation of training and test subsets.
+        Finds target among pre-defined species scopes and fetches corresponding
+        files to be split into subsets. Target species determines learn files
+        (data that the model should learn to recognize), other species in the
+        scope determine nolearn files (data that the model should learn to
+        avoid). Currently available scopes are grasshoppers, frogs, frog
+        courtship calls, and frog territorial calls.
+
+    Parameters
+    ----------
+    target : str or list of str (m,)
+        Target species that determine selection of learn files. Must be in the
+        format &#34;Genus_species&#34; or &#34;Genus_species_calltype&#34;. Returns with a 
+        warning if no known scope is found for the target. If &#39;grasshoppers&#39;,
+        &#39;frogs&#39;, &#39;frogs_courtship&#39;, or &#39;frogs_territorial&#39;, returns early with
+        all files and species in this scope.
+    amount_train : int or float
+        Amount of training files for creation of training and test subsets.
+        If int, the absolute number of training files per species. 
+        If float, the proportion of training files per species (ensures at
+        least one file per species). Training takes precedence over testing, so
+        that there may be no files left for the test set if too many training
+        files are requested.
+    auto_complete : bool, optional
+        If True, automatically completes target species if it is a substring of
+        grasshopper and frog species (no calltype distinction). Allows passing
+        of targets in the format &#34;species&#34; without returning a warning. May
+        result in multiple potentially conflicting target species. The default
+        is False.
+    verbose : str, optional
+        If &#39;short&#39;, prints summary of file and species counts for each subset.
+        If &#39;full&#39;, prints additional metadata for each subset: Doubletag (file
+        may contain duplicate segments), Caution (file may not be unique), 
+        Temp (file has some temperature information). The default is None.
+    **kwargs : dict, optional
+        Keyword arguments passed to search_files() when fetching learn/nolearn
+        files, or when returning with a shortcut. Can be used to specify a
+        custom directory and file extension for the file search.
+
+    Returns
+    -------
+    file_bundle : list (3,) of lists of str
+        Paths to subset files in the order [learn, nolearn, test]. Some entries
+        may be empty if no files are found in the given directory, or if too
+        many training files are requested. If target is a shortcut string,
+        returns a flat list of all files in the corresponding scope.
+    species_bundle : list (3,) of lists of str
+        Species names corresponding to file_bundle in the same order. If target
+        is a shortcut string, returns a flat list of all species in the
+        corresponding scope.
+    &#34;&#34;&#34;    
+    # Available species scopes:
+    grasshoppers = species_collection()
+    frogs = [&#39;Rana_esculenta&#39;, &#39;Rana_lessonae&#39;, &#39;Rana_ridibunda&#39;]
+    frogs_courtship = [frog + &#39;_courtship&#39; for frog in frogs]
+    frogs_territorial = [frog + &#39;_territorial&#39; for frog in frogs]
+    all_species = grasshoppers + frogs
+
+    if auto_complete:
+        # Auto-complete target species:
+        target = [spec for spec in all_species if target in spec]
+    # Determine desired scope and handle shortcuts:
+    if any(np.isin(grasshoppers + [&#39;grasshoppers&#39;], target)):
+        species = grasshoppers
+        # Fetch all grasshopper files:
+        if target == &#39;grasshoppers&#39;:
+            return search_files(grasshoppers, **kwargs), species
+    elif any(np.isin(frogs + [&#39;frogs&#39;], target)):
+        species = frogs
+        # Fetch all frog files:
+        if target == &#39;frogs&#39;:
+            return search_files(frogs, **kwargs), species
+    elif any(np.isin(frogs_courtship + [&#39;frogs_courtship&#39;], target)):
+        species = frogs_courtship
+        # Fetch all files with frog courtship calls:
+        if target == &#39;frogs_courtship&#39;:
+            return search_files(frogs_courtship, **kwargs), species
+    elif any(np.isin(frogs_territorial + [&#39;frogs_territorial&#39;], target)):
+        species = frogs_territorial
+        # Fetch all files with frog territorial calls:
+        if target == &#39;frogs_territorial&#39;:
+            return search_files(frogs_territorial, **kwargs), species
+    else:
+        print(f&#39;WARNING: No known model scope for target {target}.&#39;)
+        return None, None
+    # Assert iterable:
+    target = check_list(target)
+    # Fetch learn files (target species):
+    learn = search_files(target, **kwargs)
+    # Fetch nolearn files (non-target species):
+    others = [spec for spec in species if not (spec in target)]
+    nolearn = search_files(others, **kwargs)
+    # Assemble training and test subsets:
+    file_bundle = list(file_subsets(learn, nolearn, amount_train, verbose))
+    species_bundle = [target, others, extract_species(file_bundle[2])]
+    return file_bundle, species_bundle</code></pre>
+</details>
+<div class="desc"><p>Top-level file search and creation of training and test subsets.
+Finds target among pre-defined species scopes and fetches corresponding
+files to be split into subsets. Target species determines learn files
+(data that the model should learn to recognize), other species in the
+scope determine nolearn files (data that the model should learn to
+avoid). Currently available scopes are grasshoppers, frogs, frog
+courtship calls, and frog territorial calls.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>target</code></strong> :&ensp;<code>str</code> or <code>list</code> of <code>str (m,)</code></dt>
+<dd>Target species that determine selection of learn files. Must be in the
+format "Genus_species" or "Genus_species_calltype". Returns with a
+warning if no known scope is found for the target. If 'grasshoppers',
+'frogs', 'frogs_courtship', or 'frogs_territorial', returns early with
+all files and species in this scope.</dd>
+<dt><strong><code>amount_train</code></strong> :&ensp;<code>int</code> or <code>float</code></dt>
+<dd>Amount of training files for creation of training and test subsets.
+If int, the absolute number of training files per species.
+If float, the proportion of training files per species (ensures at
+least one file per species). Training takes precedence over testing, so
+that there may be no files left for the test set if too many training
+files are requested.</dd>
+<dt><strong><code>auto_complete</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, automatically completes target species if it is a substring of
+grasshopper and frog species (no calltype distinction). Allows passing
+of targets in the format "species" without returning a warning. May
+result in multiple potentially conflicting target species. The default
+is False.</dd>
+<dt><strong><code>verbose</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>If 'short', prints summary of file and species counts for each subset.
+If 'full', prints additional metadata for each subset: Doubletag (file
+may contain duplicate segments), Caution (file may not be unique),
+Temp (file has some temperature information). The default is None.</dd>
+<dt><strong><code>**kwargs</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>Keyword arguments passed to search_files() when fetching learn/nolearn
+files, or when returning with a shortcut. Can be used to specify a
+custom directory and file extension for the file search.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>file_bundle</code></strong> :&ensp;<code>list (3,)</code> of <code>lists</code> of <code>str</code></dt>
+<dd>Paths to subset files in the order [learn, nolearn, test]. Some entries
+may be empty if no files are found in the given directory, or if too
+many training files are requested. If target is a shortcut string,
+returns a flat list of all files in the corresponding scope.</dd>
+<dt><strong><code>species_bundle</code></strong> :&ensp;<code>list (3,)</code> of <code>lists</code> of <code>str</code></dt>
+<dd>Species names corresponding to file_bundle in the same order. If target
+is a shortcut string, returns a flat list of all species in the
+corresponding scope.</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="thunderhopper" href="index.html">thunderhopper</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="thunderhopper.filetools.assert_dir" href="#thunderhopper.filetools.assert_dir">assert_dir</a></code></li>
+<li><code><a title="thunderhopper.filetools.check_extension" href="#thunderhopper.filetools.check_extension">check_extension</a></code></li>
+<li><code><a title="thunderhopper.filetools.crop_paths" href="#thunderhopper.filetools.crop_paths">crop_paths</a></code></li>
+<li><code><a title="thunderhopper.filetools.search_files" href="#thunderhopper.filetools.search_files">search_files</a></code></li>
+<li><code><a title="thunderhopper.filetools.to_archive" href="#thunderhopper.filetools.to_archive">to_archive</a></code></li>
+<li><code><a title="thunderhopper.filetools.from_archive" href="#thunderhopper.filetools.from_archive">from_archive</a></code></li>
+<li><code><a title="thunderhopper.filetools.load_npz" href="#thunderhopper.filetools.load_npz">load_npz</a></code></li>
+<li><code><a title="thunderhopper.filetools.expand_npz" href="#thunderhopper.filetools.expand_npz">expand_npz</a></code></li>
+<li><code><a title="thunderhopper.filetools.trim_npz" href="#thunderhopper.filetools.trim_npz">trim_npz</a></code></li>
+<li><code><a title="thunderhopper.filetools.update_npz" href="#thunderhopper.filetools.update_npz">update_npz</a></code></li>
+<li><code><a title="thunderhopper.filetools.write_json" href="#thunderhopper.filetools.write_json">write_json</a></code></li>
+<li><code><a title="thunderhopper.filetools.load_json" href="#thunderhopper.filetools.load_json">load_json</a></code></li>
+<li><code><a title="thunderhopper.filetools.merge_wavs" href="#thunderhopper.filetools.merge_wavs">merge_wavs</a></code></li>
+<li><code><a title="thunderhopper.filetools.merge_wav_series" href="#thunderhopper.filetools.merge_wav_series">merge_wav_series</a></code></li>
+<li><code><a title="thunderhopper.filetools.species_collection" href="#thunderhopper.filetools.species_collection">species_collection</a></code></li>
+<li><code><a title="thunderhopper.filetools.genus_collection" href="#thunderhopper.filetools.genus_collection">genus_collection</a></code></li>
+<li><code><a title="thunderhopper.filetools.extract_species" href="#thunderhopper.filetools.extract_species">extract_species</a></code></li>
+<li><code><a title="thunderhopper.filetools.count_files" href="#thunderhopper.filetools.count_files">count_files</a></code></li>
+<li><code><a title="thunderhopper.filetools.create_subsets" href="#thunderhopper.filetools.create_subsets">create_subsets</a></code></li>
+<li><code><a title="thunderhopper.filetools.file_subsets" href="#thunderhopper.filetools.file_subsets">file_subsets</a></code></li>
+<li><code><a title="thunderhopper.filetools.organize_files" href="#thunderhopper.filetools.organize_files">organize_files</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>
